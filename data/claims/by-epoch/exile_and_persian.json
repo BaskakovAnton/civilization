@@ -107,5 +107,27 @@
         "url": "https://en.wikipedia.org/wiki/Yehud_Medinata"
       }
     ]
+  },
+  {
+    "id": "claim_exile_and_persian_zerubbabel",
+    "epoch_id": "exile_and_persian",
+    "statement_ru": "Зерубавель фигурирует в традиции восстановления культа/общины Йехуда; объём исторической роли реконструируют осторожно.",
+    "confidence": "disputed",
+    "date_min": -538,
+    "date_max": -515,
+    "source_ids": [
+      "ezra_nehemiah",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_zerubbabel",
+        "label_ru": "Езд 3–5",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Ezra.3-5",
+        "url": "https://www.biblegateway.com/passage/?search=Ezra+3-5&version=NRSVUE"
+      }
+    ]
   }
 ]

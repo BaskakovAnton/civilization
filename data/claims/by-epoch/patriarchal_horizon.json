@@ -77,5 +77,27 @@
         "url": "https://en.wikipedia.org/wiki/Joseph_(Genesis)"
       }
     ]
+  },
+  {
+    "id": "claim_patriarchal_horizon_genealogy",
+    "epoch_id": "patriarchal_horizon",
+    "statement_ru": "Цепочка Авраам–Исаак–Иаков в Бытии задаёт генеалогическую рамку предания; внешняя биографическая аттестация отсутствует.",
+    "confidence": "literary",
+    "date_min": null,
+    "date_max": null,
+    "source_ids": [
+      "genesis_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_pat_geneal",
+        "label_ru": "Быт 21–28",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.21-28",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+21-28&version=NRSVUE"
+      }
+    ]
   }
 ]

@@ -84,6 +84,10 @@ function matchPerson(person, index) {
     barnabas: "barnabas_1722",
     // Brother of Jesus — not Zebedee / Alphaeus
     james_of_jerusalem: "james_719",
+    isaac: "isaac_616",
+    miriam: "miriam_2087",
+    zerubbabel: "zerubbabel_3054",
+    john_the_baptist: "john_1676",
   };
   const pin = pinned[person.id];
   if (pin && index.byLookup.has(pin)) return index.byLookup.get(pin);

@@ -907,5 +907,98 @@
         "url": "https://www.biblegateway.com/passage/?search=Mark+11-14&version=NRSVUE"
       }
     ]
+  },
+  {
+    "id": "evt_nehemiah_wall",
+    "label_ru": "Стена Неемии (традиция восстановления)",
+    "epoch_id": "exile_and_persian",
+    "place_ids": [
+      "jerusalem",
+      "yehud"
+    ],
+    "person_ids": [
+      "nehemiah",
+      "ezra"
+    ],
+    "date_min": -445,
+    "date_max": -430,
+    "confidence": "disputed",
+    "statement_ru": "Традиция Неемии о восстановлении стен Иерусалима; хронология и масштаб спорны.",
+    "source_ids": [
+      "ezra_nehemiah",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_evt_neh_wall",
+        "label_ru": "Неем 2–6",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Neh.2-6",
+        "url": "https://www.biblegateway.com/passage/?search=Nehemiah+2-6&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_baptist_activity",
+    "label_ru": "Проповедь Иоанна Крестителя",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "galilee",
+      "jerusalem"
+    ],
+    "person_ids": [
+      "john_the_baptist",
+      "jesus_of_nazareth"
+    ],
+    "date_min": 28,
+    "date_max": 30,
+    "confidence": "anchored",
+    "statement_ru": "Иоанн как независимый проповедник крещения; связь с Иисусом — в традиции и критическом консенсусе о крещении.",
+    "source_ids": [
+      "josephus_antiquities",
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_evt_baptist",
+        "label_ru": "Josephus / Mark 1",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/John_the_Baptist"
+      }
+    ]
+  },
+  {
+    "id": "evt_hebron_machpelah",
+    "label_ru": "Пещера Махпела / Хеврон (предание)",
+    "epoch_id": "patriarchal_horizon",
+    "place_ids": [
+      "hebron"
+    ],
+    "person_ids": [
+      "abraham",
+      "isaac",
+      "jacob"
+    ],
+    "date_min": null,
+    "date_max": null,
+    "confidence": "literary",
+    "statement_ru": "Предание о родовом погребении праотцев в Хевроне; без внешней абсолютной даты.",
+    "source_ids": [
+      "genesis_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_evt_machpelah",
+        "label_ru": "Быт 23",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.23",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+23&version=NRSVUE"
+      }
+    ]
   }
 ]

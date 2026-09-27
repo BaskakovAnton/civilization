@@ -41,7 +41,8 @@
     ],
     "person_ids": [
       "joseph_patriarch",
-      "moses"
+      "moses",
+      "miriam"
     ],
     "citations": [
       {
@@ -220,7 +221,8 @@
     "person_ids": [
       "ezra",
       "nehemiah",
-      "cyrus"
+      "cyrus",
+      "zerubbabel"
     ],
     "citations": [
       {
@@ -387,7 +389,8 @@
       "modern_handbook"
     ],
     "person_ids": [
-      "simon_bar_kokhba"
+      "simon_bar_kokhba",
+      "yeshua_ben_galgula"
     ],
     "citations": [
       {
@@ -439,7 +442,8 @@
     ],
     "person_ids": [
       "jesus_of_nazareth",
-      "peter"
+      "peter",
+      "john_the_baptist"
     ],
     "citations": [
       {
@@ -448,6 +452,34 @@
         "kind": "web",
         "source_id": "modern_handbook",
         "url": "https://en.wikipedia.org/wiki/Galilee"
+      }
+    ]
+  },
+  {
+    "id": "hebron",
+    "label_ru": "Хеврон",
+    "epoch_ids": [
+      "patriarchal_horizon"
+    ],
+    "confidence": "literary",
+    "note_ru": "Традиционное место погребения праотцев; не абсолютная хронология",
+    "source_ids": [
+      "genesis_narrative",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "abraham",
+      "isaac",
+      "jacob"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_hebron",
+        "label_ru": "Быт 23",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.23",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+23&version=NRSVUE"
       }
     ]
   }

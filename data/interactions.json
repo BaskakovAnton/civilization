@@ -993,5 +993,192 @@
         "url": "https://en.wikipedia.org/wiki/Herod_Archelaus"
       }
     ]
+  },
+  {
+    "id": "int_abraham_isaac_kin",
+    "epoch_id": "patriarchal_horizon",
+    "from_person_id": "abraham",
+    "to_person_id": "isaac",
+    "relation": "kin",
+    "label_ru": "Авраам — отец Исаака в генеалогии предания",
+    "confidence": "literary",
+    "source_ids": [
+      "genesis_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_abr_isaac",
+        "label_ru": "Быт 21",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.21",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+21&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_isaac_jacob_kin",
+    "epoch_id": "patriarchal_horizon",
+    "from_person_id": "isaac",
+    "to_person_id": "jacob",
+    "relation": "kin",
+    "label_ru": "Исаак — отец Иакова в генеалогии предания",
+    "confidence": "literary",
+    "source_ids": [
+      "genesis_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_isaac_jac",
+        "label_ru": "Быт 25; 27",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.25;27",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+25%3B+Genesis+27&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_moses_miriam_kin",
+    "epoch_id": "exodus_emergence",
+    "from_person_id": "moses",
+    "to_person_id": "miriam",
+    "relation": "kin",
+    "label_ru": "Моисей и Мириам — сиблинги в предании Исхода",
+    "confidence": "literary",
+    "source_ids": [
+      "exodus_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_mos_mir",
+        "label_ru": "Исх 15:20–21",
+        "kind": "verse",
+        "source_id": "exodus_narrative",
+        "ref": "Exod.15.20-21",
+        "url": "https://www.biblegateway.com/passage/?search=Exodus+15%3A20-21&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_zerubbabel_cyrus_context",
+    "epoch_id": "exile_and_persian",
+    "from_person_id": "zerubbabel",
+    "to_person_id": "cyrus",
+    "relation": "serves",
+    "label_ru": "Зерубавель действует в персидском контексте после указа Кира (традиция восстановления)",
+    "confidence": "disputed",
+    "source_ids": [
+      "ezra_nehemiah",
+      "cyrus_cylinder",
+      "modern_handbook"
+    ],
+    "note_ru": "Не личная служба Киру; имперский фон возвращения",
+    "citations": [
+      {
+        "id": "cite_int_zer_cyrus",
+        "label_ru": "Езд 1–3",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Ezra.1-3",
+        "url": "https://www.biblegateway.com/passage/?search=Ezra+1-3&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_zerubbabel_ezra_context",
+    "epoch_id": "exile_and_persian",
+    "from_person_id": "ezra",
+    "to_person_id": "zerubbabel",
+    "relation": "succeeds",
+    "label_ru": "Традиция связывает Зерубавеля (раннее восстановление) и Эзру (закон/община) как этапы Йехуда",
+    "confidence": "disputed",
+    "source_ids": [
+      "ezra_nehemiah",
+      "modern_handbook"
+    ],
+    "note_ru": "Не прямое личное преемство; хронологический разрыв спорен",
+    "citations": [
+      {
+        "id": "cite_int_zer_ezra",
+        "label_ru": "Езд 3; 7",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Ezra.3;7",
+        "url": "https://www.biblegateway.com/passage/?search=Ezra+3%3B+Ezra+7&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_jesus_baptist_meets",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "jesus_of_nazareth",
+    "to_person_id": "john_the_baptist",
+    "relation": "meets",
+    "label_ru": "Иисус связан с движением Иоанна (крещение / преемство проповеди в традиции)",
+    "confidence": "anchored",
+    "source_ids": [
+      "synoptic_gospels",
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "note_ru": "Факт крещения Иисуса у Иоанна — сильный критический консенсус; детали — literary",
+    "citations": [
+      {
+        "id": "cite_int_jes_baptist",
+        "label_ru": "Мк 1:9–11",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.9-11",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A9-11&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_josephus_baptist_mentions",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "josephus_flavius",
+    "to_person_id": "john_the_baptist",
+    "relation": "mentions",
+    "label_ru": "Иосиф упоминает Иоанна Крестителя независимо от евангелий",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jos_baptist",
+        "label_ru": "Josephus — John the Baptist",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Josephus_on_Jesus#John_the_Baptist"
+      }
+    ]
+  },
+  {
+    "id": "int_bar_kokhba_writes_galgula",
+    "epoch_id": "bar_kokhba",
+    "from_person_id": "simon_bar_kokhba",
+    "to_person_id": "yeshua_ben_galgula",
+    "relation": "writes_to",
+    "label_ru": "Бар-Кохба пишет Иешуа бен Галгуле (снабжение/назначения в архиве пустыни)",
+    "confidence": "firm",
+    "source_ids": [
+      "bar_kokhba_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_bk_writes",
+        "label_ru": "Bar Kokhba letters",
+        "kind": "inscription",
+        "source_id": "bar_kokhba_letters",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_letters"
+      }
+    ]
   }
 ]

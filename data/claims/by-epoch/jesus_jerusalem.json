@@ -129,5 +129,35 @@
         "url": "https://www.biblegateway.com/passage/?search=Mark+8%3A27-30&version=NRSVUE"
       }
     ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_baptist",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Иоанн Креститель — независимый якорь контекста: упомянут Иосифом; связь с Иисусом держится на традиции синоптиков и критической фильтрации.",
+    "confidence": "anchored",
+    "date_min": 28,
+    "date_max": 30,
+    "source_ids": [
+      "josephus_antiquities",
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_baptist_jos",
+        "label_ru": "Josephus on John the Baptist",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Josephus_on_Jesus#John_the_Baptist"
+      },
+      {
+        "id": "cite_claim_baptist_mark",
+        "label_ru": "Мк 1:2–11",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.2-11",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A2-11&version=NRSVUE"
+      }
+    ]
   }
 ]

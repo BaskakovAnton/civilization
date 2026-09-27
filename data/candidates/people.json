@@ -24,6 +24,22 @@
       }
     },
     {
+      "id": "isaac",
+      "label_ru": "Исаак",
+      "theographic_slug": "isaac_616",
+      "epoch_ids": [
+        "patriarchal_horizon"
+      ],
+      "confidence": "literary",
+      "note_ru": "Фигура генеалогии предания Авраам–Исаак–Иаков",
+      "upstream": {
+        "found": true,
+        "name": "Isaac",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/isaac.html"
+      }
+    },
+    {
       "id": "jacob",
       "label_ru": "Иаков",
       "theographic_slug": "jacob_683",
@@ -85,6 +101,22 @@
         "name": "Aaron",
         "alsoCalled": [],
         "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/aaron.html"
+      }
+    },
+    {
+      "id": "miriam",
+      "label_ru": "Мириам",
+      "theographic_slug": "miriam_2087",
+      "epoch_ids": [
+        "exodus_emergence"
+      ],
+      "confidence": "literary",
+      "note_ru": "Сестра Моисея/Аарона в предании Исхода",
+      "upstream": {
+        "found": true,
+        "name": "Miriam",
+        "alsoCalled": [],
+        "dictionaryLink": null
       }
     },
     {
@@ -281,6 +313,22 @@
       }
     },
     {
+      "id": "zerubbabel",
+      "label_ru": "Зерубавель",
+      "theographic_slug": "zerubbabel_3054",
+      "epoch_ids": [
+        "exile_and_persian"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Фигура восстановления; хронология и роль спорны",
+      "upstream": {
+        "found": true,
+        "name": "Zerubbabel",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
       "id": "ezra",
       "label_ru": "Эзра",
       "theographic_slug": "ezra_1244",
@@ -427,6 +475,23 @@
       }
     },
     {
+      "id": "john_the_baptist",
+      "label_ru": "Иоанн Креститель",
+      "theographic_slug": "john_1676",
+      "epoch_ids": [
+        "jesus_jerusalem",
+        "roman_herodian"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Внешнее упоминание у Иосифа + традиция синоптиков",
+      "upstream": {
+        "found": true,
+        "name": "John",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/john-the-baptist.html"
+      }
+    },
+    {
       "id": "jesus_of_nazareth",
       "label_ru": "Иисус из Назарета",
       "theographic_slug": "jesus_905",
@@ -514,7 +579,8 @@
       "theographic_slug": "",
       "epoch_ids": [
         "war_and_divergence",
-        "roman_herodian"
+        "roman_herodian",
+        "jesus_jerusalem"
       ],
       "confidence": "firm",
       "note_ru": "Свидетель и историк; не отец Церкви",
@@ -570,6 +636,19 @@
       ],
       "confidence": "firm",
       "note_ru": "Эпиграфика/монеты/Дион",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
+      "id": "yeshua_ben_galgula",
+      "label_ru": "Иешуа бен Галгула",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "bar_kokhba"
+      ],
+      "confidence": "firm",
+      "note_ru": "Адресат/офицер в письмах Бар-Кохбы (административная сеть)",
       "upstream": {
         "found": false
       }
