@@ -1,0 +1,64 @@
+[
+  {
+    "id": "polity_assyria",
+    "label_ru": "Ассирия (неоассирийская держава)",
+    "kind": "polity",
+    "epoch_ids": ["divided_kingdoms", "assyria_to_exile"],
+    "confidence": "firm",
+    "note_ru": "Имперский актор: анналы, завоевание Самарии, поход 701",
+    "source_ids": ["assyrian_annals", "modern_handbook"],
+    "person_ids": ["sennacherib", "omri", "ahab", "jehu", "hezekiah"]
+  },
+  {
+    "id": "polity_babylon",
+    "label_ru": "Нововавилонская держава",
+    "kind": "polity",
+    "epoch_ids": ["assyria_to_exile", "exile_and_persian"],
+    "confidence": "firm",
+    "note_ru": "Актор изгнания и разрушения 586",
+    "source_ids": ["babylonian_chronicles", "modern_handbook"],
+    "person_ids": ["nebuchadnezzar"]
+  },
+  {
+    "id": "polity_persia",
+    "label_ru": "Империя Ахеменидов",
+    "kind": "polity",
+    "epoch_ids": ["exile_and_persian"],
+    "confidence": "firm",
+    "note_ru": "Контекст Йехуда и возвращений",
+    "source_ids": ["cyrus_cylinder", "modern_handbook"],
+    "person_ids": ["cyrus", "ezra", "nehemiah"]
+  },
+  {
+    "id": "polity_seleucid",
+    "label_ru": "Селевкидское царство",
+    "kind": "polity",
+    "epoch_ids": ["hellenistic_hasmonean"],
+    "confidence": "firm",
+    "note_ru": "Фон кризиса при Антиохе IV",
+    "source_ids": ["1_macc", "hellenistic_chronology", "modern_handbook"],
+    "person_ids": ["antiochus_iv", "mattathias", "judas_maccabeus"]
+  },
+  {
+    "id": "polity_rome",
+    "label_ru": "Римская империя / власть в Иудее",
+    "kind": "polity",
+    "epoch_ids": [
+      "roman_herodian",
+      "jesus_jerusalem",
+      "pauline_networks",
+      "war_and_divergence",
+      "bar_kokhba"
+    ],
+    "confidence": "firm",
+    "note_ru": "От Помпея до Адриана",
+    "source_ids": ["roman_fasti", "josephus_war", "modern_handbook"],
+    "person_ids": [
+      "herod_the_great",
+      "pontius_pilate",
+      "vespasian",
+      "hadrian",
+      "josephus_flavius"
+    ]
+  }
+]

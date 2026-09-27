@@ -7,7 +7,8 @@
     "dev": "vite --host 127.0.0.1 --port 5173",
     "build": "vite build",
     "preview": "vite preview",
-    "extract:theographic": "node scripts/extract-theographic-people.mjs"
+    "extract:theographic": "node scripts/extract-theographic-people.mjs",
+    "check:upstream": "node scripts/check-upstream-available.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

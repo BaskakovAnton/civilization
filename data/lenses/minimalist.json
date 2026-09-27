@@ -1,0 +1,19 @@
+{
+  "id": "minimalist",
+  "label_ru": "Минималистская линза (черновик)",
+  "description_ru": "Снижает confidence нарративных узлов; для сравнения, не default.",
+  "claim_overrides": {
+    "claim_early_monarchy_tel_dan": {
+      "confidence": "disputed",
+      "note_ru": "Линза: осторожнее с выводами из byt dwd"
+    },
+    "claim_jesus_jerusalem_historical_core": {
+      "confidence": "disputed",
+      "note_ru": "Линза: более скептична к объёму реконструируемого ядра"
+    },
+    "claim_divided_kingdoms_omrides": {
+      "confidence": "disputed",
+      "note_ru": "Линза: сильнее разводит текст и археологию"
+    }
+  }
+}

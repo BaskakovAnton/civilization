@@ -256,5 +256,37 @@
     "label_ru": "Бар-Кохба возглавляет восстание против Рима Адриана",
     "confidence": "firm",
     "source_ids": ["bar_kokhba_letters", "dio_cassius", "modern_handbook"]
+  },
+  {
+    "id": "int_david_hezekiah_dynasty",
+    "epoch_id": "assyria_to_exile",
+    "from_person_id": "hezekiah",
+    "to_person_id": "david",
+    "relation": "kin",
+    "label_ru": "Езекия — царь «дома Давида» (династическая линия Иудеи)",
+    "confidence": "anchored",
+    "source_ids": ["deuteronomistic_history", "tel_dan_inscription", "modern_handbook"]
+  },
+  {
+    "id": "int_herod_jesus_context",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "jesus_of_nazareth",
+    "to_person_id": "herod_the_great",
+    "relation": "mentions",
+    "label_ru": "Иисус действует в мире, оформленном наследием Ирода (храм, власть)",
+    "confidence": "anchored",
+    "source_ids": ["synoptic_gospels", "josephus_antiquities", "modern_handbook"],
+    "note_ru": "Не личная встреча: Ирод Великий умер раньше; контекст иродианского Иерусалима"
+  },
+  {
+    "id": "int_paul_rome_mentions",
+    "epoch_id": "pauline_networks",
+    "from_person_id": "paul_of_tarsus",
+    "to_person_id": "pontius_pilate",
+    "relation": "mentions",
+    "label_ru": "Павел действует в римском имперском пространстве (Пилат — ранний якорь префектуры)",
+    "confidence": "anchored",
+    "source_ids": ["pauline_letters", "roman_fasti", "modern_handbook"],
+    "note_ru": "Не современники в одном эпизоде; связка империи"
   }
 ]

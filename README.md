@@ -31,6 +31,8 @@ npm run extract:theographic   # P4: обогатить candidates из Theograph
 | `data/interactions.json` | Взаимодействия лиц (рёбра + источники) |
 | `data/places.json` | Места (P5) |
 | `data/events.json` | События (P5) + citations (P6) |
+| `data/polities.json` | Имперские акторы (P9) |
+| `data/lenses/` | Линзы university / conservative / minimalist (P10) |
 | `data/external/` | Upstream docs; raw/ в gitignore |
 | `scripts/extract-theographic-people.mjs` | P4 extract |
 | `web/` | UI (React + Vite + TS) |
@@ -44,6 +46,25 @@ npm run extract:theographic   # P4: обогатить candidates из Theograph
 - Отцы Церкви — вне MVP
 - Маккавеи — `historical_document`, не канон UI
 - **P4 Theographic** — candidate layer (`data/candidates` + extract script)
+
+## Публикация (GitHub Pages)
+
+CI: `.github/workflows/pages.yml` (push в `master`).
+
+Сайт: `https://baskakovanton.github.io/civilization/`
+
+Локальная сборка под Pages:
+
+```bash
+# PowerShell
+$env:GITHUB_PAGES="true"; npm run build
+```
+
+## Upstream check (P12 stub)
+
+```bash
+npm run check:upstream
+```
 
 ## Канон для агента
 

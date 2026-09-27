@@ -165,5 +165,29 @@
     "urls": [
       "https://github.com/robertrouse/theographic-bible-metadata"
     ]
+  },
+  {
+    "id": "ignatius_letters",
+    "label_ru": "Игнатий Антиохийский (письма) — слой отцов",
+    "type": "classical_historiography",
+    "tradition_note_ru": "P11 stub: рецепция, не baseline истории Иисуса"
+  },
+  {
+    "id": "justin_apology",
+    "label_ru": "Иустин Мученик — слой отцов",
+    "type": "classical_historiography",
+    "tradition_note_ru": "P11 stub"
+  },
+  {
+    "id": "irenaeus_haer",
+    "label_ru": "Ириней, Против ересей — слой отцов",
+    "type": "classical_historiography",
+    "tradition_note_ru": "P11 stub"
+  },
+  {
+    "id": "eusebius_he",
+    "label_ru": "Евсевий, Церковная история — слой отцов",
+    "type": "classical_historiography",
+    "tradition_note_ru": "P11 stub: канон/рецепция"
   }
 ]

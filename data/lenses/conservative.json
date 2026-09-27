@@ -1,0 +1,19 @@
+{
+  "id": "conservative",
+  "label_ru": "Консервативная линза (черновик)",
+  "description_ru": "Повышает confidence отдельных claims; не заменяет university baseline.",
+  "claim_overrides": {
+    "claim_exodus_emergence_mass_exodus": {
+      "confidence": "anchored",
+      "note_ru": "Линза: допускает более сильное историческое ядро Исхода"
+    },
+    "claim_early_monarchy_scale": {
+      "confidence": "anchored",
+      "note_ru": "Линза: более крупная объединённая монархия"
+    },
+    "claim_patriarchal_horizon_saga": {
+      "confidence": "disputed",
+      "note_ru": "Линза: праотцы ближе к возможной истории, не только saga"
+    }
+  }
+}

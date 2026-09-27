@@ -17,8 +17,13 @@ import pauline from "../../data/claims/by-epoch/pauline_networks.json";
 import war from "../../data/claims/by-epoch/war_and_divergence.json";
 import barKokhba from "../../data/claims/by-epoch/bar_kokhba.json";
 import candidatesFile from "../../data/candidates/people.json";
+import politiesData from "../../data/polities.json";
+import universityLens from "../../data/lenses/university.json";
+import conservativeLens from "../../data/lenses/conservative.json";
+import minimalistLens from "../../data/lenses/minimalist.json";
 import CitationList from "./CitationList";
 import EpochGraph from "./EpochGraph";
+import GlobalTools from "./GlobalTools";
 import type {
   CandidatePerson,
   Claim,
@@ -35,6 +40,34 @@ import {
   formatYear,
   relationLabelRu,
 } from "./types";
+
+type Polity = {
+  id: string;
+  label_ru: string;
+  epoch_ids: string[];
+  confidence: Confidence;
+  note_ru?: string;
+  source_ids: string[];
+  person_ids?: string[];
+};
+
+type LensFile = {
+  id: string;
+  label_ru: string;
+  description_ru: string;
+  claim_overrides?: Record<
+    string,
+    { confidence: Confidence; note_ru?: string }
+  >;
+};
+
+const lenses: LensFile[] = [
+  universityLens as LensFile,
+  conservativeLens as LensFile,
+  minimalistLens as LensFile,
+];
+const lensById = Object.fromEntries(lenses.map((l) => [l.id, l]));
+const allPolities = politiesData as Polity[];
 
 const allClaims: Claim[] = [
   ...(patriarchal as Claim[]),
@@ -99,8 +132,21 @@ export default function App() {
   );
   const [selectedId, setSelectedId] = useState(sorted[0]?.id ?? "");
   const [focusPersonId, setFocusPersonId] = useState<string | null>(null);
+  const [lensId, setLensId] = useState("university");
   const selected = sorted.find((e) => e.id === selectedId) ?? sorted[0];
-  const claims = allClaims.filter((c) => c.epoch_id === selected?.id);
+  const lens = lensById[lensId] ?? lenses[0];
+  const claimsRaw = allClaims.filter((c) => c.epoch_id === selected?.id);
+  const claims = claimsRaw.map((c) => {
+    const ov = lens.claim_overrides?.[c.id];
+    if (!ov) return c;
+    return {
+      ...c,
+      confidence: ov.confidence,
+      dissent_ru: ov.note_ru
+        ? `${ov.note_ru}${c.dissent_ru ? ` · ${c.dissent_ru}` : ""}`
+        : c.dissent_ru,
+    };
+  });
   const people = candidatePeople.filter((p) =>
     selected ? p.epoch_ids.includes(selected.id) : false
   );
@@ -118,6 +164,9 @@ export default function App() {
     selected ? p.epoch_ids.includes(selected.id) : false
   );
   const events = allEvents.filter((e) => e.epoch_id === selected?.id);
+  const polities = allPolities.filter((p) =>
+    selected ? p.epoch_ids.includes(selected.id) : false
+  );
 
   useEffect(() => {
     setFocusPersonId(null);
@@ -129,10 +178,23 @@ export default function App() {
         <p className="eyebrow">civilization · historical-critical</p>
         <h1>Длинная дуга</h1>
         <p className="lede">
-          Каркас из 12 эпох: граф лиц, взаимодействия и утверждения с
-          источниками. Тон — университетский консенсус.
+          Каркас из 12 эпох: граф, места, события, взаимодействия и источники.
+          Default — университетский консенсус; линзы — сравнительный слой.
         </p>
       </header>
+
+      <GlobalTools
+        people={candidatePeople}
+        epochs={sorted}
+        edges={allInteractions}
+        lensId={lensId}
+        lenses={lenses}
+        onLensChange={setLensId}
+        onJumpToPerson={(personId, epochId) => {
+          setSelectedId(epochId);
+          setFocusPersonId(personId);
+        }}
+      />
 
       <div className="layout">
         <nav className="rail" aria-label="Эпохи">
@@ -199,6 +261,37 @@ export default function App() {
                 selectedPersonId={focusPersonId}
                 onSelectPerson={setFocusPersonId}
               />
+            </section>
+
+            <section>
+              <h3>Политии ({polities.length})</h3>
+              {polities.length === 0 ? (
+                <p className="empty">Нет polity-акторов для этой эпохи.</p>
+              ) : (
+                <ul className="entity-list">
+                  {polities.map((p) => (
+                    <li key={p.id}>
+                      <div className="people-top">
+                        <strong>{p.label_ru}</strong>
+                        <span className={`pill conf-${p.confidence}`}>
+                          {confidenceLabel[p.confidence]}
+                        </span>
+                        <span className="pill relation">polity</span>
+                      </div>
+                      {p.note_ru && <p className="people-note">{p.note_ru}</p>}
+                      {p.person_ids && p.person_ids.length > 0 && (
+                        <p className="entity-meta">
+                          Лица:{" "}
+                          {p.person_ids
+                            .map((id) => personById[id]?.label_ru ?? id)
+                            .join(", ")}
+                        </p>
+                      )}
+                      <SourceList ids={p.source_ids} />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </section>
 
             <section>
