@@ -6,7 +6,16 @@
     "confidence": "firm",
     "date_min": -1210,
     "date_max": -1205,
-    "source_ids": ["merneptah_stele", "modern_handbook"]
+    "source_ids": ["merneptah_stele", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_claim_merneptah",
+        "label_ru": "Merneptah Stele",
+        "kind": "inscription",
+        "source_id": "merneptah_stele",
+        "url": "https://en.wikipedia.org/wiki/Merneptah_Stele"
+      }
+    ]
   },
   {
     "id": "claim_exodus_emergence_settlement",

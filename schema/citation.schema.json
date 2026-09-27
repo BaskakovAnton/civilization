@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/citation.schema.json",
+  "title": "Citation",
+  "type": "object",
+  "required": ["id", "label_ru", "kind"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string" },
+    "label_ru": { "type": "string" },
+    "kind": {
+      "type": "string",
+      "enum": ["verse", "inscription", "josephus", "web", "handbook"]
+    },
+    "source_id": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "ref": { "type": "string", "description": "Machine ref, e.g. Gen.12.1-3" }
+  }
+}

@@ -20,6 +20,10 @@
       "items": { "type": "string" },
       "minItems": 1
     },
-    "dissent_ru": { "type": "string" }
+    "dissent_ru": { "type": "string" },
+    "citations": {
+      "type": "array",
+      "items": { "$ref": "citation.schema.json" }
+    }
   }
 }

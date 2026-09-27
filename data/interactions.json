@@ -167,6 +167,23 @@
       "tacitus_annals",
       "josephus_antiquities",
       "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_mark_15",
+        "label_ru": "Мк 15",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.15",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+15&version=NRSVUE"
+      },
+      {
+        "id": "cite_int_tacitus",
+        "label_ru": "Тацит, Анналы 15.44",
+        "kind": "web",
+        "source_id": "tacitus_annals",
+        "url": "https://en.wikipedia.org/wiki/Tacitus_on_Jesus"
+      }
     ]
   },
   {
@@ -198,7 +215,17 @@
     "label_ru": "Павел противостоит Кифе в Антиохии (Гал 2)",
     "confidence": "anchored",
     "source_ids": ["pauline_letters", "modern_handbook"],
-    "note_ru": "Конфликт по свидетельству Павла; Деяния сглаживают"
+    "note_ru": "Конфликт по свидетельству Павла; Деяния сглаживают",
+    "citations": [
+      {
+        "id": "cite_int_gal_2",
+        "label_ru": "Гал 2:11–14",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.11-14",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A11-14&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_josephus_documents_herod",

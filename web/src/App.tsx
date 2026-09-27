@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import epochs from "../../data/epochs.json";
 import sources from "../../data/sources.json";
 import interactionsData from "../../data/interactions.json";
+import placesData from "../../data/places.json";
+import eventsData from "../../data/events.json";
 import patriarchal from "../../data/claims/by-epoch/patriarchal_horizon.json";
 import exodus from "../../data/claims/by-epoch/exodus_emergence.json";
 import earlyMonarchy from "../../data/claims/by-epoch/early_monarchy.json";
@@ -15,13 +17,16 @@ import pauline from "../../data/claims/by-epoch/pauline_networks.json";
 import war from "../../data/claims/by-epoch/war_and_divergence.json";
 import barKokhba from "../../data/claims/by-epoch/bar_kokhba.json";
 import candidatesFile from "../../data/candidates/people.json";
+import CitationList from "./CitationList";
 import EpochGraph from "./EpochGraph";
 import type {
   CandidatePerson,
   Claim,
   Confidence,
   Epoch,
+  HistEvent,
   Interaction,
+  Place,
   Source,
 } from "./types";
 import {
@@ -52,6 +57,9 @@ const sourceById = Object.fromEntries(sourceList.map((s) => [s.id, s]));
 const candidatePeople = (candidatesFile as { people: CandidatePerson[] }).people;
 const personById = Object.fromEntries(candidatePeople.map((p) => [p.id, p]));
 const allInteractions = interactionsData as Interaction[];
+const allPlaces = placesData as Place[];
+const allEvents = eventsData as HistEvent[];
+const placeById = Object.fromEntries(allPlaces.map((p) => [p.id, p]));
 
 const josephusRu: Record<Epoch["josephus_role"], string> = {
   none: "нет",
@@ -74,7 +82,7 @@ function SourceList({ ids }: { ids: string[] }) {
             )}
             {s?.urls?.[0] && (
               <a href={s.urls[0]} target="_blank" rel="noreferrer">
-                ссылка
+                открыть
               </a>
             )}
           </li>
@@ -106,6 +114,10 @@ export default function App() {
           i.to_person_id === focusPersonId
       )
     : interactions;
+  const places = allPlaces.filter((p) =>
+    selected ? p.epoch_ids.includes(selected.id) : false
+  );
+  const events = allEvents.filter((e) => e.epoch_id === selected?.id);
 
   useEffect(() => {
     setFocusPersonId(null);
@@ -187,6 +199,83 @@ export default function App() {
                 selectedPersonId={focusPersonId}
                 onSelectPerson={setFocusPersonId}
               />
+            </section>
+
+            <section>
+              <h3>Места ({places.length})</h3>
+              {places.length === 0 ? (
+                <p className="empty">Нет curated-мест для этой эпохи.</p>
+              ) : (
+                <ul className="entity-list">
+                  {places.map((p) => (
+                    <li key={p.id}>
+                      <div className="people-top">
+                        <strong>{p.label_ru}</strong>
+                        <span className={`pill conf-${p.confidence}`}>
+                          {confidenceLabel[p.confidence]}
+                        </span>
+                        <code className="id">{p.id}</code>
+                      </div>
+                      {p.note_ru && <p className="people-note">{p.note_ru}</p>}
+                      {p.person_ids && p.person_ids.length > 0 && (
+                        <p className="entity-meta">
+                          Лица:{" "}
+                          {p.person_ids
+                            .map((id) => personById[id]?.label_ru ?? id)
+                            .join(", ")}
+                        </p>
+                      )}
+                      <SourceList ids={p.source_ids} />
+                      <CitationList items={p.citations} />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
+
+            <section>
+              <h3>События ({events.length})</h3>
+              {events.length === 0 ? (
+                <p className="empty">Нет curated-событий для этой эпохи.</p>
+              ) : (
+                <div className="claims">
+                  {events.map((e) => (
+                    <article key={e.id} className="claim">
+                      <div className="claim-top">
+                        <strong>{e.label_ru}</strong>
+                        <span className={`pill conf-${e.confidence}`}>
+                          {confidenceLabel[e.confidence]}
+                        </span>
+                        {(e.date_min !== null || e.date_max !== null) && (
+                          <span className="claim-dates">
+                            {formatYear(e.date_min)} – {formatYear(e.date_max)}
+                          </span>
+                        )}
+                      </div>
+                      <p>{e.statement_ru}</p>
+                      {e.note_ru && <p className="dissent">{e.note_ru}</p>}
+                      {e.place_ids && e.place_ids.length > 0 && (
+                        <p className="entity-meta">
+                          Места:{" "}
+                          {e.place_ids
+                            .map((id) => placeById[id]?.label_ru ?? id)
+                            .join(", ")}
+                        </p>
+                      )}
+                      {e.person_ids && e.person_ids.length > 0 && (
+                        <p className="entity-meta">
+                          Лица:{" "}
+                          {e.person_ids
+                            .map((id) => personById[id]?.label_ru ?? id)
+                            .join(", ")}
+                        </p>
+                      )}
+                      <SourceList ids={e.source_ids} />
+                      <CitationList items={e.citations} />
+                    </article>
+                  ))}
+                </div>
+              )}
             </section>
 
             <section>
@@ -283,6 +372,7 @@ export default function App() {
                         <p>{i.label_ru}</p>
                         {i.note_ru && <p className="dissent">{i.note_ru}</p>}
                         <SourceList ids={i.source_ids} />
+                        <CitationList items={i.citations} />
                       </article>
                     );
                   })}
@@ -310,6 +400,7 @@ export default function App() {
                       <p className="dissent">Спор: {c.dissent_ru}</p>
                     )}
                     <SourceList ids={c.source_ids} />
+                    <CitationList items={c.citations} />
                   </article>
                 ))}
               </div>

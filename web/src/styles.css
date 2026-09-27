@@ -371,6 +371,45 @@ body {
   border-top-color: transparent;
 }
 
+.entity-list {
+  list-style: none;
+  margin: 0 0 1.35rem;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.entity-list > li {
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+.entity-meta {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.citations {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.citations li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  align-items: baseline;
+  font-size: 0.9rem;
+}
+
+.citations a {
+  color: var(--accent);
+}
+
 .claims {
   display: grid;
   gap: 0.85rem;

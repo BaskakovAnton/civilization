@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/event.schema.json",
+  "title": "Event",
+  "type": "object",
+  "required": [
+    "id",
+    "label_ru",
+    "epoch_id",
+    "confidence",
+    "source_ids",
+    "statement_ru"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^evt_[a-z0-9_]+$" },
+    "label_ru": { "type": "string" },
+    "epoch_id": { "type": "string" },
+    "place_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "person_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "date_min": { "type": ["integer", "null"] },
+    "date_max": { "type": ["integer", "null"] },
+    "confidence": {
+      "type": "string",
+      "enum": ["literary", "disputed", "anchored", "firm"]
+    },
+    "statement_ru": { "type": "string" },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "note_ru": { "type": "string" },
+    "citations": {
+      "type": "array",
+      "items": { "$ref": "citation.schema.json" }
+    }
+  }
+}

@@ -21,6 +21,15 @@ export type Source = {
   urls?: string[];
 };
 
+export type Citation = {
+  id: string;
+  label_ru: string;
+  kind: "verse" | "inscription" | "josephus" | "web" | "handbook";
+  source_id?: string;
+  url?: string;
+  ref?: string;
+};
+
 export type Claim = {
   id: string;
   epoch_id: string;
@@ -30,6 +39,33 @@ export type Claim = {
   date_max: number | null;
   source_ids: string[];
   dissent_ru?: string;
+  citations?: Citation[];
+};
+
+export type Place = {
+  id: string;
+  label_ru: string;
+  epoch_ids: string[];
+  confidence: Confidence;
+  note_ru?: string;
+  source_ids: string[];
+  person_ids?: string[];
+  citations?: Citation[];
+};
+
+export type HistEvent = {
+  id: string;
+  label_ru: string;
+  epoch_id: string;
+  place_ids?: string[];
+  person_ids?: string[];
+  date_min: number | null;
+  date_max: number | null;
+  confidence: Confidence;
+  statement_ru: string;
+  source_ids: string[];
+  note_ru?: string;
+  citations?: Citation[];
 };
 
 export type CandidatePerson = {
@@ -69,6 +105,7 @@ export type Interaction = {
   confidence: Confidence;
   source_ids: string[];
   note_ru?: string;
+  citations?: Citation[];
 };
 
 export const relationLabelRu: Record<InteractionRelation, string> = {

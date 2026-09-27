@@ -1,0 +1,211 @@
+[
+  {
+    "id": "canaan_highlands",
+    "label_ru": "Нагорье Ханаана",
+    "epoch_ids": ["exodus_emergence"],
+    "confidence": "anchored",
+    "note_ru": "Зона роста поселений Iron I, связанная с появлением Израиля",
+    "source_ids": ["iron_i_settlement", "modern_handbook"],
+    "person_ids": ["joshua", "moses"]
+  },
+  {
+    "id": "egypt",
+    "label_ru": "Египет",
+    "epoch_ids": ["patriarchal_horizon", "exodus_emergence"],
+    "confidence": "literary",
+    "note_ru": "Сцена цикла Иосифа и предания Исхода; не автоматически = исторический маршрут",
+    "source_ids": ["genesis_narrative", "exodus_narrative", "modern_handbook"],
+    "person_ids": ["joseph_patriarch", "moses"],
+    "citations": [
+      {
+        "id": "cite_gen_egypt",
+        "label_ru": "Быт 37–50 (цикл Иосифа)",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.37",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+37&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "jerusalem",
+    "label_ru": "Иерусалим",
+    "epoch_ids": [
+      "early_monarchy",
+      "divided_kingdoms",
+      "assyria_to_exile",
+      "exile_and_persian",
+      "hellenistic_hasmonean",
+      "roman_herodian",
+      "jesus_jerusalem",
+      "war_and_divergence",
+      "bar_kokhba"
+    ],
+    "confidence": "firm",
+    "note_ru": "Ключевой город Иудеи / Йехуда; роль меняется по эпохам",
+    "source_ids": ["modern_handbook", "josephus_war"],
+    "person_ids": [
+      "david",
+      "hezekiah",
+      "josiah",
+      "herod_the_great",
+      "jesus_of_nazareth",
+      "pontius_pilate"
+    ],
+    "citations": [
+      {
+        "id": "cite_wiki_jerusalem",
+        "label_ru": "Обзор (история города)",
+        "kind": "web",
+        "url": "https://en.wikipedia.org/wiki/History_of_Jerusalem"
+      }
+    ]
+  },
+  {
+    "id": "samaria",
+    "label_ru": "Самария (Шомрон)",
+    "epoch_ids": ["divided_kingdoms", "assyria_to_exile"],
+    "confidence": "firm",
+    "note_ru": "Столица северного царства; падение ~722",
+    "source_ids": ["assyrian_annals", "modern_handbook"],
+    "person_ids": ["omri", "ahab"]
+  },
+  {
+    "id": "tel_dan",
+    "label_ru": "Тель Дан",
+    "epoch_ids": ["early_monarchy", "divided_kingdoms"],
+    "confidence": "firm",
+    "note_ru": "Место находки надписи byt dwd",
+    "source_ids": ["tel_dan_inscription", "modern_handbook"],
+    "person_ids": ["david"],
+    "citations": [
+      {
+        "id": "cite_tel_dan",
+        "label_ru": "Tel Dan Stele",
+        "kind": "inscription",
+        "source_id": "tel_dan_inscription",
+        "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+      }
+    ]
+  },
+  {
+    "id": "nineveh",
+    "label_ru": "Ниневия",
+    "epoch_ids": ["assyria_to_exile"],
+    "confidence": "firm",
+    "note_ru": "Ассирийский центр; контекст анналов Синаххериба",
+    "source_ids": ["assyrian_annals", "modern_handbook"],
+    "person_ids": ["sennacherib"]
+  },
+  {
+    "id": "babylon",
+    "label_ru": "Вавилон",
+    "epoch_ids": ["assyria_to_exile", "exile_and_persian"],
+    "confidence": "firm",
+    "note_ru": "Центр неовавилонской власти; изгнание",
+    "source_ids": ["babylonian_chronicles", "modern_handbook"],
+    "person_ids": ["nebuchadnezzar"]
+  },
+  {
+    "id": "yehud",
+    "label_ru": "Йехуд (персидская провинция)",
+    "epoch_ids": ["exile_and_persian"],
+    "confidence": "anchored",
+    "note_ru": "Скромная провинция вокруг Иерусалима",
+    "source_ids": ["ezra_nehemiah", "modern_handbook"],
+    "person_ids": ["ezra", "nehemiah", "cyrus"]
+  },
+  {
+    "id": "modein",
+    "label_ru": "Модиин",
+    "epoch_ids": ["hellenistic_hasmonean"],
+    "confidence": "anchored",
+    "note_ru": "Традиционное место начала восстания Маттафии",
+    "source_ids": ["1_macc", "modern_handbook"],
+    "person_ids": ["mattathias", "judas_maccabeus"],
+    "citations": [
+      {
+        "id": "cite_1macc_2",
+        "label_ru": "1 Макк 2",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.2",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+2&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "rome",
+    "label_ru": "Рим",
+    "epoch_ids": ["roman_herodian", "pauline_networks", "war_and_divergence", "bar_kokhba"],
+    "confidence": "firm",
+    "note_ru": "Имперский центр; конечная точка сети Павла и войны",
+    "source_ids": ["roman_fasti", "pauline_letters", "modern_handbook"],
+    "person_ids": ["paul_of_tarsus", "vespasian", "hadrian"]
+  },
+  {
+    "id": "antioch",
+    "label_ru": "Антиохия Сирийская",
+    "epoch_ids": ["pauline_networks"],
+    "confidence": "anchored",
+    "note_ru": "Важный узел ранней миссии; инцидент Павел/Кифа",
+    "source_ids": ["pauline_letters", "acts", "modern_handbook"],
+    "person_ids": ["paul_of_tarsus", "peter"],
+    "citations": [
+      {
+        "id": "cite_gal_2",
+        "label_ru": "Гал 2:11–14",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.11-14",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A11-14&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "corinth",
+    "label_ru": "Коринф",
+    "epoch_ids": ["pauline_networks"],
+    "confidence": "anchored",
+    "note_ru": "Община, к которой обращены письма Павла",
+    "source_ids": ["pauline_letters", "modern_handbook"],
+    "person_ids": ["paul_of_tarsus"],
+    "citations": [
+      {
+        "id": "cite_1cor_1",
+        "label_ru": "1 Кор 1",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "1Cor.1",
+        "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+1&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "aelia_capitolina",
+    "label_ru": "Элия Капитолина",
+    "epoch_ids": ["bar_kokhba"],
+    "confidence": "firm",
+    "note_ru": "Римское переустройство Иерусалима после 135",
+    "source_ids": ["dio_cassius", "modern_handbook"],
+    "person_ids": ["hadrian", "simon_bar_kokhba"]
+  },
+  {
+    "id": "judean_desert",
+    "label_ru": "Иудейская пустыня (архивы Бар-Кохбы)",
+    "epoch_ids": ["bar_kokhba"],
+    "confidence": "firm",
+    "note_ru": "Письма и документы восстания",
+    "source_ids": ["bar_kokhba_letters", "modern_handbook"],
+    "person_ids": ["simon_bar_kokhba"],
+    "citations": [
+      {
+        "id": "cite_bar_kokhba_letters",
+        "label_ru": "Bar Kokhba letters (обзор)",
+        "kind": "inscription",
+        "source_id": "bar_kokhba_letters",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_letters"
+      }
+    ]
+  }
+]

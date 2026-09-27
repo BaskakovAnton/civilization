@@ -1,0 +1,345 @@
+[
+  {
+    "id": "evt_merneptah_israel",
+    "label_ru": "Упоминание Израиля на стеле Мернептаха",
+    "epoch_id": "exodus_emergence",
+    "place_ids": ["canaan_highlands"],
+    "person_ids": [],
+    "date_min": -1210,
+    "date_max": -1205,
+    "confidence": "firm",
+    "statement_ru": "Египетская стела фиксирует этноним «Израиль» в Ханаане около 1208 до н.э.",
+    "source_ids": ["merneptah_stele", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_merneptah",
+        "label_ru": "Merneptah Stele",
+        "kind": "inscription",
+        "source_id": "merneptah_stele",
+        "url": "https://en.wikipedia.org/wiki/Merneptah_Stele"
+      }
+    ]
+  },
+  {
+    "id": "evt_iron_i_settlement",
+    "label_ru": "Рост поселений Iron I на нагорье",
+    "epoch_id": "exodus_emergence",
+    "place_ids": ["canaan_highlands"],
+    "person_ids": ["joshua"],
+    "date_min": -1200,
+    "date_max": -1000,
+    "confidence": "disputed",
+    "statement_ru": "Археологический фон появления Израиля; механизм этногенеза спорен.",
+    "source_ids": ["iron_i_settlement", "modern_handbook"]
+  },
+  {
+    "id": "evt_tel_dan_inscription",
+    "label_ru": "Надпись Тель Дана (byt dwd)",
+    "epoch_id": "early_monarchy",
+    "place_ids": ["tel_dan"],
+    "person_ids": ["david"],
+    "date_min": -850,
+    "date_max": -800,
+    "confidence": "anchored",
+    "statement_ru": "Внешнее упоминание «дома Давида»; сама надпись IX/VIII в., традиция о Давиде — раньше.",
+    "source_ids": ["tel_dan_inscription", "modern_handbook"],
+    "note_ru": "Привязана к эпохе early_monarchy как якорь династии, не как дата жизни Давида",
+    "citations": [
+      {
+        "id": "cite_tel_dan_evt",
+        "label_ru": "Tel Dan Stele",
+        "kind": "inscription",
+        "source_id": "tel_dan_inscription",
+        "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+      }
+    ]
+  },
+  {
+    "id": "evt_jehu_black_obelisk",
+    "label_ru": "Ииуй на Чёрном обелиске",
+    "epoch_id": "divided_kingdoms",
+    "place_ids": ["samaria"],
+    "person_ids": ["jehu", "ahab"],
+    "date_min": -841,
+    "date_max": -841,
+    "confidence": "firm",
+    "statement_ru": "Ассирийский рельеф фиксирует израильского правителя (Ииуй / дом Омри).",
+    "source_ids": ["black_obelisk", "assyrian_annals", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_black_obelisk",
+        "label_ru": "Black Obelisk of Shalmaneser III",
+        "kind": "inscription",
+        "source_id": "black_obelisk",
+        "url": "https://en.wikipedia.org/wiki/Black_Obelisk_of_Shalmaneser_III"
+      }
+    ]
+  },
+  {
+    "id": "evt_mesha_stele",
+    "label_ru": "Стела Меши",
+    "epoch_id": "divided_kingdoms",
+    "place_ids": ["samaria"],
+    "person_ids": ["omri", "ahab"],
+    "date_min": -850,
+    "date_max": -830,
+    "confidence": "firm",
+    "statement_ru": "Моавитский взгляд на конфликт с Израилем Омридов.",
+    "source_ids": ["mesha_stele", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_mesha",
+        "label_ru": "Mesha Stele",
+        "kind": "inscription",
+        "source_id": "mesha_stele",
+        "url": "https://en.wikipedia.org/wiki/Mesha_Stele"
+      }
+    ]
+  },
+  {
+    "id": "evt_samaria_722",
+    "label_ru": "Падение Самарии",
+    "epoch_id": "assyria_to_exile",
+    "place_ids": ["samaria"],
+    "person_ids": [],
+    "date_min": -723,
+    "date_max": -720,
+    "confidence": "firm",
+    "statement_ru": "Конец северного царства под ударом Ассирии.",
+    "source_ids": ["assyrian_annals", "deuteronomistic_history", "modern_handbook"]
+  },
+  {
+    "id": "evt_sennacherib_701",
+    "label_ru": "Поход Синаххериба (~701)",
+    "epoch_id": "assyria_to_exile",
+    "place_ids": ["jerusalem", "nineveh"],
+    "person_ids": ["sennacherib", "hezekiah"],
+    "date_min": -701,
+    "date_max": -701,
+    "confidence": "firm",
+    "statement_ru": "Кампания против Иудеи; Иерусалим не взят, но страна разорена.",
+    "source_ids": ["assyrian_annals", "deuteronomistic_history", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_2kgs_18",
+        "label_ru": "4 Цар 18–19",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.18-19",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+18-19&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_jerusalem_586",
+    "label_ru": "Разрушение Иерусалима (586)",
+    "epoch_id": "assyria_to_exile",
+    "place_ids": ["jerusalem", "babylon"],
+    "person_ids": ["nebuchadnezzar"],
+    "date_min": -586,
+    "date_max": -586,
+    "confidence": "firm",
+    "statement_ru": "Падение города и Первого храма; депортации.",
+    "source_ids": ["babylonian_chronicles", "deuteronomistic_history", "modern_handbook"]
+  },
+  {
+    "id": "evt_cyrus_539",
+    "label_ru": "Персы берут Вавилон (539)",
+    "epoch_id": "exile_and_persian",
+    "place_ids": ["babylon", "yehud"],
+    "person_ids": ["cyrus", "nebuchadnezzar"],
+    "date_min": -539,
+    "date_max": -539,
+    "confidence": "firm",
+    "statement_ru": "Смена империи; контекст возвращений в Йехуд.",
+    "source_ids": ["cyrus_cylinder", "babylonian_chronicles", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_cyrus_cylinder",
+        "label_ru": "Cyrus Cylinder",
+        "kind": "inscription",
+        "source_id": "cyrus_cylinder",
+        "url": "https://en.wikipedia.org/wiki/Cyrus_Cylinder"
+      }
+    ]
+  },
+  {
+    "id": "evt_second_temple",
+    "label_ru": "Освящение Второго храма (~516)",
+    "epoch_id": "exile_and_persian",
+    "place_ids": ["jerusalem", "yehud"],
+    "person_ids": [],
+    "date_min": -520,
+    "date_max": -515,
+    "confidence": "anchored",
+    "statement_ru": "Восстановление культа в персидский период.",
+    "source_ids": ["ezra_nehemiah", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_ezra_6",
+        "label_ru": "Езд 6",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Ezra.6",
+        "url": "https://www.biblegateway.com/passage/?search=Ezra+6&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_maccabean_crisis",
+    "label_ru": "Кризис Антиоха IV и восстание (167–164)",
+    "epoch_id": "hellenistic_hasmonean",
+    "place_ids": ["jerusalem", "modein"],
+    "person_ids": ["antiochus_iv", "mattathias", "judas_maccabeus"],
+    "date_min": -167,
+    "date_max": -164,
+    "confidence": "firm",
+    "statement_ru": "Селевкидский кризис и хасмонейский ответ по 1–2 Макк.",
+    "source_ids": ["1_macc", "2_macc", "hellenistic_chronology"],
+    "citations": [
+      {
+        "id": "cite_1macc_1",
+        "label_ru": "1 Макк 1–4",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.1-4",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+1-4&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_pompey_63",
+    "label_ru": "Помпей в Иерусалиме (63 до н.э.)",
+    "epoch_id": "roman_herodian",
+    "place_ids": ["jerusalem"],
+    "person_ids": [],
+    "date_min": -63,
+    "date_max": -63,
+    "confidence": "firm",
+    "statement_ru": "Римский контроль над Иудеей.",
+    "source_ids": ["josephus_antiquities", "roman_fasti", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_josephus_pompey",
+        "label_ru": "Иосиф, Древности (контекст Помпея)",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(63_BC)"
+      }
+    ]
+  },
+  {
+    "id": "evt_crucifixion",
+    "label_ru": "Казнь Иисуса при Пилате",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": ["jerusalem"],
+    "person_ids": ["jesus_of_nazareth", "pontius_pilate", "peter"],
+    "date_min": 30,
+    "date_max": 33,
+    "confidence": "anchored",
+    "statement_ru": "Историческое ядро: распятие иудейского учителя римской властью.",
+    "source_ids": ["synoptic_gospels", "tacitus_annals", "pauline_letters", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_mark_15",
+        "label_ru": "Мк 15",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.15",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+15&version=NRSVUE"
+      },
+      {
+        "id": "cite_tacitus_15_44",
+        "label_ru": "Тацит, Анналы 15.44",
+        "kind": "web",
+        "source_id": "tacitus_annals",
+        "url": "https://en.wikipedia.org/wiki/Tacitus_on_Jesus"
+      }
+    ]
+  },
+  {
+    "id": "evt_antioch_incident",
+    "label_ru": "Антиохийский инцидент (Павел / Кифа)",
+    "epoch_id": "pauline_networks",
+    "place_ids": ["antioch"],
+    "person_ids": ["paul_of_tarsus", "peter"],
+    "date_min": 48,
+    "date_max": 55,
+    "confidence": "anchored",
+    "statement_ru": "Конфликт миссий по свидетельству Гал 2; Деяния сглаживают.",
+    "source_ids": ["pauline_letters", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_gal_2_evt",
+        "label_ru": "Гал 2:11–14",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.11-14",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A11-14&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_temple_70",
+    "label_ru": "Разрушение Храма (70)",
+    "epoch_id": "war_and_divergence",
+    "place_ids": ["jerusalem"],
+    "person_ids": ["josephus_flavius", "vespasian"],
+    "date_min": 70,
+    "date_max": 70,
+    "confidence": "firm",
+    "statement_ru": "Кульминация Иудейской войны; Иосиф — главный нарратив.",
+    "source_ids": ["josephus_war", "roman_fasti", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_josephus_war_6",
+        "label_ru": "Иосиф, Война (осада Иерусалима)",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)"
+      }
+    ]
+  },
+  {
+    "id": "evt_bar_kokhba_revolt",
+    "label_ru": "Восстание Бар-Кохбы (132–135)",
+    "epoch_id": "bar_kokhba",
+    "place_ids": ["jerusalem", "judean_desert", "aelia_capitolina"],
+    "person_ids": ["simon_bar_kokhba", "hadrian"],
+    "date_min": 132,
+    "date_max": 135,
+    "confidence": "firm",
+    "statement_ru": "Война против Рима; письма, монеты, Дион.",
+    "source_ids": ["bar_kokhba_letters", "dio_cassius", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_bar_kokhba_revolt",
+        "label_ru": "Bar Kokhba revolt",
+        "kind": "web",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_revolt"
+      }
+    ]
+  },
+  {
+    "id": "evt_patriarch_saga",
+    "label_ru": "Цикл праотцев (литературный)",
+    "epoch_id": "patriarchal_horizon",
+    "place_ids": ["egypt"],
+    "person_ids": ["abraham", "jacob", "joseph_patriarch"],
+    "date_min": null,
+    "date_max": null,
+    "confidence": "literary",
+    "statement_ru": "Нарративный комплекс Бытия без внешней абсолютной хронологии.",
+    "source_ids": ["genesis_narrative", "modern_handbook"],
+    "citations": [
+      {
+        "id": "cite_gen_12",
+        "label_ru": "Быт 12",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.12",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+12&version=NRSVUE"
+      }
+    ]
+  }
+]
