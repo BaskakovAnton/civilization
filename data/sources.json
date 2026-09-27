@@ -3,7 +3,8 @@
     "id": "modern_handbook",
     "label_ru": "Академический handbook (консенсус вводного курса)",
     "type": "modern_handbook",
-    "tradition_note_ru": "Ориентир каркаса дат и формулировок, не первичный источник"
+    "tradition_note_ru": "Ориентир каркаса дат и формулировок, не первичный источник",
+    "urls": ["https://en.wikipedia.org/wiki/Biblical_criticism"]
   },
   {
     "id": "genesis_narrative",
@@ -170,24 +171,28 @@
     "id": "ignatius_letters",
     "label_ru": "Игнатий Антиохийский (письма) — слой отцов",
     "type": "classical_historiography",
-    "tradition_note_ru": "P11 stub: рецепция, не baseline истории Иисуса"
+    "tradition_note_ru": "P11 stub: рецепция, не baseline истории Иисуса",
+    "urls": ["https://en.wikipedia.org/wiki/Ignatius_of_Antioch"]
   },
   {
     "id": "justin_apology",
     "label_ru": "Иустин Мученик — слой отцов",
     "type": "classical_historiography",
-    "tradition_note_ru": "P11 stub"
+    "tradition_note_ru": "P11 stub",
+    "urls": ["https://en.wikipedia.org/wiki/Justin_Martyr"]
   },
   {
     "id": "irenaeus_haer",
     "label_ru": "Ириней, Против ересей — слой отцов",
     "type": "classical_historiography",
-    "tradition_note_ru": "P11 stub"
+    "tradition_note_ru": "P11 stub",
+    "urls": ["https://en.wikipedia.org/wiki/Irenaeus"]
   },
   {
     "id": "eusebius_he",
     "label_ru": "Евсевий, Церковная история — слой отцов",
     "type": "classical_historiography",
-    "tradition_note_ru": "P11 stub: канон/рецепция"
+    "tradition_note_ru": "P11 stub: канон/рецепция",
+    "urls": ["https://en.wikipedia.org/wiki/Church_History_(Eusebius)"]
   }
 ]

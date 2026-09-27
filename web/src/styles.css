@@ -420,8 +420,63 @@ body {
 
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+@media (min-width: 1100px) {
+  .tools-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.conf-filter {
+  margin-bottom: 1rem;
+}
+
+.conf-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.conf-toggle {
+  border: 1px solid var(--line);
+  cursor: pointer;
+  opacity: 0.45;
+  font: inherit;
+}
+
+.conf-toggle.on {
+  opacity: 1;
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.claim-focus {
+  background: var(--accent-soft);
+  border-radius: 6px;
+  padding: 0.75rem;
+  border-top: none;
+}
+
+.claim-related {
+  box-shadow: inset 3px 0 0 var(--anchored);
+  padding-left: 0.65rem;
+}
+
+.claim-pick {
+  font-size: 0.8rem;
+}
+
+.citations-more {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.graph-node.related circle {
+  stroke: var(--anchored);
+  stroke-width: 3;
 }
 
 .global-tools h3 {

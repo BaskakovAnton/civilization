@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import type { CandidatePerson, Epoch } from "./types";
+import type { CandidatePerson, Epoch, HistEvent } from "./types";
 import { shortestPersonPath } from "./graphPath";
 import type { Edge } from "./graphPath";
 
@@ -13,20 +13,26 @@ type Props = {
   people: CandidatePerson[];
   epochs: Epoch[];
   edges: Edge[];
+  events: HistEvent[];
+  focusPersonId: string | null;
   lensId: string;
   lenses: LensMeta[];
   onLensChange: (id: string) => void;
   onJumpToPerson: (personId: string, epochId: string) => void;
+  onJumpToEpoch: (epochId: string) => void;
 };
 
 export default function GlobalTools({
   people,
   epochs,
   edges,
+  events,
+  focusPersonId,
   lensId,
   lenses,
   onLensChange,
   onJumpToPerson,
+  onJumpToEpoch,
 }: Props) {
   const [query, setQuery] = useState("");
   const [pathFrom, setPathFrom] = useState("paul_of_tarsus");
@@ -34,6 +40,10 @@ export default function GlobalTools({
   const epochById = useMemo(
     () => Object.fromEntries(epochs.map((e) => [e.id, e])),
     [epochs]
+  );
+  const personById = useMemo(
+    () => Object.fromEntries(people.map((p) => [p.id, p])),
+    [people]
   );
 
   const hits = useMemo(() => {
@@ -53,6 +63,15 @@ export default function GlobalTools({
     () => shortestPersonPath(edges, pathFrom, pathTo),
     [edges, pathFrom, pathTo]
   );
+
+  const focusEvents = useMemo(() => {
+    if (!focusPersonId) return [];
+    return events
+      .filter((e) => e.person_ids?.includes(focusPersonId))
+      .slice(0, 6);
+  }, [events, focusPersonId]);
+
+  const focusPerson = focusPersonId ? personById[focusPersonId] : null;
 
   return (
     <section className="global-tools">
@@ -146,6 +165,36 @@ export default function GlobalTools({
           <p className="tools-muted">
             {lenses.find((l) => l.id === lensId)?.description_ru}
           </p>
+        </div>
+
+        <div>
+          <h3>События выбранного лица</h3>
+          {!focusPerson ? (
+            <p className="tools-muted">
+              Выберите лицо на графе или в списке эпохи.
+            </p>
+          ) : focusEvents.length === 0 ? (
+            <p className="tools-muted">
+              У «{focusPerson.label_ru}» нет curated-событий.
+            </p>
+          ) : (
+            <ul className="tools-hits">
+              {focusEvents.map((e) => (
+                <li key={e.id}>
+                  <button
+                    type="button"
+                    className="linkish"
+                    onClick={() => onJumpToEpoch(e.epoch_id)}
+                  >
+                    {e.label_ru}
+                  </button>
+                  <span className="tools-muted">
+                    {epochById[e.epoch_id]?.label_ru ?? e.epoch_id}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </section>

@@ -125,6 +125,38 @@ function SourceList({ ids }: { ids: string[] }) {
   );
 }
 
+const ALL_CONF: Confidence[] = ["literary", "disputed", "anchored", "firm"];
+
+function relatedToClaim(
+  claim: Claim,
+  people: CandidatePerson[],
+  events: HistEvent[],
+  interactions: Interaction[]
+): { personIds: string[]; eventIds: string[] } {
+  const sources = new Set(claim.source_ids);
+  const personIds = new Set<string>();
+  const eventIds = new Set<string>();
+  const text = claim.statement_ru.toLowerCase();
+
+  for (const e of events) {
+    const overlap = e.source_ids.some((s) => sources.has(s));
+    if (overlap) {
+      eventIds.add(e.id);
+      for (const pid of e.person_ids || []) personIds.add(pid);
+    }
+  }
+  for (const i of interactions) {
+    if (i.source_ids.some((s) => sources.has(s))) {
+      personIds.add(i.from_person_id);
+      personIds.add(i.to_person_id);
+    }
+  }
+  for (const p of people) {
+    if (text.includes(p.label_ru.toLowerCase())) personIds.add(p.id);
+  }
+  return { personIds: [...personIds], eventIds: [...eventIds] };
+}
+
 export default function App() {
   const sorted = useMemo(
     () => [...epochList].sort((a, b) => a.order - b.order),
@@ -132,26 +164,32 @@ export default function App() {
   );
   const [selectedId, setSelectedId] = useState(sorted[0]?.id ?? "");
   const [focusPersonId, setFocusPersonId] = useState<string | null>(null);
+  const [focusClaimId, setFocusClaimId] = useState<string | null>(null);
   const [lensId, setLensId] = useState("university");
+  const [confFilter, setConfFilter] = useState<Confidence[]>([...ALL_CONF]);
   const selected = sorted.find((e) => e.id === selectedId) ?? sorted[0];
   const lens = lensById[lensId] ?? lenses[0];
+  const confSet = useMemo(() => new Set(confFilter), [confFilter]);
+
   const claimsRaw = allClaims.filter((c) => c.epoch_id === selected?.id);
-  const claims = claimsRaw.map((c) => {
-    const ov = lens.claim_overrides?.[c.id];
-    if (!ov) return c;
-    return {
-      ...c,
-      confidence: ov.confidence,
-      dissent_ru: ov.note_ru
-        ? `${ov.note_ru}${c.dissent_ru ? ` · ${c.dissent_ru}` : ""}`
-        : c.dissent_ru,
-    };
-  });
+  const claims = claimsRaw
+    .map((c) => {
+      const ov = lens.claim_overrides?.[c.id];
+      if (!ov) return c;
+      return {
+        ...c,
+        confidence: ov.confidence,
+        dissent_ru: ov.note_ru
+          ? `${ov.note_ru}${c.dissent_ru ? ` · ${c.dissent_ru}` : ""}`
+          : c.dissent_ru,
+      };
+    })
+    .filter((c) => confSet.has(c.confidence));
   const people = candidatePeople.filter((p) =>
     selected ? p.epoch_ids.includes(selected.id) : false
   );
   const interactions = allInteractions.filter(
-    (i) => i.epoch_id === selected?.id
+    (i) => i.epoch_id === selected?.id && confSet.has(i.confidence)
   );
   const visibleInteractions = focusPersonId
     ? interactions.filter(
@@ -163,14 +201,33 @@ export default function App() {
   const places = allPlaces.filter((p) =>
     selected ? p.epoch_ids.includes(selected.id) : false
   );
-  const events = allEvents.filter((e) => e.epoch_id === selected?.id);
+  const events = allEvents.filter(
+    (e) => e.epoch_id === selected?.id && confSet.has(e.confidence)
+  );
   const polities = allPolities.filter((p) =>
     selected ? p.epoch_ids.includes(selected.id) : false
   );
 
+  const focusClaim = claims.find((c) => c.id === focusClaimId) ?? null;
+  const claimLinks = useMemo(() => {
+    if (!focusClaim) return { personIds: [] as string[], eventIds: [] as string[] };
+    return relatedToClaim(focusClaim, people, events, interactions);
+  }, [focusClaim, people, events, interactions]);
+
   useEffect(() => {
     setFocusPersonId(null);
+    setFocusClaimId(null);
   }, [selectedId]);
+
+  function toggleConf(level: Confidence) {
+    setConfFilter((prev) => {
+      if (prev.includes(level)) {
+        if (prev.length === 1) return prev;
+        return prev.filter((c) => c !== level);
+      }
+      return [...prev, level];
+    });
+  }
 
   return (
     <div className="page">
@@ -187,12 +244,18 @@ export default function App() {
         people={candidatePeople}
         epochs={sorted}
         edges={allInteractions}
+        events={allEvents}
+        focusPersonId={focusPersonId}
         lensId={lensId}
         lenses={lenses}
         onLensChange={setLensId}
         onJumpToPerson={(personId, epochId) => {
           setSelectedId(epochId);
           setFocusPersonId(personId);
+          setFocusClaimId(null);
+        }}
+        onJumpToEpoch={(epochId) => {
+          setSelectedId(epochId);
         }}
       />
 
@@ -244,6 +307,30 @@ export default function App() {
               </div>
             </dl>
 
+            <section className="conf-filter" aria-label="Фильтр confidence">
+              <h3>Фильтр уверенности</h3>
+              <div className="conf-filter-row">
+                {ALL_CONF.map((level) => (
+                  <button
+                    key={level}
+                    type="button"
+                    className={
+                      confSet.has(level)
+                        ? `pill conf-${level} conf-toggle on`
+                        : `pill conf-${level} conf-toggle`
+                    }
+                    onClick={() => toggleConf(level)}
+                    aria-pressed={confSet.has(level)}
+                  >
+                    {confidenceLabel[level]}
+                  </button>
+                ))}
+              </div>
+              <p className="section-hint">
+                Скрывает claims / рёбра / события вне выбранных уровней.
+              </p>
+            </section>
+
             <section>
               <h3>Якоря</h3>
               <ul className="anchors">
@@ -259,7 +346,11 @@ export default function App() {
                 people={people}
                 interactions={interactions}
                 selectedPersonId={focusPersonId}
-                onSelectPerson={setFocusPersonId}
+                onSelectPerson={(id) => {
+                  setFocusPersonId(id);
+                  if (id) setFocusClaimId(null);
+                }}
+                relatedPersonIds={claimLinks.personIds}
               />
             </section>
 
@@ -333,7 +424,14 @@ export default function App() {
               ) : (
                 <div className="claims">
                   {events.map((e) => (
-                    <article key={e.id} className="claim">
+                    <article
+                      key={e.id}
+                      className={
+                        claimLinks.eventIds.includes(e.id)
+                          ? "claim claim-related"
+                          : "claim"
+                      }
+                    >
                       <div className="claim-top">
                         <strong>{e.label_ru}</strong>
                         <span className={`pill conf-${e.confidence}`}>
@@ -475,10 +573,41 @@ export default function App() {
 
             <section>
               <h3>Утверждения ({claims.length})</h3>
+              {focusClaimId ? (
+                <p className="section-hint">
+                  Выбрано утверждение — подсвечены связанные лица/события.{" "}
+                  <button
+                    type="button"
+                    className="linkish"
+                    onClick={() => setFocusClaimId(null)}
+                  >
+                    сбросить
+                  </button>
+                </p>
+              ) : (
+                <p className="section-hint">
+                  Клик по утверждению подсвечивает связанные лица и события.
+                </p>
+              )}
               <div className="claims">
                 {claims.map((c) => (
-                  <article key={c.id} className="claim">
+                  <article
+                    key={c.id}
+                    className={
+                      focusClaimId === c.id ? "claim claim-focus" : "claim"
+                    }
+                  >
                     <div className="claim-top">
+                      <button
+                        type="button"
+                        className="linkish claim-pick"
+                        onClick={() => {
+                          setFocusClaimId(focusClaimId === c.id ? null : c.id);
+                          setFocusPersonId(null);
+                        }}
+                      >
+                        выбрать
+                      </button>
                       <span className={`pill conf-${c.confidence}`}>
                         {confidenceLabel[c.confidence]}
                       </span>

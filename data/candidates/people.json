@@ -106,14 +106,17 @@
     {
       "id": "saul",
       "label_ru": "Саул",
-      "theographic_slug": "",
+      "theographic_slug": "saul_2478",
       "epoch_ids": [
         "early_monarchy"
       ],
       "confidence": "disputed",
       "note_ru": "Первый царь в династической традиции; внешняя аттестация слабее, чем у «дома Давида»",
       "upstream": {
-        "found": false
+        "found": true,
+        "name": "Saul",
+        "alsoCalled": [],
+        "dictionaryLink": null
       }
     },
     {
@@ -459,7 +462,7 @@
     {
       "id": "james_of_jerusalem",
       "label_ru": "Иаков (брат Господень / Иерусалим)",
-      "theographic_slug": "",
+      "theographic_slug": "james_719",
       "epoch_ids": [
         "jesus_jerusalem",
         "pauline_networks"
@@ -467,20 +470,26 @@
       "confidence": "anchored",
       "note_ru": "Столп Иерусалима у Павла (Гал 1–2); не путать с сыном Зеведея без отдельной калибровки",
       "upstream": {
-        "found": false
+        "found": true,
+        "name": "James",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/james.html"
       }
     },
     {
       "id": "barnabas",
       "label_ru": "Варнава",
-      "theographic_slug": "",
+      "theographic_slug": "barnabas_1722",
       "epoch_ids": [
         "pauline_networks"
       ],
       "confidence": "anchored",
       "note_ru": "Упоминается Павлом в Гал 2 (Антиохия); биография Деяний вторична",
       "upstream": {
-        "found": false
+        "found": true,
+        "name": "Barnabas",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/barnabas.html"
       }
     },
     {

@@ -15,6 +15,7 @@ npm run dev
 
 ```bash
 npm run build
+npm run check:data            # целостность data/* (ids, citations, orphans)
 npm run extract:theographic   # P4: обогатить candidates из Theographic
 ```
 

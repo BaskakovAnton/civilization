@@ -970,5 +970,28 @@
         "url": "https://en.wikipedia.org/wiki/Akiva#Bar_Kokhba_revolt"
       }
     ]
+  },
+  {
+    "id": "int_herod_appoints_archelaus",
+    "epoch_id": "roman_herodian",
+    "from_person_id": "herod_the_great",
+    "to_person_id": "herod_archelaus",
+    "relation": "appoints",
+    "label_ru": "Ирод назначает Архелая наследником власти в Иудее (этнарх по завещанию/Риму)",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "note_ru": "Формальное утверждение — через Рим; отношение appoints отражает династическое назначение",
+    "citations": [
+      {
+        "id": "cite_int_herod_appoints",
+        "label_ru": "Herod Archelaus",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Herod_Archelaus"
+      }
+    ]
   }
 ]

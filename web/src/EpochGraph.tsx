@@ -7,6 +7,8 @@ type Props = {
   interactions: Interaction[];
   selectedPersonId: string | null;
   onSelectPerson: (id: string | null) => void;
+  /** Soft highlight from claim crosslink (does not replace selection). */
+  relatedPersonIds?: string[];
 };
 
 type NodePos = { id: string; x: number; y: number; label: string };
@@ -43,11 +45,16 @@ export default function EpochGraph({
   interactions,
   selectedPersonId,
   onSelectPerson,
+  relatedPersonIds = [],
 }: Props) {
   const nodes = useMemo(() => layout(people), [people]);
   const byId = useMemo(
     () => Object.fromEntries(nodes.map((n) => [n.id, n])),
     [nodes]
+  );
+  const related = useMemo(
+    () => new Set(relatedPersonIds),
+    [relatedPersonIds]
   );
 
   if (people.length === 0) {
@@ -118,6 +125,7 @@ export default function EpochGraph({
 
         {nodes.map((n) => {
           const selected = selectedPersonId === n.id;
+          const claimRelated = related.has(n.id);
           const linked =
             !selectedPersonId ||
             selected ||
@@ -128,15 +136,20 @@ export default function EpochGraph({
                 (i.to_person_id === selectedPersonId &&
                   i.from_person_id === n.id)
             );
+          const dimByPerson = Boolean(selectedPersonId) && !linked;
+          const dimByClaim =
+            related.size > 0 && !claimRelated && !selected;
           return (
             <g
               key={n.id}
               className={
                 selected
                   ? "graph-node selected"
-                  : linked
-                    ? "graph-node"
-                    : "graph-node dim"
+                  : claimRelated
+                    ? "graph-node related"
+                    : dimByPerson || dimByClaim
+                      ? "graph-node dim"
+                      : "graph-node"
               }
               transform={`translate(${n.x},${n.y})`}
               onClick={() =>

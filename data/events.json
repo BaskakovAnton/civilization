@@ -835,5 +835,77 @@
         "url": "https://en.wikipedia.org/wiki/Aelia_Capitolina"
       }
     ]
+  },
+  {
+    "id": "evt_galilee_activity",
+    "label_ru": "Деятельность в Галилее (до Иерусалима)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "galilee"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter",
+      "james_of_jerusalem"
+    ],
+    "date_min": 28,
+    "date_max": 33,
+    "confidence": "anchored",
+    "statement_ru": "Историческое ядро включает публичную деятельность Иисуса в Галилее до казни в Иерусалиме; маршрут и чудеса не переводятся в firm.",
+    "source_ids": [
+      "synoptic_gospels",
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "note_ru": "Детали эпизодов — literary; ядро «учитель из Галилеи» — anchored",
+    "citations": [
+      {
+        "id": "cite_evt_galilee_mark1",
+        "label_ru": "Мк 1:14–39",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.14-39",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A14-39&version=NRSVUE"
+      },
+      {
+        "id": "cite_evt_galilee_hb",
+        "label_ru": "Historical Jesus — Galilee",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Historical_Jesus"
+      }
+    ]
+  },
+  {
+    "id": "evt_jerusalem_final_week",
+    "label_ru": "Конфликт в Иерусалиме перед казнью",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "jerusalem"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "pontius_pilate",
+      "peter"
+    ],
+    "date_min": 30,
+    "date_max": 33,
+    "confidence": "disputed",
+    "statement_ru": "Синоптическая традиция помещает финальный конфликт и арест в Иерусалиме непосредственно перед распятием; хронология «недели» реконструируется осторожно.",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "note_ru": "Не путать полный евангельский сюжет с attested chronology",
+    "citations": [
+      {
+        "id": "cite_evt_jeru_week_mark11",
+        "label_ru": "Мк 11–14",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.11-14",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+11-14&version=NRSVUE"
+      }
+    ]
   }
 ]

@@ -14,6 +14,15 @@
     "person_ids": [
       "joshua",
       "moses"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_canaan",
+        "label_ru": "Israelites — Iron I / highlands",
+        "kind": "web",
+        "source_id": "iron_i_settlement",
+        "url": "https://en.wikipedia.org/wiki/Israelites#Origins"
+      }
     ]
   },
   {
@@ -108,6 +117,15 @@
     "person_ids": [
       "omri",
       "ahab"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_samaria",
+        "label_ru": "Samaria (ancient city)",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Samaria_(ancient_city)"
+      }
     ]
   },
   {
@@ -150,6 +168,15 @@
     ],
     "person_ids": [
       "sennacherib"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_nineveh",
+        "label_ru": "Nineveh",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Nineveh"
+      }
     ]
   },
   {
@@ -167,6 +194,15 @@
     ],
     "person_ids": [
       "nebuchadnezzar"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_babylon",
+        "label_ru": "Babylon",
+        "kind": "web",
+        "source_id": "babylonian_chronicles",
+        "url": "https://en.wikipedia.org/wiki/Babylon"
+      }
     ]
   },
   {
@@ -185,6 +221,15 @@
       "ezra",
       "nehemiah",
       "cyrus"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_yehud",
+        "label_ru": "Yehud Medinata",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Yehud_Medinata"
+      }
     ]
   },
   {
@@ -237,6 +282,15 @@
       "hadrian",
       "titus",
       "josephus_flavius"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_rome",
+        "label_ru": "Ancient Rome",
+        "kind": "web",
+        "source_id": "roman_fasti",
+        "url": "https://en.wikipedia.org/wiki/Ancient_Rome"
+      }
     ]
   },
   {
@@ -309,6 +363,15 @@
     "person_ids": [
       "hadrian",
       "simon_bar_kokhba"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_aelia",
+        "label_ru": "Aelia Capitolina",
+        "kind": "web",
+        "source_id": "dio_cassius",
+        "url": "https://en.wikipedia.org/wiki/Aelia_Capitolina"
+      }
     ]
   },
   {
@@ -359,6 +422,32 @@
         "kind": "josephus",
         "source_id": "josephus_war",
         "url": "https://en.wikipedia.org/wiki/Masada"
+      }
+    ]
+  },
+  {
+    "id": "galilee",
+    "label_ru": "Галилея",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "anchored",
+    "note_ru": "Регион публичной деятельности Иисуса в критической реконструкции",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_galilee",
+        "label_ru": "Galilee",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Galilee"
       }
     ]
   }
