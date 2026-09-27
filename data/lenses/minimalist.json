@@ -79,6 +79,18 @@
       "confidence": "disputed",
       "note_ru": "Линза: роль Петра в Иерусалиме реконструируется осторожно"
     },
+    "claim_jesus_jerusalem_temple_action": {
+      "confidence": "literary",
+      "note_ru": "Линза: храмовый жест почти целиком из синоптического сюжета"
+    },
+    "claim_jesus_jerusalem_resurrection_kerygma": {
+      "confidence": "disputed",
+      "note_ru": "Линза: формула 1 Кор 15 — проповедь общины; не аттестация события"
+    },
+    "claim_jesus_jerusalem_josephus_tf": {
+      "confidence": "literary",
+      "note_ru": "Линза: Testimonium читается как христианская интерполяция / ненадёжный текст"
+    },
     "claim_pauline_networks_acts_secondary": {
       "confidence": "disputed",
       "note_ru": "Линза: Деяния почти негодны как хронологический каркас"

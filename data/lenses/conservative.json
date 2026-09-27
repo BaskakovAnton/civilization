@@ -63,6 +63,22 @@
       "confidence": "firm",
       "note_ru": "Линза: ранняя иерусалимская община — надёжное ядро"
     },
+    "claim_jesus_jerusalem_baptism": {
+      "confidence": "firm",
+      "note_ru": "Линза: крещение у Иоанна — почти несомненный узел"
+    },
+    "claim_jesus_jerusalem_nazareth": {
+      "confidence": "firm",
+      "note_ru": "Линза: галилеянин из Назарета — прочнее university"
+    },
+    "claim_jesus_jerusalem_resurrection_kerygma": {
+      "confidence": "firm",
+      "note_ru": "Линза: формула 1 Кор 15 как ранняя проповедь — твёрже; не пустой гроб"
+    },
+    "claim_jesus_jerusalem_josephus_tf": {
+      "confidence": "disputed",
+      "note_ru": "Линза: не выше disputed; интерполяция остаётся проблемой"
+    },
     "claim_pauline_networks_acts_secondary": {
       "confidence": "anchored",
       "note_ru": "Линза: Деяния полезнее для хронологии, чем в university"

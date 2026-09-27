@@ -458,6 +458,23 @@
       }
     },
     {
+      "id": "herod_antipas",
+      "label_ru": "Ирод Антипас",
+      "theographic_slug": "herod_1505",
+      "epoch_ids": [
+        "roman_herodian",
+        "jesus_jerusalem"
+      ],
+      "confidence": "firm",
+      "note_ru": "Тетрарх Галилеи; казнь Иоанна у Иосифа",
+      "upstream": {
+        "found": true,
+        "name": "Herod Antipas",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/herod-antipas.html"
+      }
+    },
+    {
       "id": "pontius_pilate",
       "label_ru": "Понтий Пилат",
       "theographic_slug": "pilate_2365",
@@ -472,6 +489,23 @@
         "name": "Pontius",
         "alsoCalled": [],
         "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/pilate-pontius.html"
+      }
+    },
+    {
+      "id": "caiaphas",
+      "label_ru": "Каиафа",
+      "theographic_slug": "caiaphas_532",
+      "epoch_ids": [
+        "jesus_jerusalem",
+        "roman_herodian"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Первосвященник; Иосиф + контекст иудейского суда (детали процесса спорны)",
+      "upstream": {
+        "found": true,
+        "name": "Caiaphas",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/caiaphas.html"
       }
     },
     {
@@ -505,6 +539,38 @@
         "name": "Jesus",
         "alsoCalled": [],
         "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/christ.html"
+      }
+    },
+    {
+      "id": "mary_magdalene",
+      "label_ru": "Мария Магдалина",
+      "theographic_slug": "mary_1943",
+      "epoch_ids": [
+        "jesus_jerusalem"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Ранняя ученица в традиции синоптиков; не поднимать выше disputed",
+      "upstream": {
+        "found": true,
+        "name": "Mary",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "judas_iscariot",
+      "label_ru": "Иуда Искариот",
+      "theographic_slug": "judas_1760",
+      "epoch_ids": [
+        "jesus_jerusalem"
+      ],
+      "confidence": "literary",
+      "note_ru": "Узел предания о выдаче; literary, не внешняя биография",
+      "upstream": {
+        "found": true,
+        "name": "Judas",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/judas.html"
       }
     },
     {

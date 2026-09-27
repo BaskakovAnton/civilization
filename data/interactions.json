@@ -1180,5 +1180,152 @@
         "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_letters"
       }
     ]
+  },
+  {
+    "id": "int_jesus_james_kin",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "jesus_of_nazareth",
+    "to_person_id": "james_of_jerusalem",
+    "relation": "kin",
+    "label_ru": "Иаков — «брат Господень» у Павла (Гал 1:19)",
+    "confidence": "anchored",
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jes_james",
+        "label_ru": "Гал 1:19",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.1.19",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+1%3A19&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_caiaphas_jesus_judges",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "caiaphas",
+    "to_person_id": "jesus_of_nazareth",
+    "relation": "judges",
+    "label_ru": "Каиафа / храмовая элита участвует в предании о осуждении Иисуса",
+    "confidence": "disputed",
+    "source_ids": [
+      "synoptic_gospels",
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "note_ru": "Сам факт первосвященства Каиафы тверже, чем реконструкция ночного суда",
+    "citations": [
+      {
+        "id": "cite_int_caiaphas",
+        "label_ru": "Мк 14:53–65",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.14.53-65",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+14%3A53-65&version=NRSVUE"
+      },
+      {
+        "id": "cite_int_caiaphas_wiki",
+        "label_ru": "Caiaphas",
+        "kind": "web",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Caiaphas"
+      }
+    ]
+  },
+  {
+    "id": "int_antipas_baptist_opposes",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "herod_antipas",
+    "to_person_id": "john_the_baptist",
+    "relation": "opposes",
+    "label_ru": "Антипас казнит Иоанна (Иосиф) — внешний якорь",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_antipas_baptist",
+        "label_ru": "Josephus — death of John",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/John_the_Baptist#Imprisonment_and_execution"
+      }
+    ]
+  },
+  {
+    "id": "int_jesus_mary_meets",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "jesus_of_nazareth",
+    "to_person_id": "mary_magdalene",
+    "relation": "meets",
+    "label_ru": "Мария Магдалина — среди ближайших последовательниц в традиции",
+    "confidence": "disputed",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jes_mary",
+        "label_ru": "Мк 15:40–41; 16:1",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.15.40-41;16.1",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+15%3A40-41%3B+Mark+16%3A1&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_josephus_jesus_mentions",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "josephus_flavius",
+    "to_person_id": "jesus_of_nazareth",
+    "relation": "mentions",
+    "label_ru": "Иосиф упоминает Иисуса (Testimonium / параллели) — текст спорный",
+    "confidence": "disputed",
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "note_ru": "Не использовать TF как firm-биографию",
+    "citations": [
+      {
+        "id": "cite_int_jos_jesus",
+        "label_ru": "Josephus on Jesus",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Josephus_on_Jesus"
+      }
+    ]
+  },
+  {
+    "id": "int_judas_jesus_opposes",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "judas_iscariot",
+    "to_person_id": "jesus_of_nazareth",
+    "relation": "opposes",
+    "label_ru": "Иуда выдаёт Иисуса в страстном предании",
+    "confidence": "literary",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "note_ru": "Literary узел; нет внешней аттестации биографии Иуды",
+    "citations": [
+      {
+        "id": "cite_int_judas",
+        "label_ru": "Мк 14:10–11, 43–46",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.14.10-11;43-46",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+14%3A10-11%3B+Mark+14%3A43-46&version=NRSVUE"
+      }
+    ]
   }
 ]

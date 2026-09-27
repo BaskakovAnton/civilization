@@ -159,5 +159,169 @@
         "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A2-11&version=NRSVUE"
       }
     ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_baptism",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Крещение Иисуса у Иоанна — один из наиболее устойчивых узлов критического консенсуса (критерий «неловкости»).",
+    "confidence": "anchored",
+    "date_min": 28,
+    "date_max": 30,
+    "source_ids": [
+      "synoptic_gospels",
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_jes_baptism",
+        "label_ru": "Мк 1:9–11",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.9-11",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A9-11&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_baptism_hb",
+        "label_ru": "Baptism of Jesus",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Baptism_of_Jesus"
+      }
+    ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_nazareth",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Иисус — галилеянин, связанный традицией с Назаретом; деталь топонима обсуждается, галилейский контекст — в ядре.",
+    "confidence": "anchored",
+    "date_min": 28,
+    "date_max": 33,
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Споры о форме названия/статусе поселения не отменяют галилейскую привязку.",
+    "citations": [
+      {
+        "id": "cite_claim_jes_naz",
+        "label_ru": "Мк 1:9",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.9",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A9&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_naz_wiki",
+        "label_ru": "Nazareth",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Nazareth"
+      }
+    ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_kingdom",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Центр проповеди — близкое царство/владычество Бога; формулировки притч и чудес фильтруются критически.",
+    "confidence": "anchored",
+    "date_min": 28,
+    "date_max": 33,
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_jes_kingdom",
+        "label_ru": "Мк 1:14–15",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.14-15",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A14-15&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_kingdom_hb",
+        "label_ru": "Kingdom of God (Christianity)",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Kingdom_of_God_(Christianity)"
+      }
+    ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_temple_action",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Жест против храмовой торговли/порядка в Иерусалиме входит в раннюю традицию; масштаб и точный смысл спорны.",
+    "confidence": "disputed",
+    "date_min": 30,
+    "date_max": 33,
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Одни видят пророческий знак разрушения; другие — ограниченный протест.",
+    "citations": [
+      {
+        "id": "cite_claim_jes_temple",
+        "label_ru": "Мк 11:15–17",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.11.15-17",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+11%3A15-17&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_resurrection_kerygma",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Ранняя формула 1 Кор 15:3–8 фиксирует проповедь смерти и воскресения Христа в общине до писем Павла; это свидетельство керигмы, не historicity пустого гроба.",
+    "confidence": "anchored",
+    "date_min": 30,
+    "date_max": 55,
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Не смешивать с евангельским нарративом гроба/явлений как firm-фактами.",
+    "citations": [
+      {
+        "id": "cite_claim_jes_kerygma",
+        "label_ru": "1 Кор 15:3–8",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "1Cor.15.3-8",
+        "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A3-8&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_kerygma_hb",
+        "label_ru": "1 Corinthians 15",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/1_Corinthians_15"
+      }
+    ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_josephus_tf",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Testimonium Flavianum у Иосифа — спорный текст: возможное ядро упоминания Иисуса при поздних христианских вставках.",
+    "confidence": "disputed",
+    "date_min": 90,
+    "date_max": 95,
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Полная аутентичность отвергнута большинством; частичная — гипотеза handbook.",
+    "citations": [
+      {
+        "id": "cite_claim_jes_tf",
+        "label_ru": "Josephus on Jesus (Testimonium)",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Josephus_on_Jesus"
+      }
+    ]
   }
 ]

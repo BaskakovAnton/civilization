@@ -167,9 +167,10 @@ export default function EpochGraph({
         })}
       </svg>
       <p className="graph-hint">
-        Клик по лицу подсвечивает связи
+        <span className="graph-hint-desktop">Клик по лицу подсвечивает связи</span>
+        <span className="graph-hint-mobile">Нажмите на лицо — связи</span>
         {selectedPersonId
-          ? ` · выбрано: ${byId[selectedPersonId]?.label ?? selectedPersonId}`
+          ? ` · ${byId[selectedPersonId]?.label ?? selectedPersonId}`
           : ""}
         {selectedPersonId ? (
           <>

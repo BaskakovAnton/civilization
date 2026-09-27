@@ -243,6 +243,17 @@ export default function App() {
     setFocusClaimId(null);
   }, [selectedId]);
 
+  useEffect(() => {
+    const el = document.querySelector<HTMLElement>(
+      `.epoch-btn.active[data-epoch="${selectedId}"]`
+    );
+    el?.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }, [selectedId]);
+
   function toggleConf(level: Confidence) {
     setConfFilter((prev) => {
       if (prev.includes(level)) {
@@ -292,6 +303,7 @@ export default function App() {
             <button
               key={e.id}
               type="button"
+              data-epoch={e.id}
               className={e.id === selected?.id ? "epoch-btn active" : "epoch-btn"}
               onClick={() => setSelectedId(e.id)}
             >

@@ -377,7 +377,9 @@
     "person_ids": [
       "jesus_of_nazareth",
       "pontius_pilate",
-      "peter"
+      "peter",
+      "caiaphas",
+      "mary_magdalene"
     ],
     "date_min": 30,
     "date_max": 33,
@@ -841,12 +843,15 @@
     "label_ru": "Деятельность в Галилее (до Иерусалима)",
     "epoch_id": "jesus_jerusalem",
     "place_ids": [
-      "galilee"
+      "galilee",
+      "nazareth"
     ],
     "person_ids": [
       "jesus_of_nazareth",
       "peter",
-      "james_of_jerusalem"
+      "james_of_jerusalem",
+      "herod_antipas",
+      "mary_magdalene"
     ],
     "date_min": 28,
     "date_max": 33,
@@ -886,7 +891,10 @@
     "person_ids": [
       "jesus_of_nazareth",
       "pontius_pilate",
-      "peter"
+      "peter",
+      "caiaphas",
+      "judas_iscariot",
+      "mary_magdalene"
     ],
     "date_min": 30,
     "date_max": 33,
@@ -896,7 +904,7 @@
       "synoptic_gospels",
       "modern_handbook"
     ],
-    "note_ru": "Не путать полный евангельский сюжет с attested chronology",
+    "note_ru": "Синоптическая «неделя» и арест — disputed reconstruction. Не путать с ранней керигмой воскресения (1 Кор 15) и не читать как attested chronology.",
     "citations": [
       {
         "id": "cite_evt_jeru_week_mark11",
@@ -998,6 +1006,98 @@
         "source_id": "genesis_narrative",
         "ref": "Gen.23",
         "url": "https://www.biblegateway.com/passage/?search=Genesis+23&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_baptism_jordan",
+    "label_ru": "Крещение Иисуса у Иоанна",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "galilee"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "john_the_baptist"
+    ],
+    "date_min": 28,
+    "date_max": 30,
+    "confidence": "anchored",
+    "statement_ru": "Иисус принимает крещение Иоанна — устойчивый критический узел (embarrassment).",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_evt_baptism",
+        "label_ru": "Мк 1:9–11",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.9-11",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A9-11&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_temple_incident",
+    "label_ru": "Жест в Храме",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "jerusalem"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "caiaphas"
+    ],
+    "date_min": 30,
+    "date_max": 33,
+    "confidence": "disputed",
+    "statement_ru": "Протест/знак в храмовом дворе по синоптической традиции; детали и масштаб спорны.",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_evt_temple",
+        "label_ru": "Мк 11:15–17",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.11.15-17",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+11%3A15-17&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_resurrection_kerygma",
+    "label_ru": "Ранняя керигма воскресения (1 Кор 15)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "jerusalem"
+    ],
+    "person_ids": [
+      "peter",
+      "james_of_jerusalem",
+      "jesus_of_nazareth"
+    ],
+    "date_min": 30,
+    "date_max": 40,
+    "confidence": "anchored",
+    "statement_ru": "Община провозглашает смерть и воскресение Иисуса в формуле, которую Павел позже цитирует; это история проповеди, не аттестация пустого гроба.",
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "note_ru": "Не смешивать с евангельскими явлениями/гробом как firm",
+    "citations": [
+      {
+        "id": "cite_evt_kerygma",
+        "label_ru": "1 Кор 15:3–8",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "1Cor.15.3-8",
+        "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A3-8&version=NRSVUE"
       }
     ]
   }

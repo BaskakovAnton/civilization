@@ -88,6 +88,11 @@ function matchPerson(person, index) {
     miriam: "miriam_2087",
     zerubbabel: "zerubbabel_3054",
     john_the_baptist: "john_1676",
+    // Exact lookup only (disambiguation fields in upstream are noisy)
+    caiaphas: "caiaphas_532",
+    herod_antipas: "herod_1505",
+    mary_magdalene: "mary_1943",
+    judas_iscariot: "judas_1760",
   };
   const pin = pinned[person.id];
   if (pin && index.byLookup.has(pin)) return index.byLookup.get(pin);

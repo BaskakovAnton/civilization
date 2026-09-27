@@ -91,7 +91,10 @@
       "judas_maccabeus",
       "titus",
       "james_of_jerusalem",
-      "paul_of_tarsus"
+      "paul_of_tarsus",
+      "caiaphas",
+      "mary_magdalene",
+      "judas_iscariot"
     ],
     "citations": [
       {
@@ -443,7 +446,9 @@
     "person_ids": [
       "jesus_of_nazareth",
       "peter",
-      "john_the_baptist"
+      "john_the_baptist",
+      "herod_antipas",
+      "mary_magdalene"
     ],
     "citations": [
       {
@@ -480,6 +485,39 @@
         "source_id": "genesis_narrative",
         "ref": "Gen.23",
         "url": "https://www.biblegateway.com/passage/?search=Genesis+23&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "nazareth",
+    "label_ru": "Назарет",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "disputed",
+    "note_ru": "Родина в традиции; археология поселения ≠ полная биография",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_nazareth",
+        "label_ru": "Nazareth",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Nazareth"
+      },
+      {
+        "id": "cite_place_nazareth_mark",
+        "label_ru": "Мк 1:9",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.9",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A9&version=NRSVUE"
       }
     ]
   }
