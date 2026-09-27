@@ -322,5 +322,44 @@
         "url": "https://en.wikipedia.org/wiki/Josephus_on_Jesus"
       }
     ]
+  },
+  {
+    "id": "claim_jesus_jerusalem_miracle_itinerary",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Свод Мф+Мк+Лк+Ин даёт literary-географию пути: Галилея (Кана/Капернаум/озеро/Декаполис/Тир/Кесария Филиппова) → Самария (Ин) → Иерихон → Вифания/Иерусалим. Это схема чтения преданий, не attested travelogue и не historicity чудес.",
+    "confidence": "literary",
+    "date_min": 28,
+    "date_max": 33,
+    "source_ids": [
+      "synoptic_gospels",
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Синоптики и Иоанн расходятся по числу визитов в Иерусалим; маршрут — компромиссная карта для UI.",
+    "citations": [
+      {
+        "id": "cite_claim_mir_itin",
+        "label_ru": "Ministry of Jesus — geography",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Ministry_of_Jesus"
+      },
+      {
+        "id": "cite_claim_mir_mk",
+        "label_ru": "Мк 1–10 (галилея→путь)",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1-10",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_mir_jn",
+        "label_ru": "Ин 2–11 (знаки/визиты)",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.2-11",
+        "url": "https://www.biblegateway.com/passage/?search=John+2&version=NRSVUE"
+      }
+    ]
   }
 ]

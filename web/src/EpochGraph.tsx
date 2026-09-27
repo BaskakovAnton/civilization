@@ -1,6 +1,11 @@
-import { useMemo } from "react";
-import type { CandidatePerson, Interaction } from "./types";
-import { relationLabelRu } from "./types";
+import { useMemo, useState } from "react";
+import type { CandidatePerson, Confidence, Interaction } from "./types";
+import {
+  confidenceHintRu,
+  confidenceLabel,
+  relationLabelRu,
+} from "./types";
+import { ConfPill } from "./HoverTip";
 
 type Props = {
   people: CandidatePerson[];
@@ -9,9 +14,16 @@ type Props = {
   onSelectPerson: (id: string | null) => void;
   /** Soft highlight from claim crosslink (does not replace selection). */
   relatedPersonIds?: string[];
+  /** Scroll/focus an interaction card in the list below. */
+  onFocusInteraction?: (id: string) => void;
 };
 
 type NodePos = { id: string; x: number; y: number; label: string };
+
+type TipState = {
+  title: string;
+  lines: string[];
+};
 
 const W = 520;
 const H = 300;
@@ -40,22 +52,70 @@ function shortenLabel(s: string, max = 14): string {
   return s.length > max ? `${s.slice(0, max - 1)}…` : s;
 }
 
+function personTip(p: CandidatePerson): TipState {
+  return {
+    title: p.label_ru,
+    lines: [
+      `${confidenceLabel[p.confidence]} — ${confidenceHintRu[p.confidence]}`,
+      p.note_ru || "",
+    ].filter(Boolean),
+  };
+}
+
+function edgeTip(
+  i: Interaction,
+  from?: CandidatePerson,
+  to?: CandidatePerson
+): TipState {
+  const a = from?.label_ru ?? i.from_person_id;
+  const b = to?.label_ru ?? i.to_person_id;
+  return {
+    title: `${a} → ${b}`,
+    lines: [
+      `${relationLabelRu[i.relation]} · ${confidenceLabel[i.confidence]}`,
+      confidenceHintRu[i.confidence],
+      i.label_ru,
+      i.note_ru || "",
+    ].filter(Boolean),
+  };
+}
+
 export default function EpochGraph({
   people,
   interactions,
   selectedPersonId,
   onSelectPerson,
   relatedPersonIds = [],
+  onFocusInteraction,
 }: Props) {
   const nodes = useMemo(() => layout(people), [people]);
   const byId = useMemo(
     () => Object.fromEntries(nodes.map((n) => [n.id, n])),
     [nodes]
   );
+  const personMap = useMemo(
+    () => Object.fromEntries(people.map((p) => [p.id, p])),
+    [people]
+  );
   const related = useMemo(
     () => new Set(relatedPersonIds),
     [relatedPersonIds]
   );
+  const [tip, setTip] = useState<TipState | null>(null);
+  const [pinnedTip, setPinnedTip] = useState(false);
+
+  const selectedPerson = selectedPersonId
+    ? personMap[selectedPersonId]
+    : undefined;
+
+  const selectedEdges = useMemo(() => {
+    if (!selectedPersonId) return [];
+    return interactions.filter(
+      (i) =>
+        i.from_person_id === selectedPersonId ||
+        i.to_person_id === selectedPersonId
+    );
+  }, [interactions, selectedPersonId]);
 
   if (people.length === 0) {
     return <p className="empty">Нет лиц для графа в этой эпохе.</p>;
@@ -65,6 +125,17 @@ export default function EpochGraph({
     !selectedPersonId ||
     i.from_person_id === selectedPersonId ||
     i.to_person_id === selectedPersonId;
+
+  const showTip = (next: TipState, pin = false) => {
+    setTip(next);
+    if (pin) setPinnedTip(true);
+  };
+
+  const clearTip = (fromPin = false) => {
+    if (pinnedTip && !fromPin) return;
+    setTip(null);
+    if (fromPin) setPinnedTip(false);
+  };
 
   return (
     <div className="graph-wrap">
@@ -95,7 +166,6 @@ export default function EpochGraph({
           const on = activeEdge(i);
           const mx = (a.x + b.x) / 2;
           const my = (a.y + b.y) / 2;
-          // shorten line so arrow stops at node rim
           const dx = b.x - a.x;
           const dy = b.y - a.y;
           const len = Math.hypot(dx, dy) || 1;
@@ -104,11 +174,32 @@ export default function EpochGraph({
           const y1 = a.y + (dy / len) * pad;
           const x2 = b.x - (dx / len) * pad;
           const y2 = b.y - (dy / len) * pad;
+          const confClass = `edge-${i.confidence as Confidence}`;
+          const tipData = edgeTip(
+            i,
+            personMap[i.from_person_id],
+            personMap[i.to_person_id]
+          );
           return (
             <g
               key={i.id}
-              className={on ? "graph-edge on" : "graph-edge dim"}
+              className={`graph-edge ${confClass}${on ? " on" : " dim"}`}
+              onMouseEnter={() => showTip(tipData)}
+              onMouseLeave={() => clearTip()}
+              onClick={(e) => {
+                e.stopPropagation();
+                showTip(tipData, true);
+                onFocusInteraction?.(i.id);
+              }}
+              style={{ cursor: "pointer" }}
             >
+              <line
+                className="edge-hit"
+                x1={x1}
+                y1={y1}
+                x2={x2}
+                y2={y2}
+              />
               <line
                 x1={x1}
                 y1={y1}
@@ -124,6 +215,7 @@ export default function EpochGraph({
         })}
 
         {nodes.map((n) => {
+          const person = personMap[n.id];
           const selected = selectedPersonId === n.id;
           const claimRelated = related.has(n.id);
           const linked =
@@ -139,6 +231,7 @@ export default function EpochGraph({
           const dimByPerson = Boolean(selectedPersonId) && !linked;
           const dimByClaim =
             related.size > 0 && !claimRelated && !selected;
+          const tipData = person ? personTip(person) : { title: n.label, lines: [] };
           return (
             <g
               key={n.id}
@@ -152,23 +245,50 @@ export default function EpochGraph({
                       : "graph-node"
               }
               transform={`translate(${n.x},${n.y})`}
-              onClick={() =>
-                onSelectPerson(selectedPersonId === n.id ? null : n.id)
-              }
+              onMouseEnter={() => showTip(tipData)}
+              onMouseLeave={() => clearTip()}
+              onClick={() => {
+                const next = selectedPersonId === n.id ? null : n.id;
+                onSelectPerson(next);
+                if (next && person) showTip(personTip(person), true);
+                else clearTip(true);
+              }}
               style={{ cursor: "pointer" }}
             >
               <circle r={22} />
               <text className="node-label" y={5} textAnchor="middle">
                 {shortenLabel(n.label)}
               </text>
-              <title>{n.label}</title>
             </g>
           );
         })}
       </svg>
+
+      {tip ? (
+        <div className="graph-float-tip" role="tooltip">
+          <strong>{tip.title}</strong>
+          {tip.lines.map((line, idx) => (
+            <span key={idx}>{line}</span>
+          ))}
+          {pinnedTip ? (
+            <button
+              type="button"
+              className="linkish"
+              onClick={() => clearTip(true)}
+            >
+              закрыть подсказку
+            </button>
+          ) : null}
+        </div>
+      ) : null}
+
       <p className="graph-hint">
-        <span className="graph-hint-desktop">Клик по лицу подсвечивает связи</span>
-        <span className="graph-hint-mobile">Нажмите на лицо — связи</span>
+        <span className="graph-hint-desktop">
+          Наведите на лицо или ребро · клик выбирает · цвет ребра = уверенность
+        </span>
+        <span className="graph-hint-mobile">
+          Нажмите лицо или ребро · цвет = уверенность
+        </span>
         {selectedPersonId
           ? ` · ${byId[selectedPersonId]?.label ?? selectedPersonId}`
           : ""}
@@ -178,13 +298,68 @@ export default function EpochGraph({
             <button
               type="button"
               className="linkish"
-              onClick={() => onSelectPerson(null)}
+              onClick={() => {
+                onSelectPerson(null);
+                clearTip(true);
+              }}
             >
               сбросить
             </button>
           </>
         ) : null}
       </p>
+
+      {selectedPerson ? (
+        <div className="graph-inspector">
+          <div className="graph-inspector-head">
+            <strong>{selectedPerson.label_ru}</strong>
+            <ConfPill level={selectedPerson.confidence} />
+          </div>
+          {selectedPerson.note_ru ? (
+            <p className="graph-inspector-note">{selectedPerson.note_ru}</p>
+          ) : null}
+          {selectedEdges.length === 0 ? (
+            <p className="empty">Нет рёбер у этого лица в эпохе.</p>
+          ) : (
+            <ul className="graph-inspector-edges">
+              {selectedEdges.map((i) => {
+                const from = personMap[i.from_person_id]?.label_ru ?? i.from_person_id;
+                const to = personMap[i.to_person_id]?.label_ru ?? i.to_person_id;
+                return (
+                  <li key={i.id}>
+                    <button
+                      type="button"
+                      className="graph-inspector-edge"
+                      onClick={() => onFocusInteraction?.(i.id)}
+                    >
+                      <span>
+                        {from} → {to}
+                      </span>
+                      <span className="pill relation">
+                        {relationLabelRu[i.relation]}
+                      </span>
+                      <span className={`pill conf-${i.confidence}`}>
+                        {confidenceLabel[i.confidence]}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+      ) : null}
+
+      <div className="graph-edge-legend" aria-label="Легенда рёбер">
+        {(["firm", "anchored", "disputed", "literary"] as Confidence[]).map(
+          (c) => (
+            <span key={c} className={`graph-legend-item edge-${c}`}>
+              <i />
+              {confidenceLabel[c]}
+            </span>
+          )
+        )}
+      </div>
     </div>
   );
 }

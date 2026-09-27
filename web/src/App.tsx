@@ -25,6 +25,10 @@ import minimalistLens from "../../data/lenses/minimalist.json";
 import CitationList from "./CitationList";
 import EpochGraph from "./EpochGraph";
 import GlobalTools from "./GlobalTools";
+import "./jesus-path.css";
+import HoverTip, { ConfPill } from "./HoverTip";
+import JesusPathView from "./JesusPathView";
+import JesusJourney from "./JesusJourney";
 import type {
   CandidatePerson,
   Claim,
@@ -36,9 +40,11 @@ import type {
   Source,
 } from "./types";
 import {
+  confidenceHintRu,
   confidenceLabel,
   formatSpan,
   formatYear,
+  previewText,
   relationLabelRu,
 } from "./types";
 
@@ -161,6 +167,34 @@ function relatedToClaim(
   return { personIds: [...personIds], eventIds: [...eventIds] };
 }
 
+function claimLinkedToPerson(
+  claim: Claim,
+  personId: string,
+  person: CandidatePerson | undefined,
+  events: HistEvent[],
+  interactions: Interaction[]
+): boolean {
+  if (person && claim.statement_ru.toLowerCase().includes(person.label_ru.toLowerCase())) {
+    return true;
+  }
+  for (const e of events) {
+    if (!e.person_ids?.includes(personId)) continue;
+    if (e.source_ids.some((s) => claim.source_ids.includes(s))) return true;
+  }
+  for (const i of interactions) {
+    if (i.from_person_id !== personId && i.to_person_id !== personId) continue;
+    if (i.source_ids.some((s) => claim.source_ids.includes(s))) return true;
+  }
+  return false;
+}
+
+function focusInteractionCard(id: string) {
+  const el = document.querySelector<HTMLElement>(`[data-int-id="${id}"]`);
+  el?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  el?.classList.add("flash-focus");
+  window.setTimeout(() => el?.classList.remove("flash-focus"), 1200);
+}
+
 export default function App() {
   const sorted = useMemo(
     () => [...epochList].sort((a, b) => a.order - b.order),
@@ -169,6 +203,7 @@ export default function App() {
   const [selectedId, setSelectedId] = useState(sorted[0]?.id ?? "");
   const [focusPersonId, setFocusPersonId] = useState<string | null>(null);
   const [focusClaimId, setFocusClaimId] = useState<string | null>(null);
+  const [pathOpen, setPathOpen] = useState(false);
   const [lensId, setLensId] = useState("university");
   const [fathersLayerOn, setFathersLayerOn] = useState(false);
   const [confFilter, setConfFilter] = useState<Confidence[]>([...ALL_CONF]);
@@ -266,6 +301,19 @@ export default function App() {
 
   return (
     <div className="page">
+      {pathOpen && personById.jesus_of_nazareth ? (
+        <JesusPathView
+          person={personById.jesus_of_nazareth}
+          events={allEvents.filter((e) => e.epoch_id === "jesus_jerusalem")}
+          onClose={() => setPathOpen(false)}
+          onJumpEpoch={(epochId) => {
+            setPathOpen(false);
+            setSelectedId(epochId);
+            setFocusPersonId(null);
+            setFocusClaimId(null);
+          }}
+        />
+      ) : null}
       <header className="hero">
         <p className="eyebrow">civilization · historical-critical</p>
         <h1>Длинная дуга</h1>
@@ -350,23 +398,34 @@ export default function App() {
               <h3>Фильтр уверенности</h3>
               <div className="conf-filter-row">
                 {ALL_CONF.map((level) => (
-                  <button
+                  <HoverTip
                     key={level}
-                    type="button"
-                    className={
+                    title={confidenceLabel[level]}
+                    lines={[
+                      confidenceHintRu[level],
                       confSet.has(level)
-                        ? `pill conf-${level} conf-toggle on`
-                        : `pill conf-${level} conf-toggle`
-                    }
-                    onClick={() => toggleConf(level)}
-                    aria-pressed={confSet.has(level)}
+                        ? "Сейчас показано. Клик скрывает этот уровень."
+                        : "Сейчас скрыто. Клик снова показывает.",
+                    ]}
                   >
-                    {confidenceLabel[level]}
-                  </button>
+                    <button
+                      type="button"
+                      className={
+                        confSet.has(level)
+                          ? `pill conf-${level} conf-toggle on`
+                          : `pill conf-${level} conf-toggle`
+                      }
+                      onClick={() => toggleConf(level)}
+                      aria-pressed={confSet.has(level)}
+                    >
+                      {confidenceLabel[level]}
+                    </button>
+                  </HoverTip>
                 ))}
               </div>
               <p className="section-hint">
-                Скрывает claims / рёбра / события вне выбранных уровней.
+                Наведите на уровень — определение шкалы. Фильтр скрывает claims /
+                рёбра / события.
               </p>
             </section>
 
@@ -379,6 +438,38 @@ export default function App() {
               </ul>
             </section>
 
+            {selected.id === "jesus_jerusalem" ? (
+              <section className="journey-section">
+                <div className="journey-section-head">
+                  <h3>Путь и время</h3>
+                  <button
+                    type="button"
+                    className="journey-open-btn"
+                    onClick={() => {
+                      setFocusPersonId("jesus_of_nazareth");
+                      setFocusClaimId(null);
+                      setPathOpen(true);
+                    }}
+                  >
+                    Открыть путь Иисуса
+                  </button>
+                </div>
+                <p className="section-hint">
+                  Полноэкранный режим как на мокапе: карта Галилея/Иудея, шкала
+                  28–33, события с confidence из данных.
+                </p>
+                {focusPersonId === "jesus_of_nazareth" &&
+                personById.jesus_of_nazareth &&
+                !pathOpen ? (
+                  <JesusJourney
+                    person={personById.jesus_of_nazareth}
+                    events={events}
+                    places={places}
+                  />
+                ) : null}
+              </section>
+            ) : null}
+
             <section>
               <h3>Граф лиц</h3>
               <EpochGraph
@@ -390,6 +481,7 @@ export default function App() {
                   if (id) setFocusClaimId(null);
                 }}
                 relatedPersonIds={claimLinks.personIds}
+                onFocusInteraction={focusInteractionCard}
               />
             </section>
 
@@ -403,9 +495,7 @@ export default function App() {
                     <li key={p.id}>
                       <div className="people-top">
                         <strong>{p.label_ru}</strong>
-                        <span className={`pill conf-${p.confidence}`}>
-                          {confidenceLabel[p.confidence]}
-                        </span>
+                        <ConfPill level={p.confidence} />
                         <span className="pill relation">polity</span>
                       </div>
                       {p.note_ru && <p className="people-note">{p.note_ru}</p>}
@@ -434,9 +524,7 @@ export default function App() {
                     <li key={p.id}>
                       <div className="people-top">
                         <strong>{p.label_ru}</strong>
-                        <span className={`pill conf-${p.confidence}`}>
-                          {confidenceLabel[p.confidence]}
-                        </span>
+                        <ConfPill level={p.confidence} />
                         <code className="id">{p.id}</code>
                       </div>
                       {p.note_ru && <p className="people-note">{p.note_ru}</p>}
@@ -462,20 +550,34 @@ export default function App() {
                 <p className="empty">Нет curated-событий для этой эпохи.</p>
               ) : (
                 <div className="claims">
-                  {events.map((e) => (
+                  {events.map((e) => {
+                    const personHit = Boolean(
+                      focusPersonId && e.person_ids?.includes(focusPersonId)
+                    );
+                    const related =
+                      claimLinks.eventIds.includes(e.id) || personHit;
+                    return (
                     <article
                       key={e.id}
+                      data-event-id={e.id}
                       className={
-                        claimLinks.eventIds.includes(e.id)
-                          ? "claim claim-related"
-                          : "claim"
+                        related ? "claim claim-related" : "claim"
                       }
                     >
                       <div className="claim-top">
-                        <strong>{e.label_ru}</strong>
-                        <span className={`pill conf-${e.confidence}`}>
-                          {confidenceLabel[e.confidence]}
-                        </span>
+                        <HoverTip
+                          title={e.label_ru}
+                          lines={[
+                            previewText(e.statement_ru),
+                            e.note_ru || "",
+                            `${formatYear(e.date_min)} – ${formatYear(e.date_max)}`,
+                          ]}
+                        >
+                          <strong tabIndex={0} className="tip-trigger">
+                            {e.label_ru}
+                          </strong>
+                        </HoverTip>
+                        <ConfPill level={e.confidence} />
                         {(e.date_min !== null || e.date_max !== null) && (
                           <span className="claim-dates">
                             {formatYear(e.date_min)} – {formatYear(e.date_max)}
@@ -503,7 +605,8 @@ export default function App() {
                       <SourceList ids={e.source_ids} />
                       <CitationList items={e.citations} />
                     </article>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </section>
@@ -521,7 +624,11 @@ export default function App() {
                     <li
                       key={p.id}
                       className={
-                        focusPersonId === p.id ? "people-item focus" : "people-item"
+                        focusPersonId === p.id
+                          ? "people-item focus"
+                          : claimLinks.personIds.includes(p.id)
+                            ? "people-item linked"
+                            : "people-item"
                       }
                     >
                       <div className="people-top">
@@ -536,9 +643,10 @@ export default function App() {
                         >
                           <strong>{p.label_ru}</strong>
                         </button>
-                        <span className={`pill conf-${p.confidence}`}>
-                          {confidenceLabel[p.confidence]}
-                        </span>
+                        <ConfPill
+                          level={p.confidence}
+                          extraLines={p.note_ru ? [p.note_ru] : undefined}
+                        />
                         {p.upstream?.found === true && (
                           <span className="pill upstream-ok">theographic</span>
                         )}
@@ -585,14 +693,21 @@ export default function App() {
                     const from = personById[i.from_person_id];
                     const to = personById[i.to_person_id];
                     return (
-                      <article key={i.id} className="claim interaction">
+                      <article
+                        key={i.id}
+                        data-int-id={i.id}
+                        className="claim interaction"
+                      >
                         <div className="claim-top">
                           <span className="pill relation">
                             {relationLabelRu[i.relation]}
                           </span>
-                          <span className={`pill conf-${i.confidence}`}>
-                            {confidenceLabel[i.confidence]}
-                          </span>
+                          <ConfPill
+                            level={i.confidence}
+                            extraLines={[i.label_ru, i.note_ru || ""].filter(
+                              Boolean
+                            )}
+                          />
                         </div>
                         <p className="edge-line">
                           <strong>{from?.label_ru ?? i.from_person_id}</strong>
@@ -629,13 +744,26 @@ export default function App() {
                 </p>
               )}
               <div className="claims">
-                {claims.map((c) => (
-                  <article
-                    key={c.id}
-                    className={
-                      focusClaimId === c.id ? "claim claim-focus" : "claim"
-                    }
-                  >
+                {claims.map((c) => {
+                  const baseConf =
+                    baseConfidenceById.get(c.id) ?? c.confidence;
+                  const personLinked =
+                    Boolean(focusPersonId) &&
+                    claimLinkedToPerson(
+                      c,
+                      focusPersonId!,
+                      focusPersonId ? personById[focusPersonId] : undefined,
+                      events,
+                      interactions
+                    );
+                  const articleClass =
+                    focusClaimId === c.id
+                      ? "claim claim-focus"
+                      : personLinked
+                        ? "claim claim-related"
+                        : "claim";
+                  return (
+                  <article key={c.id} className={articleClass}>
                     <div className="claim-top">
                       <button
                         type="button"
@@ -647,22 +775,31 @@ export default function App() {
                       >
                         выбрать
                       </button>
-                      <span className={`pill conf-${c.confidence}`}>
-                        {confidenceLabel[c.confidence]}
-                      </span>
+                      <ConfPill
+                        level={c.confidence}
+                        extraLines={
+                          lensOverrideIds.has(c.id)
+                            ? [
+                                `university: ${confidenceLabel[baseConf]} → линза: ${confidenceLabel[c.confidence]}`,
+                              ]
+                            : undefined
+                        }
+                      />
                       {c.layer === "church_fathers" ? (
                         <span className="pill layer-fathers">отцы · рецепция</span>
                       ) : null}
                       {lensOverrideIds.has(c.id) ? (
-                        <span
-                          className="pill lens-override"
-                          title={`university: ${confidenceLabel[baseConfidenceById.get(c.id) ?? c.confidence]}`}
-                        >
-                          линза ←{" "}
-                          {confidenceLabel[
-                            baseConfidenceById.get(c.id) ?? c.confidence
+                        <HoverTip
+                          title="Переопределение линзы"
+                          lines={[
+                            `university: ${confidenceLabel[baseConf]}`,
+                            `линза «${lens.label_ru}»: ${confidenceLabel[c.confidence]}`,
                           ]}
-                        </span>
+                        >
+                          <span className="pill lens-override" tabIndex={0}>
+                            линза ← {confidenceLabel[baseConf]}
+                          </span>
+                        </HoverTip>
                       ) : null}
                       {(c.date_min !== null || c.date_max !== null) && (
                         <span className="claim-dates">
@@ -670,14 +807,25 @@ export default function App() {
                         </span>
                       )}
                     </div>
-                    <p>{c.statement_ru}</p>
+                    <HoverTip
+                      title="Утверждение"
+                      lines={[
+                        previewText(c.statement_ru),
+                        c.dissent_ru ? `Спор: ${previewText(c.dissent_ru, 120)}` : "",
+                      ]}
+                    >
+                      <p tabIndex={0} className="tip-trigger claim-statement">
+                        {c.statement_ru}
+                      </p>
+                    </HoverTip>
                     {c.dissent_ru && (
                       <p className="dissent">Спор: {c.dissent_ru}</p>
                     )}
                     <SourceList ids={c.source_ids} />
                     <CitationList items={c.citations} />
                   </article>
-                ))}
+                  );
+                })}
               </div>
             </section>
           </main>

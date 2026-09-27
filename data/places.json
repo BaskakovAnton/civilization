@@ -110,7 +110,8 @@
     "label_ru": "Самария (Шомрон)",
     "epoch_ids": [
       "divided_kingdoms",
-      "assyria_to_exile"
+      "assyria_to_exile",
+      "jesus_jerusalem"
     ],
     "confidence": "firm",
     "note_ru": "Столица северного царства; падение ~722",
@@ -120,7 +121,8 @@
     ],
     "person_ids": [
       "omri",
-      "ahab"
+      "ahab",
+      "jesus_of_nazareth"
     ],
     "citations": [
       {
@@ -518,6 +520,301 @@
         "source_id": "synoptic_gospels",
         "ref": "Mark.1.9",
         "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A9&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "capernaum",
+    "label_ru": "Капернаум",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "disputed",
+    "note_ru": "База галилейской деятельности в синоптиках; археология города ≠ чудеса",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_capernaum",
+        "label_ru": "Capernaum",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Capernaum"
+      },
+      {
+        "id": "cite_place_capernaum_mk",
+        "label_ru": "Мк 1:21",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.21",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A21&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "cana",
+    "label_ru": "Кана Галилейская",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Узел Иоанна (брак); литературная география",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_cana",
+        "label_ru": "Jn 2 (Cana)",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Marriage_at_Cana"
+      }
+    ]
+  },
+  {
+    "id": "sea_of_galilee",
+    "label_ru": "Галилейское море",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "anchored",
+    "note_ru": "Озеро Кинерет — география региона; чудеса на воде = literary",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_sea_gal",
+        "label_ru": "Sea of Galilee",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Sea_of_Galilee"
+      }
+    ]
+  },
+  {
+    "id": "decapolis",
+    "label_ru": "Декаполис (Герасa/Гадара)",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Восточный берег в предании об одержимом; точный топоним спорный",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_decapolis",
+        "label_ru": "Мк 5",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.5",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+5&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "tyre_region",
+    "label_ru": "Тир / Сидон (область)",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Северный выход в Мк 7; литературный маршрут",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_tyre",
+        "label_ru": "Мк 7:24–30",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.7.24-30",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+7%3A24-30&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "bethany",
+    "label_ru": "Вифания",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Узел Иоанна (Лазарь) и страстного предания; literary",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "mary_magdalene"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_bethany",
+        "label_ru": "Bethany",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Bethany"
+      }
+    ]
+  },
+  {
+    "id": "nain",
+    "label_ru": "Наин",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Лк 7 — воскрешение сына вдовы; только Лука",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_nain",
+        "label_ru": "Лк 7:11–17",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Luke.7.11-17",
+        "url": "https://www.biblegateway.com/passage/?search=Luke+7%3A11-17&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "bethsaida",
+    "label_ru": "Вифсаида",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Узел Мк/Лк/Ин у северного берега озера",
+    "source_ids": [
+      "synoptic_gospels",
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_bethsaida",
+        "label_ru": "Bethsaida",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Bethsaida"
+      }
+    ]
+  },
+  {
+    "id": "caesarea_philippi",
+    "label_ru": "Кесария Филиппова",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Северный поворот синоптиков (исповедание Петра); не чудо, но якорь маршрута",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_caes_phil",
+        "label_ru": "Мк 8:27–30",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.8.27-30",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+8%3A27-30&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "jericho",
+    "label_ru": "Иерихон",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "literary",
+    "note_ru": "Подход к Иерусалиму в Мк/Лк (Вартимей, Закхей)",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_jericho",
+        "label_ru": "Мк 10:46–52",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.10.46-52",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+10%3A46-52&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "jordan_valley",
+    "label_ru": "Иордан (долина / крещение)",
+    "epoch_ids": [
+      "jesus_jerusalem"
+    ],
+    "confidence": "disputed",
+    "note_ru": "Зона крещения; точный пункт спорный",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "john_the_baptist"
+    ],
+    "citations": [
+      {
+        "id": "cite_place_jordan",
+        "label_ru": "Baptism of Jesus",
+        "kind": "web",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Baptism_of_Jesus"
       }
     ]
   }

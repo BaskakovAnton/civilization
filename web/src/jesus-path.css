@@ -1,0 +1,883 @@
+/* Fullscreen Jesus path view — tokens aligned to mockup target-ui.png */
+
+.jp-root {
+  --jp-bg: #f5eedb;
+  --jp-panel: #fbf6ea;
+  --jp-ink: #2a2218;
+  --jp-muted: #6a5e50;
+  --jp-line: #d4c6ae;
+  --jp-accent: #6b3f24;
+  --jp-soft: #ebe0cc;
+  --jp-firm: #6f8b60;
+  --jp-anchored: #3d72a4;
+  --jp-disputed: #ad924b;
+  --jp-literary: #7a7a7a;
+
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  grid-template-columns: 15.5rem 1fr;
+  background-color: var(--jp-bg);
+  background-image: url(/mock/parchment-texture.png);
+  background-size: 420px;
+  color: var(--jp-ink);
+  font-family: var(--font-body);
+}
+
+.jp-sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--jp-line);
+  background: color-mix(in srgb, var(--jp-panel) 88%, transparent);
+  padding: 1rem 0.75rem 0.85rem;
+  min-height: 0;
+}
+
+.jp-brand {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.25rem 0.4rem 1rem;
+  border-bottom: 1px solid var(--jp-line);
+  margin-bottom: 0.75rem;
+}
+
+.jp-brand-kicker {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--jp-muted);
+  font-weight: 700;
+}
+
+.jp-brand-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.jp-nav-sprite {
+  display: inline-block;
+  width: 1.55rem;
+  height: 1.55rem;
+  flex-shrink: 0;
+  background-image: url(/icons/journey-nav-icons.png);
+  background-repeat: no-repeat;
+  background-size: 500% 100%;
+  border-radius: 4px;
+}
+
+.jp-brand-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.jp-nav {
+  display: grid;
+  gap: 0.3rem;
+  flex: 1;
+  overflow: auto;
+}
+
+.jp-nav-item {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.55rem 0.5rem;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  touch-action: manipulation;
+}
+
+.jp-nav-item strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.jp-nav-item em {
+  display: block;
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--jp-muted);
+  margin-top: 0.1rem;
+}
+
+.jp-nav-item.on,
+.jp-nav-item:hover {
+  background: var(--jp-soft);
+}
+
+.jp-sidebar-foot {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--jp-line);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.jp-side-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--jp-muted);
+  cursor: pointer;
+  padding: 0.35rem 0.25rem;
+  touch-action: manipulation;
+}
+
+.jp-side-link.jp-exit {
+  color: var(--jp-accent);
+  margin-top: 0.35rem;
+}
+
+.jp-filters-panel {
+  padding: 0.35rem 0.25rem 0.5rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.jp-check {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--jp-muted);
+}
+
+.jp-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.jp-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.1rem 1.25rem 0.75rem;
+}
+
+.jp-header h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--jp-accent);
+}
+
+.jp-sub {
+  margin: 0.25rem 0 0;
+  color: var(--jp-muted);
+  font-size: 0.9rem;
+}
+
+.jp-mode-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.jp-mode {
+  border: 1px solid var(--jp-line);
+  background: var(--jp-panel);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--jp-ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.jp-mode.on {
+  border-color: var(--jp-accent);
+  background: var(--jp-soft);
+  color: var(--jp-accent);
+}
+
+.jp-itinerary-banner {
+  margin: 0 1.25rem 0.55rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px dashed var(--jp-line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--jp-soft) 70%, white);
+  font-size: 0.84rem;
+  line-height: 1.4;
+  color: var(--jp-ink);
+}
+
+.jp-itinerary-banner span {
+  color: var(--jp-muted);
+}
+
+.jp-path-miracle {
+  stroke-dasharray: 0;
+  stroke-width: 2.6;
+  opacity: 0.85;
+}
+
+.jp-person-chip {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  border: 1px solid var(--jp-line);
+  background: var(--jp-panel);
+  border-radius: 10px;
+  padding: 0.4rem 0.65rem;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  touch-action: manipulation;
+  max-width: 18rem;
+}
+
+.jp-person-chip img {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--jp-line);
+  background: #fff;
+}
+
+.jp-person-chip strong {
+  display: block;
+  font-size: 0.88rem;
+}
+
+.jp-person-chip em {
+  display: block;
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--jp-muted);
+}
+
+.jp-stage {
+  flex: 1;
+  min-height: 0;
+  margin: 0 1.1rem;
+  border: 1px solid var(--jp-line);
+  border-radius: 12px;
+  background: var(--jp-panel);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.jp-map {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+  background-color: #efe6d4;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--jp-line);
+}
+
+.jp-map.no-geo {
+  background-image: none !important;
+  background: linear-gradient(180deg, #e8efdf 0%, #efe6d4 55%, #ebe0cc 100%);
+}
+
+.jp-year-grid {
+  position: absolute;
+  inset: 0.45rem 0 auto;
+  height: 1.15rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.jp-year-grid span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--jp-muted);
+}
+
+.jp-year-grid span::after {
+  content: "";
+  position: absolute;
+  top: 1.15rem;
+  left: 50%;
+  width: 0;
+  height: 70vh;
+  border-left: 1px dashed color-mix(in srgb, var(--jp-ink) 16%, transparent);
+}
+
+.jp-region {
+  position: absolute;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--jp-ink) 14%, transparent);
+  pointer-events: none;
+}
+
+.jp-region.north {
+  left: 1rem;
+  top: 18%;
+}
+
+.jp-region.south {
+  right: 1.5rem;
+  bottom: 12%;
+}
+
+.jp-path-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.jp-path-line {
+  stroke: var(--jp-accent);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  opacity: 0.92;
+}
+
+.jp-node {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--jp-ink);
+  touch-action: manipulation;
+}
+
+.jp-node-dot {
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2.5px solid var(--jp-accent);
+  background: var(--jp-panel);
+}
+
+.jp-node.on .jp-node-dot,
+.jp-node:hover .jp-node-dot {
+  background: var(--jp-soft);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--jp-accent) 20%, transparent);
+}
+
+.jp-node-label {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  max-width: 5.2rem;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.jp-event-tip,
+.jp-person-card {
+  position: absolute;
+  z-index: 5;
+  width: min(17rem, 78%);
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--jp-line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--jp-panel) 94%, white);
+  box-shadow: none;
+}
+
+.jp-event-tip-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.6rem;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+}
+
+.jp-event-tip-top strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.jp-event-tip-top span,
+.jp-refs {
+  font-size: 0.78rem;
+  color: var(--jp-muted);
+}
+
+.jp-event-tip p,
+.jp-person-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--jp-muted);
+}
+
+.jp-refs {
+  margin-top: 0.35rem !important;
+}
+
+.jp-conf-line {
+  margin-top: 0.45rem !important;
+  font-size: 0.8rem !important;
+  color: var(--jp-ink) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.jp-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.jp-dot.conf-firm,
+.jp-axis-dot.conf-firm {
+  background: var(--jp-firm);
+}
+
+.jp-dot.conf-anchored,
+.jp-axis-dot.conf-anchored {
+  background: var(--jp-anchored);
+}
+
+.jp-dot.conf-disputed,
+.jp-axis-dot.conf-disputed {
+  background: var(--jp-disputed);
+}
+
+.jp-dot.conf-literary,
+.jp-axis-dot.conf-literary {
+  background: var(--jp-literary);
+}
+
+.jp-person-card {
+  top: 0.75rem;
+  right: 0.75rem;
+  width: min(18rem, 86%);
+}
+
+.jp-person-card h2 {
+  margin: 0 1.5rem 0.4rem 0;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.jp-card-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--jp-muted);
+  padding: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.jp-axis {
+  position: relative;
+  height: 6.2rem;
+  margin: 0.15rem 0.5rem 0.35rem;
+  border-top: 2px solid var(--jp-ink);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.jp-axis-item {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12rem;
+  border: 0;
+  background: none;
+  padding: 0.1rem;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  max-width: 4.6rem;
+  touch-action: manipulation;
+}
+
+.jp-axis-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-top: -7px;
+  border: 2px solid var(--jp-panel);
+}
+
+.jp-axis-lab {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.jp-axis-item.on .jp-axis-lab {
+  color: var(--jp-accent);
+}
+
+.jp-axis-item .pill {
+  font-size: 0.62rem;
+  padding: 0.05rem 0.32rem;
+}
+
+.jp-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1.25rem 0.9rem;
+  color: var(--jp-muted);
+  font-size: 0.8rem;
+}
+
+.jp-footer p {
+  margin: 0;
+}
+
+.jp-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.jp-foot-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--jp-line);
+  background: var(--jp-panel);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--jp-ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.jp-foot-btn.on {
+  border-color: var(--jp-accent);
+  background: var(--jp-soft);
+}
+
+.jp-select-wrap {
+  padding: 0;
+}
+
+.jp-select-wrap select {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.jp-larkin-slot {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  margin: 0 1.1rem 0.5rem;
+  border: 1px solid var(--jp-line);
+  border-radius: 12px;
+  background: var(--jp-panel);
+}
+
+.lk-root {
+  padding: 0.75rem 0.85rem 1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.lk-banner {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--jp-muted);
+  line-height: 1.4;
+}
+
+.lk-chart-wrap {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.4rem;
+  min-height: 280px;
+}
+
+.lk-region-key {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  border: 1px solid var(--jp-line);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.lk-region-key-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.15rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--jp-line) 70%, transparent);
+  color: var(--jp-ink);
+}
+
+.lk-stage {
+  position: relative;
+  border: 1px solid var(--jp-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f7f1e4;
+  min-height: 280px;
+}
+
+.lk-svg {
+  display: block;
+  width: 100%;
+  height: min(52vh, 360px);
+  min-height: 240px;
+}
+
+.lk-band-label {
+  font-size: 2.2px;
+  fill: color-mix(in srgb, var(--jp-ink) 35%, transparent);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.lk-path {
+  stroke: #1c1914;
+  stroke-width: 1.1;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.lk-miracle-tick {
+  stroke: #1c1914;
+  stroke-width: 0.55;
+}
+
+.lk-node {
+  fill: #1c1914;
+  stroke: #f7f1e4;
+  stroke-width: 0.35;
+}
+
+.lk-node.miracle {
+  fill: #6b3f24;
+}
+
+.lk-node.on {
+  fill: var(--jp-accent);
+  stroke: #fff;
+  stroke-width: 0.5;
+}
+
+.lk-x-labels {
+  position: relative;
+  height: 2.6rem;
+  border-top: 1px solid var(--jp-line);
+  background: color-mix(in srgb, var(--jp-panel) 90%, white);
+}
+
+.lk-x-lab {
+  position: absolute;
+  top: 0.2rem;
+  transform: translateX(-50%);
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.62rem;
+  font-weight: 700;
+  max-width: 3.6rem;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--jp-muted);
+  cursor: pointer;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+.lk-x-lab.on {
+  color: var(--jp-accent);
+}
+
+.lk-harmony {
+  border: 1px solid var(--jp-line);
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem 0.55rem;
+  background: #fffaf0;
+}
+
+.lk-harmony-head {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--jp-ink);
+}
+
+.lk-harmony-row {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.35rem;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.lk-harmony-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.lk-harmony-cells {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 2px;
+}
+
+.lk-cell {
+  height: 0.55rem;
+  border-radius: 1px;
+  background: color-mix(in srgb, var(--jp-line) 55%, white);
+}
+
+.lk-cell.on {
+  opacity: 0.9;
+}
+
+.lk-detail {
+  border: 1px solid var(--jp-line);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  background: var(--jp-panel);
+}
+
+.lk-detail-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.lk-detail-top strong {
+  font-family: var(--font-display);
+}
+
+.lk-detail p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--jp-muted);
+  line-height: 1.4;
+}
+
+.lk-refs,
+.lk-gospels-line,
+.lk-foot-note {
+  margin-top: 0.35rem !important;
+  font-size: 0.78rem !important;
+}
+
+.lk-kind,
+.lk-region-pill {
+  font-size: 0.7rem;
+  color: var(--jp-muted);
+  border: 1px solid var(--jp-line);
+  border-radius: 999px;
+  padding: 0.1rem 0.4rem;
+}
+
+.lk-foot-note {
+  margin: 0;
+  color: var(--jp-muted);
+}
+
+@media (max-width: 900px) {
+  .lk-chart-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .lk-region-key {
+    grid-template-rows: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    font-size: 0.55rem;
+  }
+
+  .jp-root {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .jp-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--jp-line);
+    max-height: 40vh;
+  }
+
+  .jp-nav {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(9rem, 1fr);
+    overflow-x: auto;
+  }
+
+  .jp-event-tip {
+    left: 4% !important;
+    right: 4%;
+    width: auto;
+    top: auto !important;
+    bottom: 0.5rem;
+  }
+
+  .jp-person-card {
+    position: static;
+    width: auto;
+    margin: 0.5rem;
+  }
+
+  .jp-axis-item .pill {
+    display: none;
+  }
+}

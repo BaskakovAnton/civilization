@@ -4,159 +4,209 @@
     "label_ru": "Академический handbook (консенсус вводного курса)",
     "type": "modern_handbook",
     "tradition_note_ru": "Ориентир каркаса дат и формулировок, не первичный источник",
-    "urls": ["https://en.wikipedia.org/wiki/Biblical_criticism"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Biblical_criticism"
+    ]
   },
   {
     "id": "genesis_narrative",
     "label_ru": "Бытие (нарратив праотцев)",
     "type": "canon_text",
     "tradition_note_ru": "Канонический текст; для эпохи 1 — literary, не внешняя хроника",
-    "urls": ["https://www.biblegateway.com/passage/?search=Genesis+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=Genesis+1&version=NRSVUE"
+    ]
   },
   {
     "id": "exodus_narrative",
     "label_ru": "Исход (библейский нарратив)",
     "type": "canon_text",
-    "urls": ["https://www.biblegateway.com/passage/?search=Exodus+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=Exodus+1&version=NRSVUE"
+    ]
   },
   {
     "id": "merneptah_stele",
     "label_ru": "Стела Мернептаха",
     "type": "inscription",
-    "urls": ["https://en.wikipedia.org/wiki/Merneptah_Stele"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Merneptah_Stele"
+    ]
   },
   {
     "id": "iron_i_settlement",
     "label_ru": "Археология поселений Iron I",
     "type": "archaeology",
-    "urls": ["https://en.wikipedia.org/wiki/Israelites#Origins"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Israelites#Origins"
+    ]
   },
   {
     "id": "tel_dan_inscription",
     "label_ru": "Надпись из Тель Дана (byt dwd)",
     "type": "inscription",
-    "urls": ["https://en.wikipedia.org/wiki/Tel_Dan_stele"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+    ]
   },
   {
     "id": "deuteronomistic_history",
     "label_ru": "Второзаконническая история (Нав–Цар)",
     "type": "canon_text",
-    "urls": ["https://www.biblegateway.com/passage/?search=2+Kings+17&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=2+Kings+17&version=NRSVUE"
+    ]
   },
   {
     "id": "assyrian_annals",
     "label_ru": "Неоассирийские анналы",
     "type": "classical_historiography",
     "tradition_note_ru": "Царские анналы Ассирии; синхронизмы с Израилем/Иудеей",
-    "urls": ["https://en.wikipedia.org/wiki/Neo-Assyrian_Empire"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Neo-Assyrian_Empire"
+    ]
   },
   {
     "id": "black_obelisk",
     "label_ru": "Чёрный обелиск Салманасара III (Ииуй)",
     "type": "inscription",
-    "urls": ["https://en.wikipedia.org/wiki/Black_Obelisk_of_Shalmaneser_III"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Black_Obelisk_of_Shalmaneser_III"
+    ]
   },
   {
     "id": "mesha_stele",
     "label_ru": "Стела Меши (Моав)",
     "type": "inscription",
-    "urls": ["https://en.wikipedia.org/wiki/Mesha_Stele"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Mesha_Stele"
+    ]
   },
   {
     "id": "babylonian_chronicles",
     "label_ru": "Вавилонские хроники",
     "type": "classical_historiography",
-    "urls": ["https://en.wikipedia.org/wiki/Babylonian_Chronicles"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Babylonian_Chronicles"
+    ]
   },
   {
     "id": "cyrus_cylinder",
     "label_ru": "Цилиндр Кира (контекст возвращения)",
     "type": "inscription",
-    "urls": ["https://en.wikipedia.org/wiki/Cyrus_Cylinder"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Cyrus_Cylinder"
+    ]
   },
   {
     "id": "ezra_nehemiah",
     "label_ru": "Эзра–Неемия",
     "type": "canon_text",
     "tradition_note_ru": "Канон; хронология внутренней редакции осторожна",
-    "urls": ["https://www.biblegateway.com/passage/?search=Ezra+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=Ezra+1&version=NRSVUE"
+    ]
   },
   {
     "id": "1_macc",
     "label_ru": "1 Маккавейская",
     "type": "historical_document",
     "tradition_note_ru": "Вне еврейского Танаха; у католиков — второканон.; в православии обычно неканон. для чтения",
-    "urls": ["https://www.biblegateway.com/passage/?search=1+Maccabees+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=1+Maccabees+1&version=NRSVUE"
+    ]
   },
   {
     "id": "2_macc",
     "label_ru": "2 Маккавейская",
     "type": "historical_document",
     "tradition_note_ru": "Вне еврейского Танаха; у католиков — второканон.; в православии обычно неканон. для чтения",
-    "urls": ["https://www.biblegateway.com/passage/?search=2+Maccabees+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=2+Maccabees+1&version=NRSVUE"
+    ]
   },
   {
     "id": "hellenistic_chronology",
     "label_ru": "Эллинистическая хронология (Александр–Селевкиды)",
     "type": "modern_handbook",
-    "urls": ["https://en.wikipedia.org/wiki/Hellenistic_period"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Hellenistic_period"
+    ]
   },
   {
     "id": "josephus_antiquities",
     "label_ru": "Иосиф Флавий, Иудейские древности",
     "type": "classical_historiography",
-    "urls": ["https://en.wikipedia.org/wiki/Antiquities_of_the_Jews"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Antiquities_of_the_Jews"
+    ]
   },
   {
     "id": "josephus_war",
     "label_ru": "Иосиф Флавий, Иудейская война",
     "type": "classical_historiography",
-    "urls": ["https://en.wikipedia.org/wiki/The_Jewish_War"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/The_Jewish_War"
+    ]
   },
   {
     "id": "roman_fasti",
     "label_ru": "Римская хронология должностей / правлений",
     "type": "classical_historiography",
-    "urls": ["https://en.wikipedia.org/wiki/Roman_emperor"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Roman_emperor"
+    ]
   },
   {
     "id": "pauline_letters",
     "label_ru": "Неоспоримые письма Павла",
     "type": "canon_text",
     "tradition_note_ru": "Раннейшие христианские тексты; канон НЗ",
-    "urls": ["https://www.biblegateway.com/passage/?search=Galatians+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=Galatians+1&version=NRSVUE"
+    ]
   },
   {
     "id": "synoptic_gospels",
     "label_ru": "Синоптические Евангелия",
     "type": "canon_text",
     "tradition_note_ru": "Канон; для истории Иисуса — с критической фильтрацией",
-    "urls": ["https://www.biblegateway.com/passage/?search=Mark+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=Mark+1&version=NRSVUE"
+    ]
   },
   {
     "id": "acts",
     "label_ru": "Деяния апостолов",
     "type": "canon_text",
     "tradition_note_ru": "Вторичный нарратив относительно писем Павла",
-    "urls": ["https://www.biblegateway.com/passage/?search=Acts+1&version=NRSVUE"]
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=Acts+1&version=NRSVUE"
+    ]
   },
   {
     "id": "tacitus_annals",
     "label_ru": "Тацит, Анналы (упоминание христиан)",
     "type": "classical_historiography",
-    "urls": ["https://en.wikipedia.org/wiki/Tacitus_on_Jesus"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Tacitus_on_Jesus"
+    ]
   },
   {
     "id": "dio_cassius",
     "label_ru": "Дион Кассий (Бар-Кохба)",
     "type": "classical_historiography",
-    "urls": ["https://en.wikipedia.org/wiki/Cassius_Dio"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Cassius_Dio"
+    ]
   },
   {
     "id": "bar_kokhba_letters",
     "label_ru": "Письма и монеты Бар-Кохбы",
     "type": "inscription",
-    "urls": ["https://en.wikipedia.org/wiki/Bar_Kokhba_letters"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Bar_Kokhba_letters"
+    ]
   },
   {
     "id": "theographic_bible_metadata",
@@ -172,27 +222,44 @@
     "label_ru": "Игнатий Антиохийский (письма) — слой отцов",
     "type": "classical_historiography",
     "tradition_note_ru": "P11 stub: рецепция, не baseline истории Иисуса",
-    "urls": ["https://en.wikipedia.org/wiki/Ignatius_of_Antioch"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Ignatius_of_Antioch"
+    ]
   },
   {
     "id": "justin_apology",
     "label_ru": "Иустин Мученик — слой отцов",
     "type": "classical_historiography",
     "tradition_note_ru": "P11 stub",
-    "urls": ["https://en.wikipedia.org/wiki/Justin_Martyr"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Justin_Martyr"
+    ]
   },
   {
     "id": "irenaeus_haer",
     "label_ru": "Ириней, Против ересей — слой отцов",
     "type": "classical_historiography",
     "tradition_note_ru": "P11 stub",
-    "urls": ["https://en.wikipedia.org/wiki/Irenaeus"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Irenaeus"
+    ]
   },
   {
     "id": "eusebius_he",
     "label_ru": "Евсевий, Церковная история — слой отцов",
     "type": "classical_historiography",
     "tradition_note_ru": "P11 stub: канон/рецепция",
-    "urls": ["https://en.wikipedia.org/wiki/Church_History_(Eusebius)"]
+    "urls": [
+      "https://en.wikipedia.org/wiki/Church_History_(Eusebius)"
+    ]
+  },
+  {
+    "id": "johannine_gospel",
+    "label_ru": "Евангелие от Иоанна",
+    "type": "canon_text",
+    "tradition_note_ru": "Канон; для пути Иисуса — literary/география визитов, не firm-биография",
+    "urls": [
+      "https://www.biblegateway.com/passage/?search=John+1&version=NRSVUE"
+    ]
   }
 ]

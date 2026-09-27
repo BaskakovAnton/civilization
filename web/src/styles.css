@@ -304,13 +304,34 @@ body {
   stroke-width: 1.6;
 }
 
-.graph-edge.on line {
-  stroke: var(--accent);
-  stroke-width: 2;
+.graph-edge .edge-hit {
+  stroke: transparent;
+  stroke-width: 14;
+  pointer-events: stroke;
+}
+
+.graph-edge.on line:not(.edge-hit) {
+  stroke-width: 2.2;
 }
 
 .graph-edge.dim {
   opacity: 0.22;
+}
+
+.graph-edge.edge-firm line:not(.edge-hit) {
+  stroke: var(--firm);
+}
+
+.graph-edge.edge-anchored line:not(.edge-hit) {
+  stroke: var(--anchored);
+}
+
+.graph-edge.edge-disputed line:not(.edge-hit) {
+  stroke: var(--disputed);
+}
+
+.graph-edge.edge-literary line:not(.edge-hit) {
+  stroke: var(--literary);
 }
 
 .edge-label {
@@ -354,6 +375,186 @@ body {
 
 .graph-hint-mobile {
   display: none;
+}
+
+.graph-float-tip {
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  border-top: 1px solid var(--line);
+  background: var(--panel);
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.graph-float-tip strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.graph-float-tip span {
+  color: var(--muted);
+}
+
+.graph-inspector {
+  padding: 0.65rem 0.75rem 0.75rem;
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--accent-soft) 55%, var(--panel));
+}
+
+.graph-inspector-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.graph-inspector-note {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.graph-inspector-edges {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.graph-inspector-edge {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  align-items: center;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 0.4rem 0.55rem;
+  touch-action: manipulation;
+}
+
+.graph-inspector-edge:hover {
+  border-color: var(--accent);
+}
+
+.graph-edge-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
+  padding: 0.45rem 0.75rem 0.65rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.graph-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.graph-legend-item i {
+  display: inline-block;
+  width: 1rem;
+  height: 3px;
+  border-radius: 1px;
+  background: var(--line);
+}
+
+.graph-legend-item.edge-firm i {
+  background: var(--firm);
+}
+
+.graph-legend-item.edge-anchored i {
+  background: var(--anchored);
+}
+
+.graph-legend-item.edge-disputed i {
+  background: var(--disputed);
+}
+
+.graph-legend-item.edge-literary i {
+  background: var(--literary);
+}
+
+.hover-tip-wrap {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.hover-tip {
+  position: absolute;
+  z-index: 40;
+  left: 0;
+  min-width: 12rem;
+  max-width: min(20rem, calc(100vw - 2rem));
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: none;
+  display: grid;
+  gap: 0.2rem;
+  pointer-events: none;
+}
+
+.hover-tip.below {
+  top: calc(100% + 0.35rem);
+}
+
+.hover-tip.above {
+  bottom: calc(100% + 0.35rem);
+}
+
+.hover-tip-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hover-tip-line {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.tip-trigger {
+  cursor: help;
+}
+
+.claim-statement {
+  margin: 0 0 0.55rem;
+  outline: none;
+}
+
+.claim-statement:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  border-radius: 2px;
+}
+
+.people-item.linked {
+  background: color-mix(in srgb, var(--anchored) 8%, transparent);
+  margin: 0 -0.5rem;
+  padding: 0.55rem 0.5rem 0.65rem;
+  border-radius: 6px;
+}
+
+.flash-focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 .linkish {
@@ -852,4 +1053,392 @@ body {
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+/* —— Jesus journey (map + timeline) —— */
+.journey-section {
+  margin-bottom: 1.35rem;
+}
+
+.journey-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.55rem;
+}
+
+.journey-section-head h3 {
+  margin: 0;
+}
+
+.journey-open-btn {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  touch-action: manipulation;
+}
+
+.journey-open-btn:hover {
+  filter: brightness(1.05);
+}
+
+.journey {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.journey-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--accent-soft) 40%, var(--panel));
+}
+
+.journey-person-card {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  max-width: 28rem;
+}
+
+.journey-person-card strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.journey-person-card p {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.journey-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid var(--accent);
+  background:
+    radial-gradient(circle at 35% 30%, #fff8ee 0%, transparent 45%),
+    var(--accent-soft);
+}
+
+.journey-toolbar-note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+  max-width: 14rem;
+  line-height: 1.35;
+}
+
+.journey-map {
+  position: relative;
+  height: min(280px, 52vw);
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e7e0d2;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.journey-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg) 25%, transparent) 0%,
+    transparent 35%,
+    color-mix(in srgb, var(--bg) 20%, transparent) 100%
+  );
+  pointer-events: none;
+}
+
+.journey-year-grid {
+  position: absolute;
+  inset: 0.4rem 0 auto;
+  height: 1.2rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.journey-year-grid span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.journey-year-grid span::before {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  left: 50%;
+  width: 1px;
+  height: min(240px, 48vw);
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  border-left: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.journey-band-tag {
+  position: absolute;
+  left: 0.65rem;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.journey-band-tag.north {
+  top: 1.7rem;
+}
+
+.journey-band-tag.south {
+  bottom: 0.55rem;
+}
+
+.journey-path-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.journey-path-line {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-dasharray: 5 4;
+  opacity: 0.9;
+}
+
+.journey-node {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ink);
+  touch-action: manipulation;
+}
+
+.journey-node-dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--panel);
+}
+
+.journey-node.on .journey-node-dot,
+.journey-node:hover .journey-node-dot {
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.journey-node-label {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.journey-float-tip {
+  position: absolute;
+  z-index: 4;
+  width: min(16.5rem, 70%);
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--panel) 92%, white);
+  pointer-events: none;
+}
+
+.journey-float-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.journey-float-top strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.journey-float-tip p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.journey-float-meta {
+  margin-top: 0.3rem !important;
+  font-size: 0.75rem !important;
+}
+
+.journey-timeline {
+  padding: 0.85rem 0.9rem 1rem;
+}
+
+.journey-ruler {
+  position: relative;
+  height: 4.75rem;
+  margin: 0.25rem 0 0.85rem;
+  border-top: 2px solid var(--ink);
+}
+
+.journey-tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  border: 0;
+  background: none;
+  padding: 0.15rem;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ink);
+  max-width: 5.5rem;
+  touch-action: manipulation;
+}
+
+.journey-tick-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: -6px;
+  border: 2px solid var(--panel);
+}
+
+.journey-tick-dot.conf-firm {
+  background: var(--firm);
+}
+
+.journey-tick-dot.conf-anchored {
+  background: var(--anchored);
+}
+
+.journey-tick-dot.conf-disputed {
+  background: var(--disputed);
+}
+
+.journey-tick-dot.conf-literary {
+  background: var(--literary);
+}
+
+.journey-tick-lab {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.journey-tick.on .journey-tick-lab {
+  color: var(--accent);
+}
+
+.journey-tick .pill {
+  font-size: 0.62rem;
+  padding: 0.05rem 0.3rem;
+}
+
+.journey-event-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.journey-evt {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  touch-action: manipulation;
+}
+
+.journey-evt:hover,
+.journey-evt.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.journey-evt-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.journey-evt-top strong {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.journey-evt-body {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.journey-evt-meta {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+@media (max-width: 800px) {
+  .journey-tick .pill {
+    display: none;
+  }
+
+  .journey-float-tip {
+    left: 4% !important;
+    right: 4%;
+    width: auto;
+    top: auto !important;
+    bottom: 0.5rem;
+  }
+
+  .journey-toolbar-note {
+    display: none;
+  }
 }

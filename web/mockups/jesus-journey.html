@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мокап · Путь Иисуса (не production)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f3efe6;
+        --ink: #1c1914;
+        --muted: #5c564c;
+        --line: #cfc5b4;
+        --panel: #fbf8f2;
+        --accent: #6b3f24;
+        --accent-soft: #efe2d4;
+        --firm: #1f5c45;
+        --anchored: #245a7a;
+        --disputed: #8a5a12;
+        --literary: #5a5a5a;
+        --galilee: #dfe8df;
+        --judea: #ebe3d4;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Source Sans 3", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse at 12% 0%, #efe6d6 0%, transparent 45%),
+          var(--bg);
+      }
+      .page {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 1.25rem 1.1rem 3rem;
+      }
+      .banner {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 0.75rem;
+        padding: 0.45rem 0.65rem;
+        border: 1px dashed var(--line);
+        border-radius: 6px;
+        background: var(--panel);
+      }
+      .banner strong {
+        color: var(--accent);
+      }
+      h1 {
+        font-family: Literata, serif;
+        font-size: 1.85rem;
+        margin: 0 0 0.25rem;
+        font-weight: 700;
+      }
+      .lede {
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        max-width: 40rem;
+        line-height: 1.45;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 11rem 1fr;
+        gap: 1rem;
+      }
+      @media (max-width: 800px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .rail {
+          display: flex;
+          gap: 0.4rem;
+          overflow-x: auto;
+        }
+        .rail button {
+          min-width: 9rem;
+        }
+      }
+      .rail button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 6px;
+        padding: 0.55rem 0.65rem;
+        margin-bottom: 0.4rem;
+        font: inherit;
+        cursor: pointer;
+        color: var(--ink);
+      }
+      .rail button.active {
+        border-color: var(--accent);
+        box-shadow: inset 0 0 0 1px var(--accent);
+        background: var(--accent-soft);
+      }
+      .rail .n {
+        display: block;
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+      .stage {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--panel);
+        overflow: hidden;
+      }
+      .people-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--line);
+      }
+      .chip {
+        border: 1px solid var(--line);
+        background: var(--bg);
+        border-radius: 999px;
+        padding: 0.35rem 0.75rem;
+        font: inherit;
+        cursor: pointer;
+        color: var(--ink);
+      }
+      .chip:hover {
+        border-color: var(--accent);
+      }
+      .chip.on {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .chip .pill {
+        margin-left: 0.35rem;
+      }
+      .pill {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 0.1rem 0.4rem;
+        border-radius: 999px;
+        vertical-align: middle;
+      }
+      .conf-anchored {
+        color: var(--anchored);
+        background: color-mix(in srgb, var(--anchored) 14%, white);
+      }
+      .conf-disputed {
+        color: var(--disputed);
+        background: color-mix(in srgb, var(--disputed) 14%, white);
+      }
+      .conf-firm {
+        color: var(--firm);
+        background: color-mix(in srgb, var(--firm) 14%, white);
+      }
+      .conf-literary {
+        color: var(--literary);
+        background: color-mix(in srgb, var(--literary) 14%, white);
+      }
+      .empty-state {
+        padding: 2.5rem 1.25rem;
+        text-align: center;
+        color: var(--muted);
+      }
+      .empty-state em {
+        color: var(--accent);
+        font-style: normal;
+        font-weight: 700;
+      }
+      .journey {
+        display: none;
+      }
+      .journey.open {
+        display: block;
+      }
+      .map-band {
+        position: relative;
+        height: 220px;
+        background-color: #e7e0d2;
+        background-image: url("/mock/jesus-map-band.png");
+        background-size: cover;
+        background-position: center;
+        border-bottom: 1px solid var(--line);
+      }
+      .band-label {
+        position: absolute;
+        left: 0.75rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .band-label.g {
+        top: 0.55rem;
+      }
+      .band-label.j {
+        bottom: 0.55rem;
+      }
+      .path-svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .place-dot {
+        cursor: pointer;
+      }
+      .place-dot circle {
+        fill: var(--panel);
+        stroke: var(--accent);
+        stroke-width: 2;
+        transition: r 0.15s ease;
+      }
+      .place-dot.on circle,
+      .place-dot:hover circle {
+        fill: var(--accent-soft);
+        stroke-width: 2.5;
+      }
+      .place-dot text {
+        font-size: 11px;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 700;
+        fill: var(--ink);
+        text-anchor: middle;
+        pointer-events: none;
+      }
+      .timeline {
+        padding: 1rem 1rem 1.25rem;
+      }
+      .timeline h2 {
+        font-family: Literata, serif;
+        font-size: 1.2rem;
+        margin: 0 0 0.15rem;
+      }
+      .timeline .sub {
+        margin: 0 0 0.85rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .ruler {
+        position: relative;
+        height: 4.5rem;
+        margin: 0.5rem 0 1rem;
+        border-top: 2px solid var(--ink);
+      }
+      .ruler .tick {
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        text-align: center;
+        cursor: pointer;
+        background: none;
+        border: 0;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+      }
+      .ruler .tick::before {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 12px;
+        margin: 0 auto 0.25rem;
+        background: var(--ink);
+      }
+      .ruler .tick .yr {
+        display: block;
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+      .ruler .tick .lab {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 700;
+        max-width: 5.5rem;
+        line-height: 1.2;
+      }
+      .ruler .tick.on .lab {
+        color: var(--accent);
+      }
+      .ruler .tick.on::before {
+        background: var(--accent);
+        height: 16px;
+      }
+      .events {
+        display: grid;
+        gap: 0.55rem;
+      }
+      .evt {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 0.65rem 0.75rem;
+        background: var(--bg);
+        cursor: pointer;
+        transition: border-color 0.12s ease, background 0.12s ease;
+      }
+      .evt:hover,
+      .evt.on {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+      .evt-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.5rem;
+        align-items: center;
+        margin-bottom: 0.25rem;
+      }
+      .evt-top strong {
+        font-family: Literata, serif;
+      }
+      .evt p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+      .inspector {
+        margin-top: 0.85rem;
+        padding: 0.75rem;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: #fff;
+        display: none;
+      }
+      .inspector.open {
+        display: block;
+      }
+      .inspector h3 {
+        margin: 0 0 0.35rem;
+        font-family: Literata, serif;
+        font-size: 1.05rem;
+      }
+      .inspector p {
+        margin: 0;
+        line-height: 1.45;
+        font-size: 0.92rem;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.85rem;
+        margin-top: 0.85rem;
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="banner">
+        <strong>Мокап UX · не данные приложения.</strong>
+        Идея: клик по лицу «Иисус» открывает путь (места) + временную шкалу
+        событий эпохи <code>jesus_jerusalem</code>.
+      </div>
+      <h1>Путь и время</h1>
+      <p class="lede">
+        Вместо сухого списка — сцена эпохи: географическая полоса перемещений и
+        шкала 28–33 н.э. Уверенность остаётся видимой (anchored / disputed /
+        literary).
+      </p>
+
+      <div class="layout">
+        <nav class="rail" aria-label="Эпохи">
+          <button type="button" disabled>
+            <span class="n">8</span> Рим / Ирод
+          </button>
+          <button type="button" class="active">
+            <span class="n">9</span> Иисус / Иерусалим
+          </button>
+          <button type="button" disabled>
+            <span class="n">10</span> Павел
+          </button>
+        </nav>
+
+        <div class="stage">
+          <div class="people-row" id="people">
+            <button type="button" class="chip" data-person="jesus">
+              Иисус из Назарета
+              <span class="pill conf-anchored">anchored</span>
+            </button>
+            <button type="button" class="chip" data-person="baptist">
+              Иоанн Креститель
+              <span class="pill conf-anchored">anchored</span>
+            </button>
+            <button type="button" class="chip" data-person="pilate">
+              Пилат
+              <span class="pill conf-firm">firm</span>
+            </button>
+            <button type="button" class="chip" data-person="other">
+              Каиафа
+              <span class="pill conf-anchored">anchored</span>
+            </button>
+          </div>
+
+          <div class="empty-state" id="empty">
+            Выберите лицо — например <em>Иисус из Назарета</em> — чтобы открыть
+            путь и шкалу событий.
+          </div>
+
+          <div class="journey" id="journey">
+            <div class="map-band" aria-label="Схема перемещений">
+              <span class="band-label g">Галилея</span>
+              <span class="band-label j">Иудея / Иерусалим</span>
+              <svg class="path-svg" viewBox="0 0 1000 220" preserveAspectRatio="none">
+                <path
+                  d="M140 70 C 260 55, 340 90, 420 75 S 620 40, 700 95 S 820 160, 880 175"
+                  fill="none"
+                  stroke="#6b3f24"
+                  stroke-width="3"
+                  stroke-dasharray="8 6"
+                  opacity="0.85"
+                />
+                <g class="place-dot" data-place="nazareth" transform="translate(140,70)">
+                  <circle r="10" />
+                  <text y="-16">Назарет</text>
+                </g>
+                <g class="place-dot" data-place="galilee" transform="translate(420,75)">
+                  <circle r="10" />
+                  <text y="-16">Галилея</text>
+                </g>
+                <g class="place-dot" data-place="jordan" transform="translate(620,55)">
+                  <circle r="10" />
+                  <text y="-16">Иордан</text>
+                </g>
+                <g class="place-dot" data-place="jerusalem" transform="translate(880,175)">
+                  <circle r="10" />
+                  <text y="28">Иерусалим</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="timeline">
+              <h2>Шкала деятельности · ~28–33 н.э.</h2>
+              <p class="sub">
+                Годы — вилка textbook; маркеры = curated events. Клик по маркеру
+                или карточке открывает детали (мок).
+              </p>
+              <div class="ruler" id="ruler"></div>
+              <div class="events" id="events"></div>
+              <div class="inspector" id="inspector">
+                <h3 id="ins-title"></h3>
+                <p id="ins-body"></p>
+              </div>
+              <div class="legend">
+                <span><span class="pill conf-firm">firm</span> внешний якорь</span>
+                <span><span class="pill conf-anchored">anchored</span> ядро</span>
+                <span><span class="pill conf-disputed">disputed</span> спорно</span>
+                <span><span class="pill conf-literary">literary</span> предание</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const EVENTS = [
+        {
+          id: "baptism",
+          year: 28.5,
+          label: "Крещение",
+          conf: "anchored",
+          place: "jordan",
+          text: "Крещение у Иоанна — устойчивый критический узел (embarrassment). Не чудеса голоса с неба.",
+        },
+        {
+          id: "galilee",
+          year: 29.5,
+          label: "Галилея",
+          conf: "anchored",
+          place: "galilee",
+          text: "Публичная проповедь царства в Галилее; маршрут и чудеса не переводятся в firm.",
+        },
+        {
+          id: "temple",
+          year: 32.2,
+          label: "Храм",
+          conf: "disputed",
+          place: "jerusalem",
+          text: "Жест в храме — ранняя традиция; масштаб и смысл спорны.",
+        },
+        {
+          id: "cross",
+          year: 32.7,
+          label: "Казнь",
+          conf: "anchored",
+          place: "jerusalem",
+          text: "Распятие при Пилате · вилка ~30–33. Ядро казни — anchored, не весь страстной сюжет.",
+        },
+        {
+          id: "kerygma",
+          year: 33.2,
+          label: "Керигма",
+          conf: "anchored",
+          place: "jerusalem",
+          text: "Ранняя проповедь воскресения (1 Кор 15) — история керигмы, не historicity пустого гроба.",
+        },
+      ];
+
+      const yearMin = 28;
+      const yearMax = 34;
+      const pct = (y) => ((y - yearMin) / (yearMax - yearMin)) * 100;
+
+      const empty = document.getElementById("empty");
+      const journey = document.getElementById("journey");
+      const ruler = document.getElementById("ruler");
+      const eventsEl = document.getElementById("events");
+      const inspector = document.getElementById("inspector");
+      const insTitle = document.getElementById("ins-title");
+      const insBody = document.getElementById("ins-body");
+
+      function renderRuler() {
+        ruler.innerHTML = EVENTS.map(
+          (e) => `
+          <button type="button" class="tick" style="left:${pct(e.year)}%" data-id="${e.id}">
+            <span class="yr">${String(e.year).replace(".5", "½").replace(".2", "").replace(".7", "")}</span>
+            <span class="lab">${e.label}</span>
+          </button>`
+        ).join("");
+      }
+
+      function renderEvents() {
+        eventsEl.innerHTML = EVENTS.map(
+          (e) => `
+          <article class="evt" data-id="${e.id}" data-place="${e.place}">
+            <div class="evt-top">
+              <strong>${e.label}</strong>
+              <span class="pill conf-${e.conf}">${e.conf}</span>
+              <span class="pill conf-literary" style="opacity:.85">${e.place}</span>
+            </div>
+            <p>${e.text}</p>
+          </article>`
+        ).join("");
+      }
+
+      function selectEvent(id) {
+        document.querySelectorAll(".tick,.evt,.place-dot").forEach((n) => {
+          n.classList.toggle("on", n.dataset.id === id || n.dataset.place === EVENTS.find((x) => x.id === id)?.place);
+        });
+        const e = EVENTS.find((x) => x.id === id);
+        if (!e) return;
+        inspector.classList.add("open");
+        insTitle.textContent = `${e.label} · ${e.conf}`;
+        insBody.textContent = e.text + " Место на схеме подсвечено.";
+      }
+
+      function openJesus() {
+        empty.style.display = "none";
+        journey.classList.add("open");
+        renderRuler();
+        renderEvents();
+        selectEvent("baptism");
+      }
+
+      function closeJourney() {
+        journey.classList.remove("open");
+        empty.style.display = "block";
+        inspector.classList.remove("open");
+      }
+
+      document.getElementById("people").addEventListener("click", (ev) => {
+        const btn = ev.target.closest(".chip");
+        if (!btn) return;
+        document.querySelectorAll(".chip").forEach((c) => c.classList.remove("on"));
+        btn.classList.add("on");
+        if (btn.dataset.person === "jesus") openJesus();
+        else {
+          closeJourney();
+          empty.innerHTML =
+            "Для мокапа полный путь собран только у <em>Иисуса</em>. Остальные лица — обычный граф/список (как сейчас в app).";
+        }
+      });
+
+      journey.addEventListener("click", (ev) => {
+        const t = ev.target.closest("[data-id]");
+        if (t?.dataset.id) selectEvent(t.dataset.id);
+        const p = ev.target.closest(".place-dot");
+        if (p?.dataset.place) {
+          const hit = EVENTS.find((e) => e.place === p.dataset.place);
+          if (hit) selectEvent(hit.id);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1013,7 +1013,8 @@
     "label_ru": "Крещение Иисуса у Иоанна",
     "epoch_id": "jesus_jerusalem",
     "place_ids": [
-      "galilee"
+      "galilee",
+      "jordan_valley"
     ],
     "person_ids": [
       "jesus_of_nazareth",
@@ -1097,6 +1098,475 @@
         "source_id": "pauline_letters",
         "ref": "1Cor.15.3-8",
         "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A3-8&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_cana",
+    "label_ru": "Кана: вода в вино (Ин)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "cana"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 28,
+    "date_max": 29,
+    "confidence": "literary",
+    "statement_ru": "Первый «знак» Иоанна в Кане Галилейской — literary; задаёт ранний галилейский узел после крещения.",
+    "note_ru": "Ин 2 · literary itinerary",
+    "source_ids": [
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_cana",
+        "label_ru": "Ин 2:1–11",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.2.1-11",
+        "url": "https://www.biblegateway.com/passage/?search=John+2%3A1-11&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_capernaum",
+    "label_ru": "Капернаум: база исцелений (Мк/Мф/Лк)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "capernaum"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "date_min": 28,
+    "date_max": 30,
+    "confidence": "literary",
+    "statement_ru": "Синоптики делают Капернаум «своим городом»: множественные исцеления — предание; география базы маршрута.",
+    "note_ru": "Мк 1–2 · Мф 8–9 · Лк 4–5",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_cap_mk",
+        "label_ru": "Мк 1:21–34",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.21-34",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A21-34&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_cap_mt",
+        "label_ru": "Мф 8:5–17",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Matt.8.5-17",
+        "url": "https://www.biblegateway.com/passage/?search=Matthew+8%3A5-17&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_cap_lk",
+        "label_ru": "Лк 4:31–41",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Luke.4.31-41",
+        "url": "https://www.biblegateway.com/passage/?search=Luke+4%3A31-41&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_sea",
+    "label_ru": "Озеро: буря и хождение по воде (Мк/Мф/Ин)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "sea_of_galilee"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "date_min": 29,
+    "date_max": 31,
+    "confidence": "literary",
+    "statement_ru": "Чудеса на Кинерете — literary знаки; фиксируют переходы между берегами озера.",
+    "note_ru": "Мк 4; 6 · Мф 8; 14 · Ин 6",
+    "source_ids": [
+      "synoptic_gospels",
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_sea_mk",
+        "label_ru": "Мк 4:35–41",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.4.35-41",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+4%3A35-41&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_sea_mt",
+        "label_ru": "Мф 14:22–33",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Matt.14.22-33",
+        "url": "https://www.biblegateway.com/passage/?search=Matthew+14%3A22-33&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_sea_jn",
+        "label_ru": "Ин 6:16–21",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.6.16-21",
+        "url": "https://www.biblegateway.com/passage/?search=John+6%3A16-21&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_gerasene",
+    "label_ru": "Декаполис: одержимый (Мк/Мф/Лк)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "decapolis"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 29,
+    "date_max": 31,
+    "confidence": "literary",
+    "statement_ru": "Выход на восточный берег; топоним Гераса/Гадара спорный — literary маршрут «через озеро на восток».",
+    "note_ru": "Мк 5 · Мф 8 · Лк 8",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_ger_mk",
+        "label_ru": "Мк 5:1–20",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.5.1-20",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+5%3A1-20&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_ger_lk",
+        "label_ru": "Лк 8:26–39",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Luke.8.26-39",
+        "url": "https://www.biblegateway.com/passage/?search=Luke+8%3A26-39&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_feeding",
+    "label_ru": "Насыщение 5000 (Мк/Мф/Лк/Ин)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "bethsaida",
+      "sea_of_galilee"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "date_min": 29,
+    "date_max": 32,
+    "confidence": "literary",
+    "statement_ru": "Единственное чудо во всех четырёх Евангелиях — literary; локализация у озера/Вифсаиды.",
+    "note_ru": "Мк 6 · Мф 14 · Лк 9 · Ин 6",
+    "source_ids": [
+      "synoptic_gospels",
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_feed_mk",
+        "label_ru": "Мк 6:30–44",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.6.30-44",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+6%3A30-44&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_feed_jn",
+        "label_ru": "Ин 6:1–15",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.6.1-15",
+        "url": "https://www.biblegateway.com/passage/?search=John+6%3A1-15&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_tyre",
+    "label_ru": "Тир/Сидон: сирофиникиянка (Мк/Мф)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "tyre_region"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 30,
+    "date_max": 32,
+    "confidence": "literary",
+    "statement_ru": "Северный выступ маршрута Марка/Матфея — literary география «из Галилеи к Финикии».",
+    "note_ru": "Мк 7 · Мф 15",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_tyre_mk",
+        "label_ru": "Мк 7:24–30",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.7.24-30",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+7%3A24-30&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_tyre_mt",
+        "label_ru": "Мф 15:21–28",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Matt.15.21-28",
+        "url": "https://www.biblegateway.com/passage/?search=Matthew+15%3A21-28&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_bethany",
+    "label_ru": "Вифания: Лазарь (Ин)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "bethany"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 30,
+    "date_max": 33,
+    "confidence": "literary",
+    "statement_ru": "Иоанновский знак у Иерусалима — literary; южный якорь перед страстями. Не смешивать с керигмой 1 Кор 15.",
+    "note_ru": "Ин 11 · literary",
+    "source_ids": [
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_beth",
+        "label_ru": "Ин 11:1–44",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.11.1-44",
+        "url": "https://www.biblegateway.com/passage/?search=John+11%3A1-44&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_nazareth_reject",
+    "label_ru": "Назарет: отвержение (Мк/Лк)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "nazareth"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 28,
+    "date_max": 30,
+    "confidence": "literary",
+    "statement_ru": "Возврат в Назарет и конфликт — literary узел; показывает движение Капернаум↔Назарет в предании.",
+    "note_ru": "Мк 6:1–6 · Лк 4:16–30",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_naz_mk",
+        "label_ru": "Мк 6:1–6",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.6.1-6",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+6%3A1-6&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_naz_lk",
+        "label_ru": "Лк 4:16–30",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Luke.4.16-30",
+        "url": "https://www.biblegateway.com/passage/?search=Luke+4%3A16-30&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_nain",
+    "label_ru": "Наин: сын вдовы (Лк)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "nain"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 29,
+    "date_max": 31,
+    "confidence": "literary",
+    "statement_ru": "Только Лука: воскрешение в Наине — literary; южный край Галилеи на карте Лк.",
+    "note_ru": "Лк 7 · только Лука",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_nain",
+        "label_ru": "Лк 7:11–17",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Luke.7.11-17",
+        "url": "https://www.biblegateway.com/passage/?search=Luke+7%3A11-17&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_path_caesarea_philippi",
+    "label_ru": "Кесария Филиппова: поворот на север (Мк/Мф)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "caesarea_philippi"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth",
+      "peter"
+    ],
+    "date_min": 30,
+    "date_max": 32,
+    "confidence": "literary",
+    "statement_ru": "Не чудо, но ключевой северный якорь синоптического пути перед поворотом к Иерусалиму.",
+    "note_ru": "Мк 8 · Мф 16 · маршрут",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_path_caes",
+        "label_ru": "Мк 8:27–33",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.8.27-33",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+8%3A27-33&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_samaria_well",
+    "label_ru": "Самария / Сихарь: колодец (Ин)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "samaria"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 29,
+    "date_max": 32,
+    "confidence": "literary",
+    "statement_ru": "Иоанн проводит Иисуса через Самарию — literary коридор Галилея↔Иудея, отсутствующий в кратком Мк.",
+    "note_ru": "Ин 4 · только Иоанн",
+    "source_ids": [
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_sam",
+        "label_ru": "Ин 4:1–42",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.4.1-42",
+        "url": "https://www.biblegateway.com/passage/?search=John+4%3A1-42&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_bethesda",
+    "label_ru": "Иерусалим: купальня Вифезда (Ин)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "jerusalem"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 29,
+    "date_max": 32,
+    "confidence": "literary",
+    "statement_ru": "Иоанн даёт ранние/повторные визиты в Иерусалим с исцелением — literary; усложняет «один финальный заход» синоптиков.",
+    "note_ru": "Ин 5 · literary",
+    "source_ids": [
+      "johannine_gospel",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_beth_pool",
+        "label_ru": "Ин 5:1–9",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.5.1-9",
+        "url": "https://www.biblegateway.com/passage/?search=John+5%3A1-9&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "evt_miracle_jericho",
+    "label_ru": "Иерихон: Вартимей / Закхей (Мк/Лк)",
+    "epoch_id": "jesus_jerusalem",
+    "place_ids": [
+      "jericho"
+    ],
+    "person_ids": [
+      "jesus_of_nazareth"
+    ],
+    "date_min": 30,
+    "date_max": 33,
+    "confidence": "literary",
+    "statement_ru": "Подход к Иерусалиму через Иерихон в Мк/Лк — literary последний отрезок пути в Иудею.",
+    "note_ru": "Мк 10 · Лк 18–19",
+    "source_ids": [
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_mir_jer_mk",
+        "label_ru": "Мк 10:46–52",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.10.46-52",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+10%3A46-52&version=NRSVUE"
+      },
+      {
+        "id": "cite_mir_jer_lk",
+        "label_ru": "Лк 19:1–10",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Luke.19.1-10",
+        "url": "https://www.biblegateway.com/passage/?search=Luke+19%3A1-10&version=NRSVUE"
       }
     ]
   }

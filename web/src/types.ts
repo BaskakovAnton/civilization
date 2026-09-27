@@ -145,3 +145,17 @@ export const confidenceLabel: Record<Confidence, string> = {
   anchored: "anchored",
   firm: "firm",
 };
+
+/** Короткие подсказки шкалы для UI (university textbook). */
+export const confidenceHintRu: Record<Confidence, string> = {
+  literary: "Только предание/текст; нет внешней хронологии.",
+  disputed: "Есть якоря, реконструкция спорная.",
+  anchored: "Историческое ядро; детали вилкой.",
+  firm: "Внешняя хронология (анналы, эпиграфика, римская история) держит факт.",
+};
+
+export function previewText(s: string, max = 160): string {
+  const t = s.trim();
+  if (t.length <= max) return t;
+  return `${t.slice(0, max - 1)}…`;
+}
