@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import epochs from "../../data/epochs.json";
 import sources from "../../data/sources.json";
 import interactionsData from "../../data/interactions.json";
@@ -15,6 +15,7 @@ import pauline from "../../data/claims/by-epoch/pauline_networks.json";
 import war from "../../data/claims/by-epoch/war_and_divergence.json";
 import barKokhba from "../../data/claims/by-epoch/bar_kokhba.json";
 import candidatesFile from "../../data/candidates/people.json";
+import EpochGraph from "./EpochGraph";
 import type {
   CandidatePerson,
   Claim,
@@ -89,6 +90,7 @@ export default function App() {
     []
   );
   const [selectedId, setSelectedId] = useState(sorted[0]?.id ?? "");
+  const [focusPersonId, setFocusPersonId] = useState<string | null>(null);
   const selected = sorted.find((e) => e.id === selectedId) ?? sorted[0];
   const claims = allClaims.filter((c) => c.epoch_id === selected?.id);
   const people = candidatePeople.filter((p) =>
@@ -97,6 +99,17 @@ export default function App() {
   const interactions = allInteractions.filter(
     (i) => i.epoch_id === selected?.id
   );
+  const visibleInteractions = focusPersonId
+    ? interactions.filter(
+        (i) =>
+          i.from_person_id === focusPersonId ||
+          i.to_person_id === focusPersonId
+      )
+    : interactions;
+
+  useEffect(() => {
+    setFocusPersonId(null);
+  }, [selectedId]);
 
   return (
     <div className="page">
@@ -104,8 +117,8 @@ export default function App() {
         <p className="eyebrow">civilization · historical-critical</p>
         <h1>Длинная дуга</h1>
         <p className="lede">
-          Каркас из 12 эпох: утверждения, взаимодействия лиц и источники. Тон —
-          университетский консенсус. Лица Theographic — candidate-слой.
+          Каркас из 12 эпох: граф лиц, взаимодействия и утверждения с
+          источниками. Тон — университетский консенсус.
         </p>
       </header>
 
@@ -167,6 +180,16 @@ export default function App() {
             </section>
 
             <section>
+              <h3>Граф лиц</h3>
+              <EpochGraph
+                people={people}
+                interactions={interactions}
+                selectedPersonId={focusPersonId}
+                onSelectPerson={setFocusPersonId}
+              />
+            </section>
+
+            <section>
               <h3>
                 Лица (candidate){" "}
                 <span className="section-hint">не attested</span>
@@ -176,9 +199,24 @@ export default function App() {
               ) : (
                 <ul className="people">
                   {people.map((p) => (
-                    <li key={p.id}>
+                    <li
+                      key={p.id}
+                      className={
+                        focusPersonId === p.id ? "people-item focus" : "people-item"
+                      }
+                    >
                       <div className="people-top">
-                        <strong>{p.label_ru}</strong>
+                        <button
+                          type="button"
+                          className="linkish person-pick"
+                          onClick={() =>
+                            setFocusPersonId(
+                              focusPersonId === p.id ? null : p.id
+                            )
+                          }
+                        >
+                          <strong>{p.label_ru}</strong>
+                        </button>
                         <span className={`pill conf-${p.confidence}`}>
                           {confidenceLabel[p.confidence]}
                         </span>
@@ -212,14 +250,19 @@ export default function App() {
             </section>
 
             <section>
-              <h3>Взаимодействия ({interactions.length})</h3>
-              {interactions.length === 0 ? (
+              <h3>
+                Взаимодействия ({visibleInteractions.length}
+                {focusPersonId ? ` / ${interactions.length}` : ""})
+              </h3>
+              {visibleInteractions.length === 0 ? (
                 <p className="empty">
-                  Для этой эпохи пока нет рёбер — только якоря/лица.
+                  {interactions.length === 0
+                    ? "Для этой эпохи пока нет рёбер — только якоря/лица."
+                    : "Нет рёбер у выбранного лица."}
                 </p>
               ) : (
                 <div className="claims">
-                  {interactions.map((i) => {
+                  {visibleInteractions.map((i) => {
                     const from = personById[i.from_person_id];
                     const to = personById[i.to_person_id];
                     return (
