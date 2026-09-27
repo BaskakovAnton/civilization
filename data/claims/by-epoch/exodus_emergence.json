@@ -26,5 +26,23 @@
     "date_max": null,
     "source_ids": ["exodus_narrative", "modern_handbook"],
     "dissent_ru": "Есть модели «исторического ядра» малой группы; единой датировки нет."
+  },
+  {
+    "id": "claim_exodus_emergence_joshua_conquest",
+    "epoch_id": "exodus_emergence",
+    "statement_ru": "Модель быстрого завоевания Ханаана «по книге Иисуса Навина» не совпадает с основной археологической картиной позднего бронзового / раннего железного века.",
+    "confidence": "disputed",
+    "date_min": -1200,
+    "date_max": -1000,
+    "source_ids": ["iron_i_settlement", "modern_handbook", "exodus_narrative"]
+  },
+  {
+    "id": "claim_exodus_emergence_moses_tradition",
+    "epoch_id": "exodus_emergence",
+    "statement_ru": "Моисей остаётся центральной фигурой предания Исхода; внешняя биографическая аттестация отсутствует.",
+    "confidence": "literary",
+    "date_min": null,
+    "date_max": null,
+    "source_ids": ["exodus_narrative", "modern_handbook"]
   }
 ]

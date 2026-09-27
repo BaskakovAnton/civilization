@@ -10,6 +10,37 @@
     "source_ids": ["genesis_narrative", "modern_handbook"]
   },
   {
+    "id": "int_jacob_joseph_kin",
+    "epoch_id": "patriarchal_horizon",
+    "from_person_id": "jacob",
+    "to_person_id": "joseph_patriarch",
+    "relation": "kin",
+    "label_ru": "Иаков — отец Иосифа в цикле предания",
+    "confidence": "literary",
+    "source_ids": ["genesis_narrative", "modern_handbook"]
+  },
+  {
+    "id": "int_moses_aaron_kin",
+    "epoch_id": "exodus_emergence",
+    "from_person_id": "moses",
+    "to_person_id": "aaron",
+    "relation": "kin",
+    "label_ru": "Моисей и Аарон — братья в предании Исхода",
+    "confidence": "literary",
+    "source_ids": ["exodus_narrative", "modern_handbook"]
+  },
+  {
+    "id": "int_moses_joshua_succeeds",
+    "epoch_id": "exodus_emergence",
+    "from_person_id": "joshua",
+    "to_person_id": "moses",
+    "relation": "succeeds",
+    "label_ru": "Иисус Навин наследует роль Моисея в традиции заселения",
+    "confidence": "literary",
+    "source_ids": ["exodus_narrative", "modern_handbook"],
+    "note_ru": "Литературное преемство; не внешняя аттестация биографий"
+  },
+  {
     "id": "int_solomon_david_succeeds",
     "epoch_id": "early_monarchy",
     "from_person_id": "solomon",
@@ -21,6 +52,57 @@
     "note_ru": "Масштаб царства спорный; династия «дома Давида» имеет внешний якорь (Тель Дан)"
   },
   {
+    "id": "int_omri_ahab_succeeds",
+    "epoch_id": "divided_kingdoms",
+    "from_person_id": "ahab",
+    "to_person_id": "omri",
+    "relation": "succeeds",
+    "label_ru": "Ахав наследует Омри в северной династии",
+    "confidence": "anchored",
+    "source_ids": ["deuteronomistic_history", "assyrian_annals", "modern_handbook"]
+  },
+  {
+    "id": "int_elijah_ahab_opposes",
+    "epoch_id": "divided_kingdoms",
+    "from_person_id": "elijah",
+    "to_person_id": "ahab",
+    "relation": "opposes",
+    "label_ru": "Илия противостоит дому Ахава в пророческой традиции",
+    "confidence": "literary",
+    "source_ids": ["deuteronomistic_history", "modern_handbook"]
+  },
+  {
+    "id": "int_jehu_ahab_opposes",
+    "epoch_id": "divided_kingdoms",
+    "from_person_id": "jehu",
+    "to_person_id": "ahab",
+    "relation": "opposes",
+    "label_ru": "Ииуй свергает дом Омри/Ахава; есть внешний ассирийский якорь",
+    "confidence": "anchored",
+    "source_ids": ["black_obelisk", "deuteronomistic_history", "assyrian_annals"]
+  },
+  {
+    "id": "int_sennacherib_hezekiah_opposes",
+    "epoch_id": "assyria_to_exile",
+    "from_person_id": "sennacherib",
+    "to_person_id": "hezekiah",
+    "relation": "opposes",
+    "label_ru": "Синаххериб ведёт кампанию против Иудеи Езекии (~701)",
+    "confidence": "firm",
+    "source_ids": ["assyrian_annals", "deuteronomistic_history", "modern_handbook"]
+  },
+  {
+    "id": "int_nebuchadnezzar_josiah_context",
+    "epoch_id": "assyria_to_exile",
+    "from_person_id": "nebuchadnezzar",
+    "to_person_id": "josiah",
+    "relation": "succeeds",
+    "label_ru": "После Иосии Иудея входит в зону вавилонского давления (Навуходоносор)",
+    "confidence": "anchored",
+    "source_ids": ["babylonian_chronicles", "deuteronomistic_history", "modern_handbook"],
+    "note_ru": "Не личная встреча; смена имперского контекста после 609"
+  },
+  {
     "id": "int_cyrus_after_babylon",
     "epoch_id": "exile_and_persian",
     "from_person_id": "cyrus",
@@ -29,6 +111,27 @@
     "label_ru": "Персия сменяет нововавилонский порядок (контекст возвращения в Йехуд)",
     "confidence": "firm",
     "source_ids": ["cyrus_cylinder", "babylonian_chronicles", "modern_handbook"]
+  },
+  {
+    "id": "int_ezra_nehemiah_allies",
+    "epoch_id": "exile_and_persian",
+    "from_person_id": "ezra",
+    "to_person_id": "nehemiah",
+    "relation": "allies",
+    "label_ru": "Эзра и Неемия связаны в традиции восстановления Йехуда",
+    "confidence": "disputed",
+    "source_ids": ["ezra_nehemiah", "modern_handbook"],
+    "note_ru": "Хронологическое соотношение фигур спорно"
+  },
+  {
+    "id": "int_antiochus_mattathias_opposes",
+    "epoch_id": "hellenistic_hasmonean",
+    "from_person_id": "mattathias",
+    "to_person_id": "antiochus_iv",
+    "relation": "opposes",
+    "label_ru": "Маттафия и сыновья поднимают восстание против политики Антиоха IV",
+    "confidence": "firm",
+    "source_ids": ["1_macc", "2_macc", "hellenistic_chronology"]
   },
   {
     "id": "int_mattathias_judas_kin",
@@ -49,7 +152,7 @@
     "label_ru": "После Ирода Иудеей управляют римские префекты (Пилат — яркий пример)",
     "confidence": "firm",
     "source_ids": ["josephus_antiquities", "roman_fasti", "modern_handbook"],
-    "note_ru": "Не прямое личное преемство; смена модели власти (клиент-царь → префектура)"
+    "note_ru": "Не прямое личное преемство; смена модели власти"
   },
   {
     "id": "int_pilate_jesus_judges",
@@ -67,6 +170,16 @@
     ]
   },
   {
+    "id": "int_jesus_peter_meets",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "jesus_of_nazareth",
+    "to_person_id": "peter",
+    "relation": "meets",
+    "label_ru": "Пётр — один из ближайших учеников Иисуса (ядро традиции)",
+    "confidence": "anchored",
+    "source_ids": ["synoptic_gospels", "pauline_letters", "modern_handbook"]
+  },
+  {
     "id": "int_paul_jesus_mentions",
     "epoch_id": "pauline_networks",
     "from_person_id": "paul_of_tarsus",
@@ -77,13 +190,44 @@
     "source_ids": ["pauline_letters", "modern_handbook"]
   },
   {
+    "id": "int_paul_peter_opposes",
+    "epoch_id": "pauline_networks",
+    "from_person_id": "paul_of_tarsus",
+    "to_person_id": "peter",
+    "relation": "opposes",
+    "label_ru": "Павел противостоит Кифе в Антиохии (Гал 2)",
+    "confidence": "anchored",
+    "source_ids": ["pauline_letters", "modern_handbook"],
+    "note_ru": "Конфликт по свидетельству Павла; Деяния сглаживают"
+  },
+  {
     "id": "int_josephus_documents_herod",
     "epoch_id": "war_and_divergence",
     "from_person_id": "josephus_flavius",
     "to_person_id": "herod_the_great",
     "relation": "mentions",
-    "label_ru": "Иосиф — главный нарративный источник об Ироде и о войне 66–70",
+    "label_ru": "Иосиф — главный нарративный источник об Ироде",
     "confidence": "firm",
     "source_ids": ["josephus_war", "josephus_antiquities"]
+  },
+  {
+    "id": "int_josephus_vespasian_serves",
+    "epoch_id": "war_and_divergence",
+    "from_person_id": "josephus_flavius",
+    "to_person_id": "vespasian",
+    "relation": "serves",
+    "label_ru": "Иосиф переходит на сторону Веспасиана и пишет историю войны",
+    "confidence": "firm",
+    "source_ids": ["josephus_war", "modern_handbook"]
+  },
+  {
+    "id": "int_bar_kokhba_hadrian_opposes",
+    "epoch_id": "bar_kokhba",
+    "from_person_id": "simon_bar_kokhba",
+    "to_person_id": "hadrian",
+    "relation": "opposes",
+    "label_ru": "Бар-Кохба возглавляет восстание против Рима Адриана",
+    "confidence": "firm",
+    "source_ids": ["bar_kokhba_letters", "dio_cassius", "modern_handbook"]
   }
 ]

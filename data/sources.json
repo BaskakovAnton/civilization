@@ -45,6 +45,16 @@
     "tradition_note_ru": "Царские анналы Ассирии; синхронизмы с Израилем/Иудеей"
   },
   {
+    "id": "black_obelisk",
+    "label_ru": "Чёрный обелиск Салманасара III (Ииуй)",
+    "type": "inscription"
+  },
+  {
+    "id": "mesha_stele",
+    "label_ru": "Стела Меши (Моав)",
+    "type": "inscription"
+  },
+  {
     "id": "babylonian_chronicles",
     "label_ru": "Вавилонские хроники",
     "type": "classical_historiography"

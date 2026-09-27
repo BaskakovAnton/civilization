@@ -25,5 +25,14 @@
     "date_min": null,
     "date_max": null,
     "source_ids": ["acts", "pauline_letters", "modern_handbook"]
+  },
+  {
+    "id": "claim_pauline_networks_antioch_incident",
+    "epoch_id": "pauline_networks",
+    "statement_ru": "Конфликт Павла и Кифы в Антиохии (Гал 2) — важный якорь напряжения между миссиями; детали Деяний не подменяют письмо.",
+    "confidence": "anchored",
+    "date_min": 48,
+    "date_max": 55,
+    "source_ids": ["pauline_letters", "modern_handbook"]
   }
 ]

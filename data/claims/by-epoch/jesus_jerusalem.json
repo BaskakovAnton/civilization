@@ -25,5 +25,14 @@
     "date_min": 30,
     "date_max": 40,
     "source_ids": ["pauline_letters", "acts", "modern_handbook"]
+  },
+  {
+    "id": "claim_jesus_jerusalem_peter",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Пётр (Кифа) — одна из ключевых фигур ранней общины; у Павла он фигурирует как авторитет Иерусалима/Антиохии.",
+    "confidence": "anchored",
+    "date_min": 30,
+    "date_max": 50,
+    "source_ids": ["pauline_letters", "synoptic_gospels", "modern_handbook"]
   }
 ]

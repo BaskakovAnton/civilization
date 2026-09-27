@@ -16,5 +16,32 @@
     "date_min": -880,
     "date_max": -840,
     "source_ids": ["assyrian_annals", "modern_handbook"]
+  },
+  {
+    "id": "claim_divided_kingdoms_jehu_obelisk",
+    "epoch_id": "divided_kingdoms",
+    "statement_ru": "Ииуй (или посол «дома Омри») изображён на Чёрном обелиске Салманасара III — редкий внешний портрет израильского правителя.",
+    "confidence": "firm",
+    "date_min": -841,
+    "date_max": -841,
+    "source_ids": ["black_obelisk", "assyrian_annals", "modern_handbook"]
+  },
+  {
+    "id": "claim_divided_kingdoms_mesha",
+    "epoch_id": "divided_kingdoms",
+    "statement_ru": "Стела Меши отражает конфликт Моава с Израилем (Омриды) с моавитской стороны.",
+    "confidence": "firm",
+    "date_min": -850,
+    "date_max": -830,
+    "source_ids": ["mesha_stele", "modern_handbook"]
+  },
+  {
+    "id": "claim_divided_kingdoms_elijah_ahab",
+    "epoch_id": "divided_kingdoms",
+    "statement_ru": "Конфликт Илии и дома Ахава — мощная пророческая традиция; отдельные чудесные эпизоды не переводятся в firm-историю.",
+    "confidence": "literary",
+    "date_min": -870,
+    "date_max": -850,
+    "source_ids": ["deuteronomistic_history", "modern_handbook"]
   }
 ]

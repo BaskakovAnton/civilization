@@ -40,6 +40,22 @@
       }
     },
     {
+      "id": "joseph_patriarch",
+      "label_ru": "Иосиф (сын Иакова)",
+      "theographic_slug": "joseph_1710",
+      "epoch_ids": [
+        "patriarchal_horizon"
+      ],
+      "confidence": "literary",
+      "note_ru": "Фигура предания цикла Иакова–Иосифа",
+      "upstream": {
+        "found": true,
+        "name": "Joseph",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/joseph.html"
+      }
+    },
+    {
       "id": "moses",
       "label_ru": "Моисей",
       "theographic_slug": "moses_2108",
@@ -53,6 +69,38 @@
         "name": "Moses",
         "alsoCalled": [],
         "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/moses.html"
+      }
+    },
+    {
+      "id": "aaron",
+      "label_ru": "Аарон",
+      "theographic_slug": "aaron_1",
+      "epoch_ids": [
+        "exodus_emergence"
+      ],
+      "confidence": "literary",
+      "note_ru": "Брат Моисея в предании; жреческая линия",
+      "upstream": {
+        "found": true,
+        "name": "Aaron",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/aaron.html"
+      }
+    },
+    {
+      "id": "joshua",
+      "label_ru": "Иисус Навин",
+      "theographic_slug": "joshua_893",
+      "epoch_ids": [
+        "exodus_emergence"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Традиция завоевания/заселения; археология спорная",
+      "upstream": {
+        "found": true,
+        "name": "Joshua",
+        "alsoCalled": [],
+        "dictionaryLink": null
       }
     },
     {
@@ -104,6 +152,54 @@
       }
     },
     {
+      "id": "ahab",
+      "label_ru": "Ахав",
+      "theographic_slug": "ahab_113",
+      "epoch_ids": [
+        "divided_kingdoms"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Омрид; синхронизмы с Ассирией/арамеями",
+      "upstream": {
+        "found": true,
+        "name": "Ahab",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "jehu",
+      "label_ru": "Ииуй",
+      "theographic_slug": "jehu_816",
+      "epoch_ids": [
+        "divided_kingdoms"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Переворот против Омридов; Чёрный обелиск Салманасара",
+      "upstream": {
+        "found": true,
+        "name": "Jehu",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "elijah",
+      "label_ru": "Илия",
+      "theographic_slug": "elijah_1131",
+      "epoch_ids": [
+        "divided_kingdoms"
+      ],
+      "confidence": "literary",
+      "note_ru": "Пророческая традиция при Ахаве; историчность эпизодов осторожна",
+      "upstream": {
+        "found": true,
+        "name": "Elijah",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
       "id": "hezekiah",
       "label_ru": "Езекия",
       "theographic_slug": "hezekiah_1512",
@@ -115,6 +211,38 @@
       "upstream": {
         "found": true,
         "name": "Hezekiah",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "sennacherib",
+      "label_ru": "Синаххериб",
+      "theographic_slug": "sennacherib_2489",
+      "epoch_ids": [
+        "assyria_to_exile"
+      ],
+      "confidence": "firm",
+      "note_ru": "Ассирийский царь; поход ~701",
+      "upstream": {
+        "found": true,
+        "name": "Sennacherib",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "josiah",
+      "label_ru": "Иосия",
+      "theographic_slug": "josiah_1730",
+      "epoch_ids": [
+        "assyria_to_exile"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Реформа / «книга закона»; детали дискуссионны",
+      "upstream": {
+        "found": true,
+        "name": "Josiah",
         "alsoCalled": [],
         "dictionaryLink": null
       }
@@ -153,6 +281,51 @@
       }
     },
     {
+      "id": "ezra",
+      "label_ru": "Эзра",
+      "theographic_slug": "ezra_1244",
+      "epoch_ids": [
+        "exile_and_persian"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Книга Эзры — сложный источник; хронология осторожна",
+      "upstream": {
+        "found": true,
+        "name": "Ezra",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "nehemiah",
+      "label_ru": "Неемия",
+      "theographic_slug": "nehemiah_2171",
+      "epoch_ids": [
+        "exile_and_persian"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Наместник/мемуары; связь с Эзрой проблематична",
+      "upstream": {
+        "found": true,
+        "name": "Nehemiah",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "antiochus_iv",
+      "label_ru": "Антиох IV Эпифан",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "hellenistic_hasmonean"
+      ],
+      "confidence": "firm",
+      "note_ru": "Селевкид; кризис ~167–164",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
       "id": "mattathias",
       "label_ru": "Маттафия",
       "theographic_slug": "mattathias_1963",
@@ -160,7 +333,7 @@
         "hellenistic_hasmonean"
       ],
       "confidence": "anchored",
-      "note_ru": "Хасмонейский якорь в Theographic; Иуда Маккавей в upstream отсутствует",
+      "note_ru": "Хасмонейский якорь",
       "upstream": {
         "found": true,
         "name": "Mattathias",
@@ -176,7 +349,7 @@
         "hellenistic_hasmonean"
       ],
       "confidence": "anchored",
-      "note_ru": "По 1_macc (historical_document); в Theographic people нет отдельной карточки",
+      "note_ru": "По 1_macc; в Theographic отдельной карточки нет",
       "upstream": {
         "found": false
       }
@@ -222,12 +395,29 @@
         "jesus_jerusalem"
       ],
       "confidence": "anchored",
-      "note_ru": "Историческое ядро; не евангельский полный нарратив",
+      "note_ru": "Историческое ядро; не полный евангельский нарратив",
       "upstream": {
         "found": true,
         "name": "Jesus",
         "alsoCalled": [],
         "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/christ.html"
+      }
+    },
+    {
+      "id": "peter",
+      "label_ru": "Пётр (Кифа)",
+      "theographic_slug": "peter_2745",
+      "epoch_ids": [
+        "jesus_jerusalem",
+        "pauline_networks"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Ученик Иисуса; Кифа у Павла",
+      "upstream": {
+        "found": true,
+        "name": "Simon",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/simon.html"
       }
     },
     {
@@ -249,13 +439,26 @@
     {
       "id": "josephus_flavius",
       "label_ru": "Иосиф Флавий",
-      "theographic_slug": "josephus",
+      "theographic_slug": "",
       "epoch_ids": [
         "war_and_divergence",
         "roman_herodian"
       ],
       "confidence": "firm",
-      "note_ru": "Свидетель и историк; не «отец Церкви»",
+      "note_ru": "Свидетель и историк; не отец Церкви",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
+      "id": "vespasian",
+      "label_ru": "Веспасиан",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "war_and_divergence"
+      ],
+      "confidence": "firm",
+      "note_ru": "Римский полководец/император; война 66–70",
       "upstream": {
         "found": false
       }
@@ -263,12 +466,25 @@
     {
       "id": "simon_bar_kokhba",
       "label_ru": "Шимон бар Косба (Бар-Кохба)",
-      "theographic_slug": "bar-kokhba",
+      "theographic_slug": "",
       "epoch_ids": [
         "bar_kokhba"
       ],
       "confidence": "firm",
-      "note_ru": "Эпиграфика/монеты/Дион; slug может отсутствовать в Theographic",
+      "note_ru": "Эпиграфика/монеты/Дион",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
+      "id": "hadrian",
+      "label_ru": "Адриан",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "bar_kokhba"
+      ],
+      "confidence": "firm",
+      "note_ru": "Римский император; подавление 132–135",
       "upstream": {
         "found": false
       }

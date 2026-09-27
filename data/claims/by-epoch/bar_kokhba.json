@@ -16,5 +16,23 @@
     "date_min": 135,
     "date_max": 135,
     "source_ids": ["dio_cassius", "modern_handbook"]
+  },
+  {
+    "id": "claim_bar_kokhba_letters_admin",
+    "epoch_id": "bar_kokhba",
+    "statement_ru": "Письма из Иудейской пустыни показывают административную сеть восстания (снабжение, назначения), а не только легенду о мессии.",
+    "confidence": "firm",
+    "date_min": 132,
+    "date_max": 135,
+    "source_ids": ["bar_kokhba_letters", "modern_handbook"]
+  },
+  {
+    "id": "claim_bar_kokhba_hadrian_policy",
+    "epoch_id": "bar_kokhba",
+    "statement_ru": "Политика Адриана (включая переименование и ограничения) — римский фон кризиса; точная последовательность провокаций дискуссионна.",
+    "confidence": "anchored",
+    "date_min": 130,
+    "date_max": 135,
+    "source_ids": ["dio_cassius", "modern_handbook"]
   }
 ]

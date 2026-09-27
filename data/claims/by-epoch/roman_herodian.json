@@ -25,5 +25,14 @@
     "date_min": 26,
     "date_max": 36,
     "source_ids": ["josephus_antiquities", "roman_fasti", "synoptic_gospels"]
+  },
+  {
+    "id": "claim_roman_herodian_temple_rebuild",
+    "epoch_id": "roman_herodian",
+    "statement_ru": "Ирод предпринимает масштабную перестройку Второго храма — археологически и текстуально хорошо видимый проект.",
+    "confidence": "firm",
+    "date_min": -20,
+    "date_max": 10,
+    "source_ids": ["josephus_antiquities", "modern_handbook"]
   }
 ]

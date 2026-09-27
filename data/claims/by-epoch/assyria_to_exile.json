@@ -25,5 +25,23 @@
     "date_min": -597,
     "date_max": -586,
     "source_ids": ["babylonian_chronicles", "deuteronomistic_history", "modern_handbook"]
+  },
+  {
+    "id": "claim_assyria_to_exile_josiah_reform",
+    "epoch_id": "assyria_to_exile",
+    "statement_ru": "Реформа Иосии и находка «книги закона» — ключевой узел второзаконнической традиции; детали и масштаб реконструируют осторожно.",
+    "confidence": "anchored",
+    "date_min": -640,
+    "date_max": -609,
+    "source_ids": ["deuteronomistic_history", "modern_handbook"]
+  },
+  {
+    "id": "claim_assyria_to_exile_597",
+    "epoch_id": "assyria_to_exile",
+    "statement_ru": "Первая крупная депортация из Иерусалима при Навуходоносоре — около 597 до н.э.",
+    "confidence": "firm",
+    "date_min": -597,
+    "date_max": -597,
+    "source_ids": ["babylonian_chronicles", "modern_handbook"]
   }
 ]

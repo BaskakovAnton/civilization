@@ -16,5 +16,14 @@
     "date_min": 70,
     "date_max": 100,
     "source_ids": ["josephus_war", "modern_handbook"]
+  },
+  {
+    "id": "claim_war_and_divergence_vespasian_titus",
+    "epoch_id": "war_and_divergence",
+    "statement_ru": "Веспасиан и Тит возглавляют римскую сторону войны; Иосиф — главный нарративный свидетель.",
+    "confidence": "firm",
+    "date_min": 67,
+    "date_max": 70,
+    "source_ids": ["josephus_war", "roman_fasti", "modern_handbook"]
   }
 ]

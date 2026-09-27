@@ -25,5 +25,14 @@
     "date_min": -140,
     "date_max": -63,
     "source_ids": ["1_macc", "josephus_antiquities", "modern_handbook"]
+  },
+  {
+    "id": "claim_hellenistic_hasmonean_temple_rededication",
+    "epoch_id": "hellenistic_hasmonean",
+    "statement_ru": "Очищение/переосвящение храма (~164 до н.э.) — центральный эпизод хасмонейской памяти (Ханука в поздней традиции).",
+    "confidence": "anchored",
+    "date_min": -164,
+    "date_max": -164,
+    "source_ids": ["1_macc", "2_macc", "modern_handbook"]
   }
 ]
