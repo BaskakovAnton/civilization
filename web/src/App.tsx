@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import epochs from "../../data/epochs.json";
 import sources from "../../data/sources.json";
+import interactionsData from "../../data/interactions.json";
 import patriarchal from "../../data/claims/by-epoch/patriarchal_horizon.json";
 import exodus from "../../data/claims/by-epoch/exodus_emergence.json";
 import earlyMonarchy from "../../data/claims/by-epoch/early_monarchy.json";
@@ -19,12 +20,14 @@ import type {
   Claim,
   Confidence,
   Epoch,
+  Interaction,
   Source,
 } from "./types";
 import {
   confidenceLabel,
   formatSpan,
   formatYear,
+  relationLabelRu,
 } from "./types";
 
 const allClaims: Claim[] = [
@@ -46,6 +49,8 @@ const epochList = epochs as Epoch[];
 const sourceList = sources as Source[];
 const sourceById = Object.fromEntries(sourceList.map((s) => [s.id, s]));
 const candidatePeople = (candidatesFile as { people: CandidatePerson[] }).people;
+const personById = Object.fromEntries(candidatePeople.map((p) => [p.id, p]));
+const allInteractions = interactionsData as Interaction[];
 
 const josephusRu: Record<Epoch["josephus_role"], string> = {
   none: "нет",
@@ -53,6 +58,30 @@ const josephusRu: Record<Epoch["josephus_role"], string> = {
   point: "точечно",
   primary: "основной нарратив",
 };
+
+function SourceList({ ids }: { ids: string[] }) {
+  return (
+    <ul className="sources">
+      {ids.map((sid) => {
+        const s = sourceById[sid];
+        return (
+          <li key={sid}>
+            <strong>{s?.label_ru ?? sid}</strong>
+            <span className="src-type">{s?.type ?? "?"}</span>
+            {s?.tradition_note_ru && (
+              <span className="src-note">{s.tradition_note_ru}</span>
+            )}
+            {s?.urls?.[0] && (
+              <a href={s.urls[0]} target="_blank" rel="noreferrer">
+                ссылка
+              </a>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
 
 export default function App() {
   const sorted = useMemo(
@@ -65,6 +94,9 @@ export default function App() {
   const people = candidatePeople.filter((p) =>
     selected ? p.epoch_ids.includes(selected.id) : false
   );
+  const interactions = allInteractions.filter(
+    (i) => i.epoch_id === selected?.id
+  );
 
   return (
     <div className="page">
@@ -72,9 +104,8 @@ export default function App() {
         <p className="eyebrow">civilization · historical-critical</p>
         <h1>Длинная дуга</h1>
         <p className="lede">
-          Каркас из 12 эпох: утверждения с уровнем уверенности и ссылками на
-          источники. Тон — университетский консенсус. Лица из Theographic —
-          отдельный candidate-слой.
+          Каркас из 12 эпох: утверждения, взаимодействия лиц и источники. Тон —
+          университетский консенсус. Лица Theographic — candidate-слой.
         </p>
       </header>
 
@@ -181,6 +212,42 @@ export default function App() {
             </section>
 
             <section>
+              <h3>Взаимодействия ({interactions.length})</h3>
+              {interactions.length === 0 ? (
+                <p className="empty">
+                  Для этой эпохи пока нет рёбер — только якоря/лица.
+                </p>
+              ) : (
+                <div className="claims">
+                  {interactions.map((i) => {
+                    const from = personById[i.from_person_id];
+                    const to = personById[i.to_person_id];
+                    return (
+                      <article key={i.id} className="claim interaction">
+                        <div className="claim-top">
+                          <span className="pill relation">
+                            {relationLabelRu[i.relation]}
+                          </span>
+                          <span className={`pill conf-${i.confidence}`}>
+                            {confidenceLabel[i.confidence]}
+                          </span>
+                        </div>
+                        <p className="edge-line">
+                          <strong>{from?.label_ru ?? i.from_person_id}</strong>
+                          <span className="edge-arrow">→</span>
+                          <strong>{to?.label_ru ?? i.to_person_id}</strong>
+                        </p>
+                        <p>{i.label_ru}</p>
+                        {i.note_ru && <p className="dissent">{i.note_ru}</p>}
+                        <SourceList ids={i.source_ids} />
+                      </article>
+                    );
+                  })}
+                </div>
+              )}
+            </section>
+
+            <section>
               <h3>Утверждения ({claims.length})</h3>
               <div className="claims">
                 {claims.map((c) => (
@@ -199,31 +266,7 @@ export default function App() {
                     {c.dissent_ru && (
                       <p className="dissent">Спор: {c.dissent_ru}</p>
                     )}
-                    <ul className="sources">
-                      {c.source_ids.map((sid) => {
-                        const s = sourceById[sid];
-                        return (
-                          <li key={sid}>
-                            <strong>{s?.label_ru ?? sid}</strong>
-                            <span className="src-type">{s?.type ?? "?"}</span>
-                            {s?.tradition_note_ru && (
-                              <span className="src-note">
-                                {s.tradition_note_ru}
-                              </span>
-                            )}
-                            {s?.urls?.[0] && (
-                              <a
-                                href={s.urls[0]}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                ссылка
-                              </a>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
+                    <SourceList ids={c.source_ids} />
                   </article>
                 ))}
               </div>

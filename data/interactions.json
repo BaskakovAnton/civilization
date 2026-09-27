@@ -1,0 +1,89 @@
+[
+  {
+    "id": "int_abraham_jacob_kin",
+    "epoch_id": "patriarchal_horizon",
+    "from_person_id": "abraham",
+    "to_person_id": "jacob",
+    "relation": "kin",
+    "label_ru": "Авраам — предок Иакова в генеалогии предания",
+    "confidence": "literary",
+    "source_ids": ["genesis_narrative", "modern_handbook"]
+  },
+  {
+    "id": "int_solomon_david_succeeds",
+    "epoch_id": "early_monarchy",
+    "from_person_id": "solomon",
+    "to_person_id": "david",
+    "relation": "succeeds",
+    "label_ru": "Соломон наследует Давиду в династической традиции",
+    "confidence": "disputed",
+    "source_ids": ["deuteronomistic_history", "tel_dan_inscription", "modern_handbook"],
+    "note_ru": "Масштаб царства спорный; династия «дома Давида» имеет внешний якорь (Тель Дан)"
+  },
+  {
+    "id": "int_cyrus_after_babylon",
+    "epoch_id": "exile_and_persian",
+    "from_person_id": "cyrus",
+    "to_person_id": "nebuchadnezzar",
+    "relation": "succeeds",
+    "label_ru": "Персия сменяет нововавилонский порядок (контекст возвращения в Йехуд)",
+    "confidence": "firm",
+    "source_ids": ["cyrus_cylinder", "babylonian_chronicles", "modern_handbook"]
+  },
+  {
+    "id": "int_mattathias_judas_kin",
+    "epoch_id": "hellenistic_hasmonean",
+    "from_person_id": "mattathias",
+    "to_person_id": "judas_maccabeus",
+    "relation": "kin",
+    "label_ru": "Маттафия — отец Иуды Маккавея",
+    "confidence": "anchored",
+    "source_ids": ["1_macc", "modern_handbook"]
+  },
+  {
+    "id": "int_herod_to_prefects",
+    "epoch_id": "roman_herodian",
+    "from_person_id": "herod_the_great",
+    "to_person_id": "pontius_pilate",
+    "relation": "succeeds",
+    "label_ru": "После Ирода Иудеей управляют римские префекты (Пилат — яркий пример)",
+    "confidence": "firm",
+    "source_ids": ["josephus_antiquities", "roman_fasti", "modern_handbook"],
+    "note_ru": "Не прямое личное преемство; смена модели власти (клиент-царь → префектура)"
+  },
+  {
+    "id": "int_pilate_jesus_judges",
+    "epoch_id": "jesus_jerusalem",
+    "from_person_id": "pontius_pilate",
+    "to_person_id": "jesus_of_nazareth",
+    "relation": "judges",
+    "label_ru": "Пилат утверждает казнь Иисуса",
+    "confidence": "anchored",
+    "source_ids": [
+      "synoptic_gospels",
+      "tacitus_annals",
+      "josephus_antiquities",
+      "modern_handbook"
+    ]
+  },
+  {
+    "id": "int_paul_jesus_mentions",
+    "epoch_id": "pauline_networks",
+    "from_person_id": "paul_of_tarsus",
+    "to_person_id": "jesus_of_nazareth",
+    "relation": "mentions",
+    "label_ru": "Павел ссылается на смерть и воскресение Иисуса в ранних письмах",
+    "confidence": "anchored",
+    "source_ids": ["pauline_letters", "modern_handbook"]
+  },
+  {
+    "id": "int_josephus_documents_herod",
+    "epoch_id": "war_and_divergence",
+    "from_person_id": "josephus_flavius",
+    "to_person_id": "herod_the_great",
+    "relation": "mentions",
+    "label_ru": "Иосиф — главный нарративный источник об Ироде и о войне 66–70",
+    "confidence": "firm",
+    "source_ids": ["josephus_war", "josephus_antiquities"]
+  }
+]

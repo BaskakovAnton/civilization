@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/interaction.schema.json",
+  "title": "Interaction",
+  "type": "object",
+  "required": [
+    "id",
+    "epoch_id",
+    "from_person_id",
+    "to_person_id",
+    "relation",
+    "label_ru",
+    "confidence",
+    "source_ids"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^int_[a-z0-9_]+$" },
+    "epoch_id": { "type": "string" },
+    "from_person_id": { "type": "string" },
+    "to_person_id": { "type": "string" },
+    "relation": {
+      "type": "string",
+      "enum": [
+        "kin",
+        "appoints",
+        "serves",
+        "opposes",
+        "meets",
+        "writes_to",
+        "judges",
+        "succeeds",
+        "allies",
+        "mentions"
+      ]
+    },
+    "label_ru": { "type": "string", "minLength": 1 },
+    "confidence": {
+      "type": "string",
+      "enum": ["literary", "disputed", "anchored", "firm"]
+    },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "note_ru": { "type": "string" }
+  }
+}

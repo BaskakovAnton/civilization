@@ -253,6 +253,25 @@ body {
   color: var(--accent);
 }
 
+.edge-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.edge-arrow {
+  color: var(--muted);
+}
+
+.pill.relation {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
 .claims {
   display: grid;
   gap: 0.85rem;

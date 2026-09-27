@@ -47,6 +47,43 @@ export type CandidatePerson = {
   };
 };
 
+export type InteractionRelation =
+  | "kin"
+  | "appoints"
+  | "serves"
+  | "opposes"
+  | "meets"
+  | "writes_to"
+  | "judges"
+  | "succeeds"
+  | "allies"
+  | "mentions";
+
+export type Interaction = {
+  id: string;
+  epoch_id: string;
+  from_person_id: string;
+  to_person_id: string;
+  relation: InteractionRelation;
+  label_ru: string;
+  confidence: Confidence;
+  source_ids: string[];
+  note_ru?: string;
+};
+
+export const relationLabelRu: Record<InteractionRelation, string> = {
+  kin: "родство",
+  appoints: "назначает",
+  serves: "служит",
+  opposes: "противостоит",
+  meets: "встречает",
+  writes_to: "пишет",
+  judges: "судит",
+  succeeds: "наследует / сменяет",
+  allies: "союз",
+  mentions: "упоминает / свидетельствует",
+};
+
 export function formatYear(y: number | null | undefined): string {
   if (y === null || y === undefined) return "—";
   if (y < 0) return `${Math.abs(y)} до н.э.`;

@@ -28,6 +28,7 @@ npm run extract:theographic   # P4: обогатить candidates из Theograph
 | `data/sources.json` | Реестр источников (`1_macc` / `2_macc` = `historical_document`) |
 | `data/claims/by-epoch/` | Ручные якоря-утверждения |
 | `data/candidates/people.json` | Curated лица (candidate, не attested) |
+| `data/interactions.json` | Взаимодействия лиц (рёбра + источники) |
 | `data/external/` | Upstream docs; raw/ в gitignore |
 | `scripts/extract-theographic-people.mjs` | P4 extract |
 | `web/` | UI (React + Vite + TS) |
