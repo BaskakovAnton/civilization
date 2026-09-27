@@ -1,0 +1,29 @@
+[
+  {
+    "id": "claim_exile_and_persian_cyrus_539",
+    "epoch_id": "exile_and_persian",
+    "statement_ru": "Персидское завоевание Вавилона (539 до н.э.) открывает возможность возвращений в Йехуд; библейский указ Кира читают в этом контексте.",
+    "confidence": "firm",
+    "date_min": -539,
+    "date_max": -539,
+    "source_ids": ["cyrus_cylinder", "ezra_nehemiah", "modern_handbook"]
+  },
+  {
+    "id": "claim_exile_and_persian_second_temple",
+    "epoch_id": "exile_and_persian",
+    "statement_ru": "Второй храм обычно датируют освящением около 516 до н.э.",
+    "confidence": "anchored",
+    "date_min": -520,
+    "date_max": -515,
+    "source_ids": ["ezra_nehemiah", "modern_handbook"]
+  },
+  {
+    "id": "claim_exile_and_persian_ezra_nehemiah",
+    "epoch_id": "exile_and_persian",
+    "statement_ru": "Хронология и историчность отдельных эпизодов Эзры–Неемии остаются предметом осторожной критики источников.",
+    "confidence": "disputed",
+    "date_min": -450,
+    "date_max": -400,
+    "source_ids": ["ezra_nehemiah", "modern_handbook"]
+  }
+]

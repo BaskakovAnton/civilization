@@ -1,0 +1,29 @@
+[
+  {
+    "id": "claim_pauline_networks_letters",
+    "epoch_id": "pauline_networks",
+    "statement_ru": "Неоспоримые письма Павла — раннейшие христианские тексты и главный контроль для хронологии миссии.",
+    "confidence": "anchored",
+    "date_min": 50,
+    "date_max": 60,
+    "source_ids": ["pauline_letters", "modern_handbook"]
+  },
+  {
+    "id": "claim_pauline_networks_geography",
+    "epoch_id": "pauline_networks",
+    "statement_ru": "Сеть общин Павла охватывает Сирию, Малую Азию, Грецию и Рим (Антиохия–Коринф–Рим как ориентир).",
+    "confidence": "anchored",
+    "date_min": 40,
+    "date_max": 65,
+    "source_ids": ["pauline_letters", "acts"]
+  },
+  {
+    "id": "claim_pauline_networks_acts_secondary",
+    "epoch_id": "pauline_networks",
+    "statement_ru": "Деяния — вторичный нарратив относительно писем: полезны, но не главный хронологический каркас.",
+    "confidence": "anchored",
+    "date_min": null,
+    "date_max": null,
+    "source_ids": ["acts", "pauline_letters", "modern_handbook"]
+  }
+]

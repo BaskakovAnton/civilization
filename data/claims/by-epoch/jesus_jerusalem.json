@@ -1,0 +1,29 @@
+[
+  {
+    "id": "claim_jesus_jerusalem_historical_core",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "В академическом консенсусе признаётся историческое ядро: Иисус из Назарета, иудейский учитель, казнённый при Пилате.",
+    "confidence": "anchored",
+    "date_min": 30,
+    "date_max": 33,
+    "source_ids": ["pauline_letters", "synoptic_gospels", "tacitus_annals", "modern_handbook"]
+  },
+  {
+    "id": "claim_jesus_jerusalem_crucifixion",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "Распятие обычно помещают около 30–33 н.э.; точный год остаётся вилкой.",
+    "confidence": "anchored",
+    "date_min": 30,
+    "date_max": 33,
+    "source_ids": ["synoptic_gospels", "roman_fasti", "modern_handbook"]
+  },
+  {
+    "id": "claim_jesus_jerusalem_community",
+    "epoch_id": "jesus_jerusalem",
+    "statement_ru": "После казни в Иерусалиме формируется ранняя община последователей; детали Деяний фильтруются критически.",
+    "confidence": "anchored",
+    "date_min": 30,
+    "date_max": 40,
+    "source_ids": ["pauline_letters", "acts", "modern_handbook"]
+  }
+]

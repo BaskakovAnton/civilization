@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/source.schema.json",
+  "title": "Source",
+  "type": "object",
+  "required": ["id", "label_ru", "type"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$" },
+    "label_ru": { "type": "string", "minLength": 1 },
+    "type": {
+      "type": "string",
+      "enum": [
+        "canon_text",
+        "historical_document",
+        "inscription",
+        "archaeology",
+        "classical_historiography",
+        "modern_handbook"
+      ]
+    },
+    "tradition_note_ru": { "type": "string" },
+    "urls": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    }
+  }
+}

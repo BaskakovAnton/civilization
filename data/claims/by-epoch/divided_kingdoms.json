@@ -1,0 +1,20 @@
+[
+  {
+    "id": "claim_divided_kingdoms_two_states",
+    "epoch_id": "divided_kingdoms",
+    "statement_ru": "После X в. до н.э. существуют два политических центра: Израиль (север) и Иудея (юг).",
+    "confidence": "anchored",
+    "date_min": -930,
+    "date_max": -722,
+    "source_ids": ["deuteronomistic_history", "assyrian_annals", "modern_handbook"]
+  },
+  {
+    "id": "claim_divided_kingdoms_omrides",
+    "epoch_id": "divided_kingdoms",
+    "statement_ru": "Династия Омридов на севере хорошо стыкуется с ассирийскими упоминаниями и археологией Самарии.",
+    "confidence": "anchored",
+    "date_min": -880,
+    "date_max": -840,
+    "source_ids": ["assyrian_annals", "modern_handbook"]
+  }
+]

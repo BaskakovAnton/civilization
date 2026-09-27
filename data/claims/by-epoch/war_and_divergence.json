@@ -1,0 +1,20 @@
+[
+  {
+    "id": "claim_war_and_divergence_66_70",
+    "epoch_id": "war_and_divergence",
+    "statement_ru": "Иудейская война 66–70 н.э. завершается взятием Иерусалима и разрушением Храма (70).",
+    "confidence": "firm",
+    "date_min": 66,
+    "date_max": 70,
+    "source_ids": ["josephus_war", "roman_fasti", "modern_handbook"]
+  },
+  {
+    "id": "claim_war_and_divergence_paths",
+    "epoch_id": "war_and_divergence",
+    "statement_ru": "После 70 г. пути раввинистического иудаизма и раннего христианства расходятся быстрее; процесс длительный, не одномоментный.",
+    "confidence": "anchored",
+    "date_min": 70,
+    "date_max": 100,
+    "source_ids": ["josephus_war", "modern_handbook"]
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/claim.schema.json",
+  "title": "Claim",
+  "type": "object",
+  "required": ["id", "epoch_id", "statement_ru", "confidence", "source_ids"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^claim_[a-z0-9_]+$" },
+    "epoch_id": { "type": "string" },
+    "statement_ru": { "type": "string", "minLength": 1 },
+    "confidence": {
+      "type": "string",
+      "enum": ["literary", "disputed", "anchored", "firm"]
+    },
+    "date_min": { "type": ["integer", "null"] },
+    "date_max": { "type": ["integer", "null"] },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "dissent_ru": { "type": "string" }
+  }
+}

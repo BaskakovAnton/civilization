@@ -1,0 +1,30 @@
+[
+  {
+    "id": "claim_exodus_emergence_merneptah",
+    "epoch_id": "exodus_emergence",
+    "statement_ru": "Стела Мернептаха (~1208 до н.э.) упоминает «Израиль» в Ханаане — ранний внешний якорь этнонима.",
+    "confidence": "firm",
+    "date_min": -1210,
+    "date_max": -1205,
+    "source_ids": ["merneptah_stele", "modern_handbook"]
+  },
+  {
+    "id": "claim_exodus_emergence_settlement",
+    "epoch_id": "exodus_emergence",
+    "statement_ru": "Рост поселений на нагорье в Iron I согласуется с появлением Израиля в Ханаане; механизм (исход / местный этногенез / смесь) спорен.",
+    "confidence": "disputed",
+    "date_min": -1200,
+    "date_max": -1000,
+    "source_ids": ["iron_i_settlement", "modern_handbook"]
+  },
+  {
+    "id": "claim_exodus_emergence_mass_exodus",
+    "epoch_id": "exodus_emergence",
+    "statement_ru": "Массовый исход из Египта в том виде, как в библейском нарративе, в критическом консенсусе не считается твёрдо подтверждённым.",
+    "confidence": "disputed",
+    "date_min": null,
+    "date_max": null,
+    "source_ids": ["exodus_narrative", "modern_handbook"],
+    "dissent_ru": "Есть модели «исторического ядра» малой группы; единой датировки нет."
+  }
+]

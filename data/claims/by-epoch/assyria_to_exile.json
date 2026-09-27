@@ -1,0 +1,29 @@
+[
+  {
+    "id": "claim_assyria_to_exile_samaria_722",
+    "epoch_id": "assyria_to_exile",
+    "statement_ru": "Северное царство (Самария) пало под ударом Ассирии около 722 до н.э.",
+    "confidence": "firm",
+    "date_min": -723,
+    "date_max": -720,
+    "source_ids": ["assyrian_annals", "deuteronomistic_history", "modern_handbook"]
+  },
+  {
+    "id": "claim_assyria_to_exile_sennacherib_701",
+    "epoch_id": "assyria_to_exile",
+    "statement_ru": "Поход Синаххериба против Иудеи (~701 до н.э.) зафиксирован и в ассирийских текстах, и в библейской традиции.",
+    "confidence": "firm",
+    "date_min": -701,
+    "date_max": -701,
+    "source_ids": ["assyrian_annals", "deuteronomistic_history"]
+  },
+  {
+    "id": "claim_assyria_to_exile_jerusalem_586",
+    "epoch_id": "assyria_to_exile",
+    "statement_ru": "Разрушение Иерусалима и Первого храма вавилонянами — около 586 до н.э. (после депортации 597).",
+    "confidence": "firm",
+    "date_min": -597,
+    "date_max": -586,
+    "source_ids": ["babylonian_chronicles", "deuteronomistic_history", "modern_handbook"]
+  }
+]

@@ -1,0 +1,18 @@
+---
+description: Историко-критический канон проекта civilization (ВЗ/НЗ)
+alwaysApply: true
+---
+
+# civilization — historical-critical
+
+- Внедрения и новые слои данных — только после явного «ок» владельца, кроме уже согласованного плана P0–P3.
+- Тон по умолчанию: университетский textbook-консенсус. Линзы школ — отдельно и позже.
+- UI-подписи на русском; id сущностей и источников — английские (`snake_case`).
+- Каждый claim обязан иметь `confidence` и хотя бы один `source_id`.
+- Не смешивать нарратив Писания и historiography: евангельский/библейский сюжет ≠ `firm`/`attested` без явного флага.
+- Шкала: `literary` | `disputed` | `anchored` | `firm`. Не повышать уровень без источника и ок.
+- `1_macc` / `2_macc` = `historical_document`, не «канон UI».
+- Иосиф Флавий — точечно с эпохи `roman_herodian` (8) по `war_and_divergence` (11).
+- Отцы Церкви — вне MVP.
+- Theographic: только curated candidate (`data/candidates`); raw в `data/external/raw/` не коммитить; не поднимать в claims без ручной калибровки.
+- Перед правкой канона/схемы/claims читай skills: `historical-critical-canon`, `civilization-graph-schema`, `source-ingest-checklist`.

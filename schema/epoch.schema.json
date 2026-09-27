@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/epoch.schema.json",
+  "title": "Epoch",
+  "type": "object",
+  "required": ["id", "label_ru", "order", "confidence", "anchors", "josephus_role"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "label_ru": { "type": "string", "minLength": 1 },
+    "order": { "type": "integer", "minimum": 1 },
+    "year_start": { "type": ["integer", "null"] },
+    "year_end": { "type": ["integer", "null"] },
+    "span_note_ru": { "type": "string" },
+    "confidence": {
+      "type": "string",
+      "enum": ["literary", "disputed", "anchored", "firm"]
+    },
+    "anchors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "date_basis_ru": { "type": "string" },
+    "josephus_role": {
+      "type": "string",
+      "enum": ["none", "background", "point", "primary"]
+    }
+  }
+}

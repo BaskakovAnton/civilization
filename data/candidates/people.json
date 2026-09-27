@@ -1,0 +1,277 @@
+{
+  "$schema": "../../schema/candidate-person.schema.json",
+  "meta": {
+    "layer": "candidate",
+    "upstream": "theographic_bible_metadata",
+    "license_note": "Theographic CC-BY-SA 4.0 — атрибуция обязательна; не поднимать в attested без ручной калибровки",
+    "default_confidence_cap": "disputed"
+  },
+  "people": [
+    {
+      "id": "abraham",
+      "label_ru": "Авраам",
+      "theographic_slug": "abraham_58",
+      "epoch_ids": [
+        "patriarchal_horizon"
+      ],
+      "confidence": "literary",
+      "note_ru": "Фигура предания; в каркасе без абсолютной биографии",
+      "upstream": {
+        "found": true,
+        "name": "Abraham",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/abraham.html"
+      }
+    },
+    {
+      "id": "jacob",
+      "label_ru": "Иаков",
+      "theographic_slug": "jacob_683",
+      "epoch_ids": [
+        "patriarchal_horizon"
+      ],
+      "confidence": "literary",
+      "note_ru": "Патриарх предания",
+      "upstream": {
+        "found": true,
+        "name": "Jacob",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "moses",
+      "label_ru": "Моисей",
+      "theographic_slug": "moses_2108",
+      "epoch_ids": [
+        "exodus_emergence"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Центральная фигура традиции Исхода; историческое ядро спорно",
+      "upstream": {
+        "found": true,
+        "name": "Moses",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/moses.html"
+      }
+    },
+    {
+      "id": "david",
+      "label_ru": "Давид",
+      "theographic_slug": "david_994",
+      "epoch_ids": [
+        "early_monarchy"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Династическая традиция; byt dwd на Тель Дане",
+      "upstream": {
+        "found": true,
+        "name": "David",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/david.html"
+      }
+    },
+    {
+      "id": "solomon",
+      "label_ru": "Соломон",
+      "theographic_slug": "solomon_2762",
+      "epoch_ids": [
+        "early_monarchy"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Масштаб царства спорный в handbook",
+      "upstream": {
+        "found": true,
+        "name": "Solomon",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/solomon.html"
+      }
+    },
+    {
+      "id": "omri",
+      "label_ru": "Омри",
+      "theographic_slug": "omri_2243",
+      "epoch_ids": [
+        "divided_kingdoms"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Северное царство; внешние синхронизмы",
+      "upstream": {
+        "found": true,
+        "name": "Omri",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "hezekiah",
+      "label_ru": "Езекия",
+      "theographic_slug": "hezekiah_1512",
+      "epoch_ids": [
+        "assyria_to_exile"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Контекст похода Синаххериба (~701)",
+      "upstream": {
+        "found": true,
+        "name": "Hezekiah",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "nebuchadnezzar",
+      "label_ru": "Навуходоносор II",
+      "theographic_slug": "nebuchadnezzar_2167",
+      "epoch_ids": [
+        "assyria_to_exile",
+        "exile_and_persian"
+      ],
+      "confidence": "firm",
+      "note_ru": "Внешний актор; вавилонская хроника",
+      "upstream": {
+        "found": true,
+        "name": "Nebuchadnezzar",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "cyrus",
+      "label_ru": "Кир II",
+      "theographic_slug": "cyrus_968",
+      "epoch_ids": [
+        "exile_and_persian"
+      ],
+      "confidence": "firm",
+      "note_ru": "Персидский контекст возвращения (539)",
+      "upstream": {
+        "found": true,
+        "name": "Cyrus",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "mattathias",
+      "label_ru": "Маттафия",
+      "theographic_slug": "mattathias_1963",
+      "epoch_ids": [
+        "hellenistic_hasmonean"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Хасмонейский якорь в Theographic; Иуда Маккавей в upstream отсутствует",
+      "upstream": {
+        "found": true,
+        "name": "Mattathias",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "judas_maccabeus",
+      "label_ru": "Иуда Маккавей",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "hellenistic_hasmonean"
+      ],
+      "confidence": "anchored",
+      "note_ru": "По 1_macc (historical_document); в Theographic people нет отдельной карточки",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
+      "id": "herod_the_great",
+      "label_ru": "Ирод Великий",
+      "theographic_slug": "herod_1504",
+      "epoch_ids": [
+        "roman_herodian"
+      ],
+      "confidence": "firm",
+      "note_ru": "Иосиф — основной нарратив",
+      "upstream": {
+        "found": true,
+        "name": "Herod",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
+      "id": "pontius_pilate",
+      "label_ru": "Понтий Пилат",
+      "theographic_slug": "pilate_2365",
+      "epoch_ids": [
+        "roman_herodian",
+        "jesus_jerusalem"
+      ],
+      "confidence": "firm",
+      "note_ru": "Префект Иудеи; надпись + литература",
+      "upstream": {
+        "found": true,
+        "name": "Pontius",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/pilate-pontius.html"
+      }
+    },
+    {
+      "id": "jesus_of_nazareth",
+      "label_ru": "Иисус из Назарета",
+      "theographic_slug": "jesus_905",
+      "epoch_ids": [
+        "jesus_jerusalem"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Историческое ядро; не евангельский полный нарратив",
+      "upstream": {
+        "found": true,
+        "name": "Jesus",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/christ.html"
+      }
+    },
+    {
+      "id": "paul_of_tarsus",
+      "label_ru": "Павел",
+      "theographic_slug": "paul_2479",
+      "epoch_ids": [
+        "pauline_networks"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Неоспоримые письма как контроль",
+      "upstream": {
+        "found": true,
+        "name": "Paul",
+        "alsoCalled": [],
+        "dictionaryLink": "https://www.biblestudytools.com/dictionaries/eastons-bible-dictionary/paul.html"
+      }
+    },
+    {
+      "id": "josephus_flavius",
+      "label_ru": "Иосиф Флавий",
+      "theographic_slug": "josephus",
+      "epoch_ids": [
+        "war_and_divergence",
+        "roman_herodian"
+      ],
+      "confidence": "firm",
+      "note_ru": "Свидетель и историк; не «отец Церкви»",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
+      "id": "simon_bar_kokhba",
+      "label_ru": "Шимон бар Косба (Бар-Кохба)",
+      "theographic_slug": "bar-kokhba",
+      "epoch_ids": [
+        "bar_kokhba"
+      ],
+      "confidence": "firm",
+      "note_ru": "Эпиграфика/монеты/Дион; slug может отсутствовать в Theographic",
+      "upstream": {
+        "found": false
+      }
+    }
+  ]
+}

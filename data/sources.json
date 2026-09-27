@@ -1,0 +1,138 @@
+[
+  {
+    "id": "modern_handbook",
+    "label_ru": "Академический handbook (консенсус вводного курса)",
+    "type": "modern_handbook",
+    "tradition_note_ru": "Ориентир каркаса дат и формулировок, не первичный источник"
+  },
+  {
+    "id": "genesis_narrative",
+    "label_ru": "Бытие (нарратив праотцев)",
+    "type": "canon_text",
+    "tradition_note_ru": "Канонический текст; для эпохи 1 — literary, не внешняя хроника"
+  },
+  {
+    "id": "exodus_narrative",
+    "label_ru": "Исход (библейский нарратив)",
+    "type": "canon_text"
+  },
+  {
+    "id": "merneptah_stele",
+    "label_ru": "Стела Мернептаха",
+    "type": "inscription",
+    "urls": ["https://en.wikipedia.org/wiki/Merneptah_Stele"]
+  },
+  {
+    "id": "iron_i_settlement",
+    "label_ru": "Археология поселений Iron I",
+    "type": "archaeology"
+  },
+  {
+    "id": "tel_dan_inscription",
+    "label_ru": "Надпись из Тель Дана (byt dwd)",
+    "type": "inscription",
+    "urls": ["https://en.wikipedia.org/wiki/Tel_Dan_stele"]
+  },
+  {
+    "id": "deuteronomistic_history",
+    "label_ru": "Второзаконническая история (Нав–Цар)",
+    "type": "canon_text"
+  },
+  {
+    "id": "assyrian_annals",
+    "label_ru": "Неоассирийские анналы",
+    "type": "classical_historiography",
+    "tradition_note_ru": "Царские анналы Ассирии; синхронизмы с Израилем/Иудеей"
+  },
+  {
+    "id": "babylonian_chronicles",
+    "label_ru": "Вавилонские хроники",
+    "type": "classical_historiography"
+  },
+  {
+    "id": "cyrus_cylinder",
+    "label_ru": "Цилиндр Кира (контекст возвращения)",
+    "type": "inscription",
+    "urls": ["https://en.wikipedia.org/wiki/Cyrus_Cylinder"]
+  },
+  {
+    "id": "ezra_nehemiah",
+    "label_ru": "Эзра–Неемия",
+    "type": "canon_text",
+    "tradition_note_ru": "Канон; хронология внутренней редакции осторожна"
+  },
+  {
+    "id": "1_macc",
+    "label_ru": "1 Маккавейская",
+    "type": "historical_document",
+    "tradition_note_ru": "Вне еврейского Танаха; у католиков — второканон.; в православии обычно неканон. для чтения"
+  },
+  {
+    "id": "2_macc",
+    "label_ru": "2 Маккавейская",
+    "type": "historical_document",
+    "tradition_note_ru": "Вне еврейского Танаха; у католиков — второканон.; в православии обычно неканон. для чтения"
+  },
+  {
+    "id": "hellenistic_chronology",
+    "label_ru": "Эллинистическая хронология (Александр–Селевкиды)",
+    "type": "modern_handbook"
+  },
+  {
+    "id": "josephus_antiquities",
+    "label_ru": "Иосиф Флавий, Иудейские древности",
+    "type": "classical_historiography"
+  },
+  {
+    "id": "josephus_war",
+    "label_ru": "Иосиф Флавий, Иудейская война",
+    "type": "classical_historiography"
+  },
+  {
+    "id": "roman_fasti",
+    "label_ru": "Римская хронология должностей / правлений",
+    "type": "classical_historiography"
+  },
+  {
+    "id": "pauline_letters",
+    "label_ru": "Неоспоримые письма Павла",
+    "type": "canon_text",
+    "tradition_note_ru": "Раннейшие христианские тексты; канон НЗ"
+  },
+  {
+    "id": "synoptic_gospels",
+    "label_ru": "Синоптические Евангелия",
+    "type": "canon_text",
+    "tradition_note_ru": "Канон; для истории Иисуса — с критической фильтрацией"
+  },
+  {
+    "id": "acts",
+    "label_ru": "Деяния апостолов",
+    "type": "canon_text",
+    "tradition_note_ru": "Вторичный нарратив относительно писем Павла"
+  },
+  {
+    "id": "tacitus_annals",
+    "label_ru": "Тацит, Анналы (упоминание христиан)",
+    "type": "classical_historiography"
+  },
+  {
+    "id": "dio_cassius",
+    "label_ru": "Дион Кассий (Бар-Кохба)",
+    "type": "classical_historiography"
+  },
+  {
+    "id": "bar_kokhba_letters",
+    "label_ru": "Письма и монеты Бар-Кохбы",
+    "type": "inscription"
+  },
+  {
+    "id": "theographic_bible_metadata",
+    "label_ru": "Theographic Bible Metadata (candidate)",
+    "type": "modern_handbook",
+    "tradition_note_ru": "CC-BY-SA 4.0; только candidate layer, не attested",
+    "urls": [
+      "https://github.com/robertrouse/theographic-bible-metadata"
+    ]
+  }
+]

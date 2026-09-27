@@ -1,0 +1,29 @@
+[
+  {
+    "id": "claim_hellenistic_hasmonean_alexander",
+    "epoch_id": "hellenistic_hasmonean",
+    "statement_ru": "После Александра (332 до н.э.) Иудея входит в эллинистический мир (Птолемеи, затем Селевкиды).",
+    "confidence": "firm",
+    "date_min": -332,
+    "date_max": -200,
+    "source_ids": ["hellenistic_chronology", "modern_handbook"]
+  },
+  {
+    "id": "claim_hellenistic_hasmonean_crisis_167",
+    "epoch_id": "hellenistic_hasmonean",
+    "statement_ru": "Кризис при Антиохе IV (~167–164 до н.э.) и восстание Маккавеев описаны в 1–2 Макк. как historical documents.",
+    "confidence": "firm",
+    "date_min": -167,
+    "date_max": -164,
+    "source_ids": ["1_macc", "2_macc", "hellenistic_chronology"]
+  },
+  {
+    "id": "claim_hellenistic_hasmonean_state",
+    "epoch_id": "hellenistic_hasmonean",
+    "statement_ru": "Хасмонейское государство оформляется во II–I вв. до н.э. до прихода Рима (63 до н.э.).",
+    "confidence": "firm",
+    "date_min": -140,
+    "date_max": -63,
+    "source_ids": ["1_macc", "josephus_antiquities", "modern_handbook"]
+  }
+]

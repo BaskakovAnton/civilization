@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/candidate-person.schema.json",
+  "title": "CandidatePeopleFile",
+  "type": "object",
+  "required": ["meta", "people"],
+  "properties": {
+    "meta": { "type": "object" },
+    "people": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label_ru", "epoch_ids", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "label_ru": { "type": "string" },
+          "theographic_slug": { "type": "string" },
+          "epoch_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["literary", "disputed", "anchored", "firm"]
+          },
+          "note_ru": { "type": "string" },
+          "upstream": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "alsoCalled": { "type": "array", "items": { "type": "string" } },
+              "found": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

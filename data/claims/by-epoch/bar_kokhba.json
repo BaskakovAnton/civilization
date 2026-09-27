@@ -1,0 +1,20 @@
+[
+  {
+    "id": "claim_bar_kokhba_revolt",
+    "epoch_id": "bar_kokhba",
+    "statement_ru": "Восстание Бар-Кохбы (132–135 н.э.) против Рима при Адриане засвидетельствовано монетами, письмами и римской историографией.",
+    "confidence": "firm",
+    "date_min": 132,
+    "date_max": 135,
+    "source_ids": ["bar_kokhba_letters", "dio_cassius", "modern_handbook"]
+  },
+  {
+    "id": "claim_bar_kokhba_aelia",
+    "epoch_id": "bar_kokhba",
+    "statement_ru": "После подавления Иерусалим переустраивается как Элия Капитолина; иудейское присутствие в городе резко ограничивается.",
+    "confidence": "firm",
+    "date_min": 135,
+    "date_max": 135,
+    "source_ids": ["dio_cassius", "modern_handbook"]
+  }
+]

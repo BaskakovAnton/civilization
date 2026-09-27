@@ -1,0 +1,29 @@
+[
+  {
+    "id": "claim_roman_herodian_pompey_63",
+    "epoch_id": "roman_herodian",
+    "statement_ru": "В 63 до н.э. Помпей устанавливает римский контроль над Иудеей.",
+    "confidence": "firm",
+    "date_min": -63,
+    "date_max": -63,
+    "source_ids": ["josephus_antiquities", "roman_fasti", "modern_handbook"]
+  },
+  {
+    "id": "claim_roman_herodian_herod",
+    "epoch_id": "roman_herodian",
+    "statement_ru": "Ирод Великий правит как римский клиент-царь; его правление подробно освещено у Иосифа.",
+    "confidence": "firm",
+    "date_min": -37,
+    "date_max": -4,
+    "source_ids": ["josephus_antiquities", "modern_handbook"]
+  },
+  {
+    "id": "claim_roman_herodian_pilate",
+    "epoch_id": "roman_herodian",
+    "statement_ru": "Понтий Пилат — префект Иудеи при Тиберии; засвидетельствован надписью и литературными источниками.",
+    "confidence": "firm",
+    "date_min": 26,
+    "date_max": 36,
+    "source_ids": ["josephus_antiquities", "roman_fasti", "synoptic_gospels"]
+  }
+]

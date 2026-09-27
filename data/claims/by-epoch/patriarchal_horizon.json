@@ -1,0 +1,21 @@
+[
+  {
+    "id": "claim_patriarchal_horizon_saga",
+    "epoch_id": "patriarchal_horizon",
+    "statement_ru": "Рассказы о праотцах в Бытии — литературное предание родословной Израиля, а не датируемая внешними анналами биография.",
+    "confidence": "literary",
+    "date_min": null,
+    "date_max": null,
+    "source_ids": ["genesis_narrative", "modern_handbook"]
+  },
+  {
+    "id": "claim_patriarchal_horizon_setting",
+    "epoch_id": "patriarchal_horizon",
+    "statement_ru": "В учебном консенсусе «мир праотцев» часто описывают как культурный фон II тыс. до н.э., без жёсткой абсолютной хронологии событий.",
+    "confidence": "literary",
+    "date_min": null,
+    "date_max": null,
+    "source_ids": ["modern_handbook"],
+    "dissent_ru": "Консервативные реконструкции пытаются привязать Авраама к MB II; критический мейнстрим этого не делает."
+  }
+]
