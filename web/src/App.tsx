@@ -16,6 +16,7 @@ import jesus from "../../data/claims/by-epoch/jesus_jerusalem.json";
 import pauline from "../../data/claims/by-epoch/pauline_networks.json";
 import war from "../../data/claims/by-epoch/war_and_divergence.json";
 import barKokhba from "../../data/claims/by-epoch/bar_kokhba.json";
+import fathersLayerFile from "../../data/layers/fathers/claims.json";
 import candidatesFile from "../../data/candidates/people.json";
 import politiesData from "../../data/polities.json";
 import universityLens from "../../data/lenses/university.json";
@@ -69,7 +70,7 @@ const lenses: LensFile[] = [
 const lensById = Object.fromEntries(lenses.map((l) => [l.id, l]));
 const allPolities = politiesData as Polity[];
 
-const allClaims: Claim[] = [
+const baselineClaims: Claim[] = [
   ...(patriarchal as Claim[]),
   ...(exodus as Claim[]),
   ...(earlyMonarchy as Claim[]),
@@ -83,6 +84,9 @@ const allClaims: Claim[] = [
   ...(war as Claim[]),
   ...(barKokhba as Claim[]),
 ];
+const fathersClaims = (
+  fathersLayerFile as { claims: Claim[] }
+).claims.filter((c) => c.layer === "church_fathers");
 
 const epochList = epochs as Epoch[];
 const sourceList = sources as Source[];
@@ -166,12 +170,32 @@ export default function App() {
   const [focusPersonId, setFocusPersonId] = useState<string | null>(null);
   const [focusClaimId, setFocusClaimId] = useState<string | null>(null);
   const [lensId, setLensId] = useState("university");
+  const [fathersLayerOn, setFathersLayerOn] = useState(false);
   const [confFilter, setConfFilter] = useState<Confidence[]>([...ALL_CONF]);
   const selected = sorted.find((e) => e.id === selectedId) ?? sorted[0];
   const lens = lensById[lensId] ?? lenses[0];
   const confSet = useMemo(() => new Set(confFilter), [confFilter]);
 
+  const allClaims = useMemo(
+    () =>
+      fathersLayerOn
+        ? [...baselineClaims, ...fathersClaims]
+        : baselineClaims,
+    [fathersLayerOn]
+  );
   const claimsRaw = allClaims.filter((c) => c.epoch_id === selected?.id);
+  const baseConfidenceById = useMemo(() => {
+    const m = new Map<string, Confidence>();
+    for (const c of claimsRaw) m.set(c.id, c.confidence);
+    return m;
+  }, [claimsRaw]);
+  const lensOverrideIds = useMemo(() => {
+    const s = new Set<string>();
+    for (const c of claimsRaw) {
+      if (lens.claim_overrides?.[c.id]) s.add(c.id);
+    }
+    return s;
+  }, [claimsRaw, lens]);
   const claims = claimsRaw
     .map((c) => {
       const ov = lens.claim_overrides?.[c.id];
@@ -236,7 +260,8 @@ export default function App() {
         <h1>Длинная дуга</h1>
         <p className="lede">
           Каркас из 12 эпох: граф, места, события, взаимодействия и источники.
-          Default — университетский консенсус; линзы — сравнительный слой.
+          Default — университетский консенсус; линзы и слой отцов — сравнительные
+          opt-in.
         </p>
       </header>
 
@@ -249,6 +274,8 @@ export default function App() {
         lensId={lensId}
         lenses={lenses}
         onLensChange={setLensId}
+        fathersLayer={fathersLayerOn}
+        onFathersLayerChange={setFathersLayerOn}
         onJumpToPerson={(personId, epochId) => {
           setSelectedId(epochId);
           setFocusPersonId(personId);
@@ -611,6 +638,20 @@ export default function App() {
                       <span className={`pill conf-${c.confidence}`}>
                         {confidenceLabel[c.confidence]}
                       </span>
+                      {c.layer === "church_fathers" ? (
+                        <span className="pill layer-fathers">отцы · рецепция</span>
+                      ) : null}
+                      {lensOverrideIds.has(c.id) ? (
+                        <span
+                          className="pill lens-override"
+                          title={`university: ${confidenceLabel[baseConfidenceById.get(c.id) ?? c.confidence]}`}
+                        >
+                          линза ←{" "}
+                          {confidenceLabel[
+                            baseConfidenceById.get(c.id) ?? c.confidence
+                          ]}
+                        </span>
+                      ) : null}
                       {(c.date_min !== null || c.date_max !== null) && (
                         <span className="claim-dates">
                           {formatYear(c.date_min)} – {formatYear(c.date_max)}
@@ -632,8 +673,8 @@ export default function App() {
       </div>
 
       <footer className="foot">
-        1–2 Макк. = historical_document · Отцы Церкви вне MVP · Theographic
-        CC-BY-SA (candidate) ·{" "}
+        1–2 Макк. = historical_document · Отцы = opt-in рецепция (не baseline
+        Иисуса) · Theographic CC-BY-SA (candidate) ·{" "}
         <code>npm run extract:theographic</code>
       </footer>
     </div>

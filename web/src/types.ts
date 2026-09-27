@@ -40,6 +40,8 @@ export type Claim = {
   source_ids: string[];
   dissent_ru?: string;
   citations?: Citation[];
+  /** Opt-in layer; omitted/undefined = university baseline */
+  layer?: "church_fathers";
 };
 
 export type Place = {

@@ -45,6 +45,6 @@ description: >-
 ## Политика слоёв
 
 - Иосиф: эпохи 8–11, точечно.
-- Отцы Церкви: вне MVP.
+- Отцы Церкви: opt-in слой рецепции (`data/layers/fathers/`); не university baseline; не биография Иисуса.
 - Competing schools: не в default-данных; позже отдельной линзой.
 - Полный people-dump Theographic: P4, отдельный ок.

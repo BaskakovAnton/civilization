@@ -13,6 +13,6 @@ alwaysApply: true
 - Шкала: `literary` | `disputed` | `anchored` | `firm`. Не повышать уровень без источника и ок.
 - `1_macc` / `2_macc` = `historical_document`, не «канон UI».
 - Иосиф Флавий — точечно с эпохи `roman_herodian` (8) по `war_and_divergence` (11).
-- Отцы Церкви — вне MVP.
+- Отцы Церкви — opt-in слой рецепции (`data/layers/fathers/`), выкл по умолчанию; не baseline истории Иисуса.
 - Theographic: только curated candidate (`data/candidates`); raw в `data/external/raw/` не коммитить; не поднимать в claims без ручной калибровки.
 - Перед правкой канона/схемы/claims читай skills: `historical-critical-canon`, `civilization-graph-schema`, `source-ingest-checklist`.

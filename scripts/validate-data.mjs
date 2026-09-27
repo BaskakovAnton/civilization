@@ -101,7 +101,7 @@ async function main() {
     for (const c of list) claims.push(c);
   }
 
-  for (const c of claims) {
+  function checkClaim(c, { allowLayer = false } = {}) {
     if (!/^claim_[a-z0-9_]+$/.test(c.id)) err(`claim bad id ${c.id}`);
     if (!epochIds.has(c.epoch_id)) err(`claim ${c.id}: unknown epoch`);
     if (!CONF.has(c.confidence)) err(`claim ${c.id}: bad confidence`);
@@ -109,8 +109,23 @@ async function main() {
     for (const sid of c.source_ids || []) {
       if (!sourceIds.has(sid)) err(`claim ${c.id}: unknown source ${sid}`);
     }
+    if (c.layer && !allowLayer) {
+      err(`claim ${c.id}: layer=${c.layer} not allowed in by-epoch baseline`);
+    }
+    if (allowLayer && c.layer !== "church_fathers") {
+      err(`claim ${c.id}: fathers layer requires layer=church_fathers`);
+    }
     checkCitations(`claim ${c.id}`, c.citations);
   }
+
+  for (const c of claims) checkClaim(c);
+
+  const fathersFile = await loadJson("data/layers/fathers/claims.json");
+  const fathersClaims = fathersFile.claims || [];
+  if (fathersFile.meta?.default_enabled !== false) {
+    err("fathers layer meta.default_enabled must be false");
+  }
+  for (const c of fathersClaims) checkClaim(c, { allowLayer: true });
 
   for (const i of interactions) {
     if (!/^int_[a-z0-9_]+$/.test(i.id)) err(`interaction bad id ${i.id}`);
@@ -195,6 +210,7 @@ async function main() {
           sources: sources.length,
           people: people.length,
           claims: claims.length,
+          fathers_claims: fathersClaims.length,
           interactions: interactions.length,
           places: places.length,
           events: events.length,

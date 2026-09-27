@@ -1,19 +1,107 @@
 {
   "id": "minimalist",
-  "label_ru": "Минималистская линза (черновик)",
-  "description_ru": "Снижает confidence нарративных узлов; для сравнения, не default.",
+  "label_ru": "Минималистская линза",
+  "description_ru": "Сравнительный слой: сильнее режет нарратив от внешней аттестации; не default.",
   "claim_overrides": {
+    "claim_exodus_emergence_merneptah": {
+      "confidence": "anchored",
+      "note_ru": "Линза: этноним есть; не читать как полную этногенетическую историю"
+    },
+    "claim_exodus_emergence_settlement": {
+      "confidence": "literary",
+      "note_ru": "Линза: рост поселений не доказывает библейский Исход"
+    },
+    "claim_exodus_emergence_mass_exodus": {
+      "confidence": "literary",
+      "note_ru": "Линза: массовый исход — предание без внешней опоры"
+    },
+    "claim_exodus_emergence_joshua_conquest": {
+      "confidence": "literary",
+      "note_ru": "Линза: модель завоевания почти целиком literary"
+    },
     "claim_early_monarchy_tel_dan": {
       "confidence": "disputed",
-      "note_ru": "Линза: осторожнее с выводами из byt dwd"
+      "note_ru": "Линза: осторожнее с выводами из byt dwd к X в."
+    },
+    "claim_early_monarchy_scale": {
+      "confidence": "literary",
+      "note_ru": "Линза: «империя» Давида–Соломона — риторика DH"
+    },
+    "claim_early_monarchy_jerusalem": {
+      "confidence": "literary",
+      "note_ru": "Линза: монументальный Иерусалим X в. почти не подтверждён"
+    },
+    "claim_early_monarchy_saul": {
+      "confidence": "literary",
+      "note_ru": "Линза: Саул остаётся фигурой предания"
+    },
+    "claim_divided_kingdoms_omrides": {
+      "confidence": "disputed",
+      "note_ru": "Линза: сильнее разводит текст и археологию Омридов"
+    },
+    "claim_divided_kingdoms_two_states": {
+      "confidence": "disputed",
+      "note_ru": "Линза: схема «два царства» упрощает политическую карту"
+    },
+    "claim_assyria_to_exile_josiah_reform": {
+      "confidence": "disputed",
+      "note_ru": "Линза: реформа Иосии — идеологический узел DH"
+    },
+    "claim_exile_and_persian_ezra_nehemiah": {
+      "confidence": "literary",
+      "note_ru": "Линза: Эзра–Неемия почти целиком литературная конструкция"
+    },
+    "claim_exile_and_persian_second_temple": {
+      "confidence": "disputed",
+      "note_ru": "Линза: дата 516 и сценарий освящения менее жёстки"
+    },
+    "claim_exile_and_persian_yehud": {
+      "confidence": "disputed",
+      "note_ru": "Линза: ещё скромнее демография и границы Йехуда"
+    },
+    "claim_hellenistic_hasmonean_temple_rededication": {
+      "confidence": "disputed",
+      "note_ru": "Линза: детали 164/Хануки читаются через позднюю память"
     },
     "claim_jesus_jerusalem_historical_core": {
       "confidence": "disputed",
       "note_ru": "Линза: более скептична к объёму реконструируемого ядра"
     },
-    "claim_divided_kingdoms_omrides": {
+    "claim_jesus_jerusalem_crucifixion": {
       "confidence": "disputed",
-      "note_ru": "Линза: сильнее разводит текст и археологию"
+      "note_ru": "Линза: факт казни вероятен, детали и год — слабее"
+    },
+    "claim_jesus_jerusalem_community": {
+      "confidence": "disputed",
+      "note_ru": "Линза: ранняя община почти целиком из Деяний/преданий"
+    },
+    "claim_jesus_jerusalem_peter": {
+      "confidence": "disputed",
+      "note_ru": "Линза: роль Петра в Иерусалиме реконструируется осторожно"
+    },
+    "claim_pauline_networks_acts_secondary": {
+      "confidence": "disputed",
+      "note_ru": "Линза: Деяния почти негодны как хронологический каркас"
+    },
+    "claim_pauline_networks_jerusalem_pillars": {
+      "confidence": "disputed",
+      "note_ru": "Линза: «столпы» — риторика Павла, не институция"
+    },
+    "claim_war_and_divergence_masada": {
+      "confidence": "disputed",
+      "note_ru": "Линза: финал Масады — литературная конструкция Иосифа"
+    },
+    "claim_war_and_divergence_paths": {
+      "confidence": "disputed",
+      "note_ru": "Линза: «расхождение» после 70 растянуто и неоднородно"
+    },
+    "claim_bar_kokhba_akiva_tradition": {
+      "confidence": "literary",
+      "note_ru": "Линза: связка Акива–Бар-Кохба — раввинистическая память"
+    },
+    "claim_bar_kokhba_hadrian_policy": {
+      "confidence": "disputed",
+      "note_ru": "Линза: последовательность «провокаций» Адриана неясна"
     }
   }
 }

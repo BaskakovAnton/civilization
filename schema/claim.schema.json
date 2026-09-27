@@ -21,6 +21,11 @@
       "minItems": 1
     },
     "dissent_ru": { "type": "string" },
+    "layer": {
+      "type": "string",
+      "enum": ["church_fathers"],
+      "description": "Opt-in layer; omit for university baseline"
+    },
     "citations": {
       "type": "array",
       "items": { "$ref": "citation.schema.json" }

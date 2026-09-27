@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "layer": "church_fathers",
+    "default_enabled": false,
+    "note_ru": "Рецепция и канон после 70/135; не baseline истории Иисуса. В UI — только при включённом toggle."
+  },
+  "claims": [
+    {
+      "id": "claim_fathers_ignatius_order",
+      "epoch_id": "war_and_divergence",
+      "layer": "church_fathers",
+      "statement_ru": "Письма Игнатия Антиохийского (~начало II в.) — раннее свидетельство формирующегося церковного порядка (епископ / пресвитеры) в рецепции после 70 г., не источник биографии Иисуса.",
+      "confidence": "anchored",
+      "date_min": 105,
+      "date_max": 117,
+      "source_ids": ["ignatius_letters", "modern_handbook"],
+      "dissent_ru": "Аутентичность корпуса и точная дата дискуссионны; слой — рецепция, не university baseline.",
+      "citations": [
+        {
+          "id": "cite_fathers_ignatius",
+          "label_ru": "Ignatius of Antioch",
+          "kind": "web",
+          "source_id": "ignatius_letters",
+          "url": "https://en.wikipedia.org/wiki/Ignatius_of_Antioch"
+        }
+      ]
+    },
+    {
+      "id": "claim_fathers_justin_apology",
+      "epoch_id": "war_and_divergence",
+      "layer": "church_fathers",
+      "statement_ru": "Апологии Иустина (~середина II в.) фиксируют, как христиане объясняют себя римской власти и философии — узел публичной рецепции, не евангельский сюжет.",
+      "confidence": "anchored",
+      "date_min": 150,
+      "date_max": 160,
+      "source_ids": ["justin_apology", "modern_handbook"],
+      "citations": [
+        {
+          "id": "cite_fathers_justin",
+          "label_ru": "Justin Martyr",
+          "kind": "web",
+          "source_id": "justin_apology",
+          "url": "https://en.wikipedia.org/wiki/Justin_Martyr"
+        }
+      ]
+    },
+    {
+      "id": "claim_fathers_irenaeus_four_gospels",
+      "epoch_id": "bar_kokhba",
+      "layer": "church_fathers",
+      "statement_ru": "Ириней (~конец II в.) аргументирует норму четырёх Евангелий — ключевой шаг истории канона НЗ в рецепции после эпохи Бар-Кохбы, не аттестация жизни Иисуса.",
+      "confidence": "anchored",
+      "date_min": 175,
+      "date_max": 190,
+      "source_ids": ["irenaeus_haer", "modern_handbook"],
+      "dissent_ru": "Привязка к эпохе bar_kokhba — контекст «после 135» для слоя рецепции; сам Ириней позже.",
+      "citations": [
+        {
+          "id": "cite_fathers_irenaeus",
+          "label_ru": "Irenaeus / Against Heresies",
+          "kind": "web",
+          "source_id": "irenaeus_haer",
+          "url": "https://en.wikipedia.org/wiki/Irenaeus"
+        },
+        {
+          "id": "cite_fathers_irenaeus_canon",
+          "label_ru": "Development of the NT canon",
+          "kind": "handbook",
+          "source_id": "modern_handbook",
+          "url": "https://en.wikipedia.org/wiki/Development_of_the_New_Testament_canon"
+        }
+      ]
+    },
+    {
+      "id": "claim_fathers_eusebius_church_history",
+      "epoch_id": "bar_kokhba",
+      "layer": "church_fathers",
+      "statement_ru": "Евсевий (Церковная история, IV в.) систематизирует память о каноне, мучениках и епископских преемствах — поздний нарратив рецепции, фильтруемый критически.",
+      "confidence": "disputed",
+      "date_min": 310,
+      "date_max": 325,
+      "source_ids": ["eusebius_he", "modern_handbook"],
+      "dissent_ru": "Евсевий ideologically shaped; полезен для истории традиции, не как хроника I в.",
+      "citations": [
+        {
+          "id": "cite_fathers_eusebius",
+          "label_ru": "Church History (Eusebius)",
+          "kind": "web",
+          "source_id": "eusebius_he",
+          "url": "https://en.wikipedia.org/wiki/Church_History_(Eusebius)"
+        }
+      ]
+    },
+    {
+      "id": "claim_fathers_layer_scope",
+      "epoch_id": "war_and_divergence",
+      "layer": "church_fathers",
+      "statement_ru": "Слой «Отцы Церкви» в civilization отвечает на вопрос рецепции и канона после 70/135; он не поднимает евангельский сюжет до firm/attested и не входит в university baseline.",
+      "confidence": "anchored",
+      "date_min": 70,
+      "date_max": 325,
+      "source_ids": ["modern_handbook", "ignatius_letters", "eusebius_he"],
+      "citations": [
+        {
+          "id": "cite_fathers_scope",
+          "label_ru": "Church Fathers (обзор)",
+          "kind": "handbook",
+          "source_id": "modern_handbook",
+          "url": "https://en.wikipedia.org/wiki/Church_Fathers"
+        }
+      ]
+    }
+  ]
+}

@@ -33,7 +33,8 @@ npm run extract:theographic   # P4: обогатить candidates из Theograph
 | `data/places.json` | Места (P5) |
 | `data/events.json` | События (P5) + citations (P6) |
 | `data/polities.json` | Имперские акторы (P9) |
-| `data/lenses/` | Линзы university / conservative / minimalist (P10) |
+| `data/lenses/` | Линзы university / conservative / minimalist (сравнительные overrides) |
+| `data/layers/fathers/` | Opt-in слой отцов (рецепция/канон; выкл по умолчанию) |
 | `data/external/` | Upstream docs; raw/ в gitignore |
 | `scripts/extract-theographic-people.mjs` | P4 extract |
 | `web/` | UI (React + Vite + TS) |
@@ -44,7 +45,7 @@ npm run extract:theographic   # P4: обогатить candidates из Theograph
 
 - 12 эпох (Бар-Кохба = 12, `firm`)
 - Иосиф — точечно с эпохи 8
-- Отцы Церкви — вне MVP
+- Отцы Церкви — opt-in слой рецепции (`data/layers/fathers/`), не university baseline
 - Маккавеи — `historical_document`, не канон UI
 - **P4 Theographic** — candidate layer (`data/candidates` + extract script)
 

@@ -18,6 +18,8 @@ type Props = {
   lensId: string;
   lenses: LensMeta[];
   onLensChange: (id: string) => void;
+  fathersLayer: boolean;
+  onFathersLayerChange: (on: boolean) => void;
   onJumpToPerson: (personId: string, epochId: string) => void;
   onJumpToEpoch: (epochId: string) => void;
 };
@@ -31,6 +33,8 @@ export default function GlobalTools({
   lensId,
   lenses,
   onLensChange,
+  fathersLayer,
+  onFathersLayerChange,
   onJumpToPerson,
   onJumpToEpoch,
 }: Props) {
@@ -164,6 +168,18 @@ export default function GlobalTools({
           </select>
           <p className="tools-muted">
             {lenses.find((l) => l.id === lensId)?.description_ru}
+          </p>
+          <label className="layer-toggle">
+            <input
+              type="checkbox"
+              checked={fathersLayer}
+              onChange={(e) => onFathersLayerChange(e.target.checked)}
+            />
+            <span>Слой: Отцы Церкви (рецепция / канон)</span>
+          </label>
+          <p className="tools-muted">
+            Выкл по умолчанию. Не baseline истории Иисуса — только рецепция после
+            70/135.
           </p>
         </div>
 

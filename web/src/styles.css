@@ -469,6 +469,32 @@ body {
   font-size: 0.8rem;
 }
 
+.pill.lens-override {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px dashed var(--accent);
+}
+
+.pill.layer-fathers {
+  background: #e8e4f0;
+  color: #3d3560;
+  border: 1px solid #b8b0cc;
+}
+
+.layer-toggle {
+  display: flex;
+  gap: 0.45rem;
+  align-items: flex-start;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.layer-toggle input {
+  margin-top: 0.2rem;
+}
+
 .citations-more {
   font-size: 0.85rem;
   margin-top: 0.25rem;

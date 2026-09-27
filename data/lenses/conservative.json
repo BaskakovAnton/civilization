@@ -1,19 +1,79 @@
 {
   "id": "conservative",
-  "label_ru": "Консервативная линза (черновик)",
-  "description_ru": "Повышает confidence отдельных claims; не заменяет university baseline.",
+  "label_ru": "Консервативная линза",
+  "description_ru": "Сравнительный слой: чуть сильнее историческое ядро предания; university baseline не меняется.",
   "claim_overrides": {
+    "claim_patriarchal_horizon_saga": {
+      "confidence": "disputed",
+      "note_ru": "Линза: праотцы ближе к возможной истории, не только saga"
+    },
+    "claim_patriarchal_horizon_setting": {
+      "confidence": "disputed",
+      "note_ru": "Линза: допускает культурный фон II тыс. как рабочую рамку"
+    },
+    "claim_patriarchal_horizon_joseph_cycle": {
+      "confidence": "disputed",
+      "note_ru": "Линза: египетский колорит читается как след реального контакта"
+    },
     "claim_exodus_emergence_mass_exodus": {
       "confidence": "anchored",
-      "note_ru": "Линза: допускает более сильное историческое ядро Исхода"
+      "note_ru": "Линза: более сильное историческое ядро Исхода (малая группа / память)"
+    },
+    "claim_exodus_emergence_moses_tradition": {
+      "confidence": "disputed",
+      "note_ru": "Линза: Моисей — не только literary-имя традиции"
+    },
+    "claim_exodus_emergence_joshua_conquest": {
+      "confidence": "disputed",
+      "note_ru": "Линза: допускает ограниченную военную фазу наряду с оседанием"
+    },
+    "claim_exodus_emergence_settlement": {
+      "confidence": "anchored",
+      "note_ru": "Линза: Iron I нагорье прочнее стыкует с «Израилем» Мернептаха"
+    },
+    "claim_early_monarchy_saul": {
+      "confidence": "disputed",
+      "note_ru": "Линза: Саул — вероятное раннее вождество, не только сюжет"
     },
     "claim_early_monarchy_scale": {
       "confidence": "anchored",
       "note_ru": "Линза: более крупная объединённая монархия"
     },
-    "claim_patriarchal_horizon_saga": {
+    "claim_early_monarchy_jerusalem": {
+      "confidence": "anchored",
+      "note_ru": "Линза: сильнее монументальность / центр «дома Давида» в X в."
+    },
+    "claim_divided_kingdoms_elijah_ahab": {
       "confidence": "disputed",
-      "note_ru": "Линза: праотцы ближе к возможной истории, не только saga"
+      "note_ru": "Линза: конфликт пророка и двора ближе к историческому ядру"
+    },
+    "claim_exile_and_persian_ezra_nehemiah": {
+      "confidence": "anchored",
+      "note_ru": "Линза: доверяет большему объёму хроники Эзры–Неемии"
+    },
+    "claim_jesus_jerusalem_historical_core": {
+      "confidence": "firm",
+      "note_ru": "Линза: ядро (учитель, казнь при Пилате) почти несомненно"
+    },
+    "claim_jesus_jerusalem_crucifixion": {
+      "confidence": "firm",
+      "note_ru": "Линза: распятие при Пилате как твёрдый факт"
+    },
+    "claim_jesus_jerusalem_community": {
+      "confidence": "firm",
+      "note_ru": "Линза: ранняя иерусалимская община — надёжное ядро"
+    },
+    "claim_pauline_networks_acts_secondary": {
+      "confidence": "anchored",
+      "note_ru": "Линза: Деяния полезнее для хронологии, чем в university"
+    },
+    "claim_bar_kokhba_akiva_tradition": {
+      "confidence": "anchored",
+      "note_ru": "Линза: традиция поддержки Акивы читается серьёзнее"
+    },
+    "claim_war_and_divergence_paths": {
+      "confidence": "firm",
+      "note_ru": "Линза: расхождение путей после 70 — более резкий перелом"
     }
   }
 }
