@@ -169,7 +169,6 @@
     "date_max": 30,
     "source_ids": [
       "synoptic_gospels",
-      "josephus_antiquities",
       "modern_handbook"
     ],
     "citations": [
