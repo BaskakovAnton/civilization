@@ -6,7 +6,10 @@
     "confidence": "firm",
     "date_min": -1210,
     "date_max": -1205,
-    "source_ids": ["merneptah_stele", "modern_handbook"],
+    "source_ids": [
+      "merneptah_stele",
+      "modern_handbook"
+    ],
     "citations": [
       {
         "id": "cite_claim_merneptah",
@@ -24,7 +27,19 @@
     "confidence": "disputed",
     "date_min": -1200,
     "date_max": -1000,
-    "source_ids": ["iron_i_settlement", "modern_handbook"]
+    "source_ids": [
+      "iron_i_settlement",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_exo_settle",
+        "label_ru": "Israelites — origins / Iron I",
+        "kind": "web",
+        "source_id": "iron_i_settlement",
+        "url": "https://en.wikipedia.org/wiki/Israelites#Origins"
+      }
+    ]
   },
   {
     "id": "claim_exodus_emergence_mass_exodus",
@@ -33,8 +48,28 @@
     "confidence": "disputed",
     "date_min": null,
     "date_max": null,
-    "source_ids": ["exodus_narrative", "modern_handbook"],
-    "dissent_ru": "Есть модели «исторического ядра» малой группы; единой датировки нет."
+    "source_ids": [
+      "exodus_narrative",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Есть модели «исторического ядра» малой группы; единой датировки нет.",
+    "citations": [
+      {
+        "id": "cite_claim_exo_mass_ex1",
+        "label_ru": "Исх 1–14 (нарратив)",
+        "kind": "verse",
+        "source_id": "exodus_narrative",
+        "ref": "Exod.1-14",
+        "url": "https://www.biblegateway.com/passage/?search=Exodus+1-14&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_exo_mass_wiki",
+        "label_ru": "The Exodus — historicity",
+        "kind": "web",
+        "source_id": "exodus_narrative",
+        "url": "https://en.wikipedia.org/wiki/The_Exodus#Origins_and_historicity"
+      }
+    ]
   },
   {
     "id": "claim_exodus_emergence_joshua_conquest",
@@ -43,7 +78,27 @@
     "confidence": "disputed",
     "date_min": -1200,
     "date_max": -1000,
-    "source_ids": ["iron_i_settlement", "modern_handbook", "exodus_narrative"]
+    "source_ids": [
+      "iron_i_settlement",
+      "modern_handbook",
+      "exodus_narrative"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_exo_josh",
+        "label_ru": "Book of Joshua — conquest model",
+        "kind": "web",
+        "source_id": "exodus_narrative",
+        "url": "https://en.wikipedia.org/wiki/Book_of_Joshua#Historicity"
+      },
+      {
+        "id": "cite_claim_exo_josh_iron",
+        "label_ru": "Israelites — Iron I settlement",
+        "kind": "web",
+        "source_id": "iron_i_settlement",
+        "url": "https://en.wikipedia.org/wiki/Israelites#Origins"
+      }
+    ]
   },
   {
     "id": "claim_exodus_emergence_moses_tradition",
@@ -52,6 +107,26 @@
     "confidence": "literary",
     "date_min": null,
     "date_max": null,
-    "source_ids": ["exodus_narrative", "modern_handbook"]
+    "source_ids": [
+      "exodus_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_exo_moses",
+        "label_ru": "Исх 3",
+        "kind": "verse",
+        "source_id": "exodus_narrative",
+        "ref": "Exod.3",
+        "url": "https://www.biblegateway.com/passage/?search=Exodus+3&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_exo_moses_wiki",
+        "label_ru": "Moses — historicity",
+        "kind": "web",
+        "source_id": "exodus_narrative",
+        "url": "https://en.wikipedia.org/wiki/Moses#Historicity"
+      }
+    ]
   }
 ]

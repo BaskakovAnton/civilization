@@ -6,7 +6,28 @@
     "confidence": "anchored",
     "date_min": -930,
     "date_max": -722,
-    "source_ids": ["deuteronomistic_history", "assyrian_annals", "modern_handbook"]
+    "source_ids": [
+      "deuteronomistic_history",
+      "assyrian_annals",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_div_two_1kgs12",
+        "label_ru": "3 Цар 12",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "1Kgs.12",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+12&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_div_two_assyria",
+        "label_ru": "Neo-Assyrian Empire (контекст)",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Neo-Assyrian_Empire"
+      }
+    ]
   },
   {
     "id": "claim_divided_kingdoms_omrides",
@@ -15,7 +36,26 @@
     "confidence": "anchored",
     "date_min": -880,
     "date_max": -840,
-    "source_ids": ["assyrian_annals", "modern_handbook"]
+    "source_ids": [
+      "assyrian_annals",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_div_omri",
+        "label_ru": "Omri / House of Omri",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Omri"
+      },
+      {
+        "id": "cite_claim_div_omri_samaria",
+        "label_ru": "Samaria (city)",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Samaria_(ancient_city)"
+      }
+    ]
   },
   {
     "id": "claim_divided_kingdoms_jehu_obelisk",
@@ -24,7 +64,20 @@
     "confidence": "firm",
     "date_min": -841,
     "date_max": -841,
-    "source_ids": ["black_obelisk", "assyrian_annals", "modern_handbook"]
+    "source_ids": [
+      "black_obelisk",
+      "assyrian_annals",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_div_jehu",
+        "label_ru": "Black Obelisk of Shalmaneser III",
+        "kind": "inscription",
+        "source_id": "black_obelisk",
+        "url": "https://en.wikipedia.org/wiki/Black_Obelisk_of_Shalmaneser_III"
+      }
+    ]
   },
   {
     "id": "claim_divided_kingdoms_mesha",
@@ -33,7 +86,19 @@
     "confidence": "firm",
     "date_min": -850,
     "date_max": -830,
-    "source_ids": ["mesha_stele", "modern_handbook"]
+    "source_ids": [
+      "mesha_stele",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_div_mesha",
+        "label_ru": "Mesha Stele",
+        "kind": "inscription",
+        "source_id": "mesha_stele",
+        "url": "https://en.wikipedia.org/wiki/Mesha_Stele"
+      }
+    ]
   },
   {
     "id": "claim_divided_kingdoms_elijah_ahab",
@@ -42,6 +107,19 @@
     "confidence": "literary",
     "date_min": -870,
     "date_max": -850,
-    "source_ids": ["deuteronomistic_history", "modern_handbook"]
+    "source_ids": [
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_div_elijah",
+        "label_ru": "3 Цар 18",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "1Kgs.18",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+18&version=NRSVUE"
+      }
+    ]
   }
 ]

@@ -104,6 +104,19 @@
       }
     },
     {
+      "id": "saul",
+      "label_ru": "Саул",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "early_monarchy"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Первый царь в династической традиции; внешняя аттестация слабее, чем у «дома Давида»",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
       "id": "david",
       "label_ru": "Давид",
       "theographic_slug": "david_994",
@@ -168,22 +181,6 @@
       }
     },
     {
-      "id": "jehu",
-      "label_ru": "Ииуй",
-      "theographic_slug": "jehu_816",
-      "epoch_ids": [
-        "divided_kingdoms"
-      ],
-      "confidence": "anchored",
-      "note_ru": "Переворот против Омридов; Чёрный обелиск Салманасара",
-      "upstream": {
-        "found": true,
-        "name": "Jehu",
-        "alsoCalled": [],
-        "dictionaryLink": null
-      }
-    },
-    {
       "id": "elijah",
       "label_ru": "Илия",
       "theographic_slug": "elijah_1131",
@@ -200,6 +197,22 @@
       }
     },
     {
+      "id": "jehu",
+      "label_ru": "Ииуй",
+      "theographic_slug": "jehu_816",
+      "epoch_ids": [
+        "divided_kingdoms"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Переворот против Омридов; Чёрный обелиск Салманасара",
+      "upstream": {
+        "found": true,
+        "name": "Jehu",
+        "alsoCalled": [],
+        "dictionaryLink": null
+      }
+    },
+    {
       "id": "hezekiah",
       "label_ru": "Езекия",
       "theographic_slug": "hezekiah_1512",
@@ -211,22 +224,6 @@
       "upstream": {
         "found": true,
         "name": "Hezekiah",
-        "alsoCalled": [],
-        "dictionaryLink": null
-      }
-    },
-    {
-      "id": "sennacherib",
-      "label_ru": "Синаххериб",
-      "theographic_slug": "sennacherib_2489",
-      "epoch_ids": [
-        "assyria_to_exile"
-      ],
-      "confidence": "firm",
-      "note_ru": "Ассирийский царь; поход ~701",
-      "upstream": {
-        "found": true,
-        "name": "Sennacherib",
         "alsoCalled": [],
         "dictionaryLink": null
       }
@@ -313,6 +310,19 @@
       }
     },
     {
+      "id": "alexander_the_great",
+      "label_ru": "Александр Македонский",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "hellenistic_hasmonean"
+      ],
+      "confidence": "firm",
+      "note_ru": "332 до н.э. — вход Иудеи в эллинистический мир; не биография по 1 Макк",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
       "id": "antiochus_iv",
       "label_ru": "Антиох IV Эпифан",
       "theographic_slug": "",
@@ -355,6 +365,19 @@
       }
     },
     {
+      "id": "pompey",
+      "label_ru": "Помпей",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "roman_herodian"
+      ],
+      "confidence": "firm",
+      "note_ru": "Римский полководец; взятие Иерусалима 63 до н.э. (Иосиф / римская хронология)",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
       "id": "herod_the_great",
       "label_ru": "Ирод Великий",
       "theographic_slug": "herod_1504",
@@ -368,6 +391,19 @@
         "name": "Herod",
         "alsoCalled": [],
         "dictionaryLink": null
+      }
+    },
+    {
+      "id": "herod_archelaus",
+      "label_ru": "Ирод Архелай",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "roman_herodian"
+      ],
+      "confidence": "firm",
+      "note_ru": "Этнарх Иудеи после Ирода; свергнут (~6 н.э.), далее римские префекты",
+      "upstream": {
+        "found": false
       }
     },
     {
@@ -421,6 +457,33 @@
       }
     },
     {
+      "id": "james_of_jerusalem",
+      "label_ru": "Иаков (брат Господень / Иерусалим)",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "jesus_jerusalem",
+        "pauline_networks"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Столп Иерусалима у Павла (Гал 1–2); не путать с сыном Зеведея без отдельной калибровки",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
+      "id": "barnabas",
+      "label_ru": "Варнава",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "pauline_networks"
+      ],
+      "confidence": "anchored",
+      "note_ru": "Упоминается Павлом в Гал 2 (Антиохия); биография Деяний вторична",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
       "id": "paul_of_tarsus",
       "label_ru": "Павел",
       "theographic_slug": "paul_2479",
@@ -464,6 +527,32 @@
       }
     },
     {
+      "id": "titus",
+      "label_ru": "Тит",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "war_and_divergence"
+      ],
+      "confidence": "firm",
+      "note_ru": "Сын Веспасиана; осада и взятие Иерусалима 70 н.э.",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
+      "id": "rabbi_akiva",
+      "label_ru": "Рабби Акива",
+      "theographic_slug": "",
+      "epoch_ids": [
+        "bar_kokhba"
+      ],
+      "confidence": "disputed",
+      "note_ru": "Поздняя традиция связывает с поддержкой Бар-Кохбы; степень историчности спорна",
+      "upstream": {
+        "found": false
+      }
+    },
+    {
       "id": "simon_bar_kokhba",
       "label_ru": "Шимон бар Косба (Бар-Кохба)",
       "theographic_slug": "",
@@ -487,6 +576,22 @@
       "note_ru": "Римский император; подавление 132–135",
       "upstream": {
         "found": false
+      }
+    },
+    {
+      "id": "sennacherib",
+      "label_ru": "Синаххериб",
+      "theographic_slug": "sennacherib_2489",
+      "epoch_ids": [
+        "assyria_to_exile"
+      ],
+      "confidence": "firm",
+      "note_ru": "Ассирийский царь; поход ~701",
+      "upstream": {
+        "found": true,
+        "name": "Sennacherib",
+        "alsoCalled": [],
+        "dictionaryLink": null
       }
     }
   ]

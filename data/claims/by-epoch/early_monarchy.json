@@ -6,7 +6,19 @@
     "confidence": "anchored",
     "date_min": -850,
     "date_max": -800,
-    "source_ids": ["tel_dan_inscription", "modern_handbook"]
+    "source_ids": [
+      "tel_dan_inscription",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_em_tel_dan",
+        "label_ru": "Tel Dan Stele",
+        "kind": "inscription",
+        "source_id": "tel_dan_inscription",
+        "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+      }
+    ]
   },
   {
     "id": "claim_early_monarchy_scale",
@@ -15,7 +27,27 @@
     "confidence": "disputed",
     "date_min": -1050,
     "date_max": -930,
-    "source_ids": ["deuteronomistic_history", "modern_handbook"]
+    "source_ids": [
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_em_scale_2sam",
+        "label_ru": "2 Цар 5–8 (традиция)",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Sam.5-8",
+        "url": "https://www.biblegateway.com/passage/?search=2+Samuel+5-8&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_em_scale_hb",
+        "label_ru": "Kingdom of Israel (united monarchy)",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Kingdom_of_Israel_(united_monarchy)#Historicity"
+      }
+    ]
   },
   {
     "id": "claim_early_monarchy_jerusalem",
@@ -24,6 +56,56 @@
     "confidence": "disputed",
     "date_min": -1000,
     "date_max": -930,
-    "source_ids": ["modern_handbook", "deuteronomistic_history"]
+    "source_ids": [
+      "modern_handbook",
+      "deuteronomistic_history"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_em_jeru",
+        "label_ru": "Jerusalem — Iron Age / City of David",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/History_of_Jerusalem#Iron_Age"
+      },
+      {
+        "id": "cite_claim_em_jeru_2sam5",
+        "label_ru": "2 Цар 5",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Sam.5",
+        "url": "https://www.biblegateway.com/passage/?search=2+Samuel+5&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "claim_early_monarchy_saul",
+    "epoch_id": "early_monarchy",
+    "statement_ru": "Саул — первый царь в библейской династической традиции; надёжной внешней биографической аттестации нет.",
+    "confidence": "literary",
+    "date_min": -1050,
+    "date_max": -1000,
+    "source_ids": [
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Некоторые реконструкции допускают историческое ядро ранней монархии без деталей 1 Сам.",
+    "citations": [
+      {
+        "id": "cite_claim_em_saul_1sam9",
+        "label_ru": "1 Цар 9–11",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "1Sam.9-11",
+        "url": "https://www.biblegateway.com/passage/?search=1+Samuel+9-11&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_em_saul_hb",
+        "label_ru": "Saul (king)",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Saul"
+      }
+    ]
   }
 ]

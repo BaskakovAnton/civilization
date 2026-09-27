@@ -6,7 +6,28 @@
     "confidence": "firm",
     "date_min": -723,
     "date_max": -720,
-    "source_ids": ["assyrian_annals", "deuteronomistic_history", "modern_handbook"]
+    "source_ids": [
+      "assyrian_annals",
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_ass_722_2kgs17",
+        "label_ru": "4 Цар 17",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.17",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+17&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_ass_722_wiki",
+        "label_ru": "Assyrian captivity / fall of Samaria",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Assyrian_captivity"
+      }
+    ]
   },
   {
     "id": "claim_assyria_to_exile_sennacherib_701",
@@ -15,7 +36,27 @@
     "confidence": "firm",
     "date_min": -701,
     "date_max": -701,
-    "source_ids": ["assyrian_annals", "deuteronomistic_history"]
+    "source_ids": [
+      "assyrian_annals",
+      "deuteronomistic_history"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_ass_701_2kgs18",
+        "label_ru": "4 Цар 18–19",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.18-19",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+18-19&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_ass_701_prism",
+        "label_ru": "Sennacherib's Annals",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Sennacherib%27s_Annals"
+      }
+    ]
   },
   {
     "id": "claim_assyria_to_exile_jerusalem_586",
@@ -24,7 +65,28 @@
     "confidence": "firm",
     "date_min": -597,
     "date_max": -586,
-    "source_ids": ["babylonian_chronicles", "deuteronomistic_history", "modern_handbook"]
+    "source_ids": [
+      "babylonian_chronicles",
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_ass_586_chron",
+        "label_ru": "Babylonian Chronicles",
+        "kind": "web",
+        "source_id": "babylonian_chronicles",
+        "url": "https://en.wikipedia.org/wiki/Babylonian_Chronicles"
+      },
+      {
+        "id": "cite_claim_ass_586_2kgs25",
+        "label_ru": "4 Цар 25",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.25",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+25&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "claim_assyria_to_exile_josiah_reform",
@@ -33,7 +95,27 @@
     "confidence": "anchored",
     "date_min": -640,
     "date_max": -609,
-    "source_ids": ["deuteronomistic_history", "modern_handbook"]
+    "source_ids": [
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_ass_josiah",
+        "label_ru": "4 Цар 22–23",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.22-23",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+22-23&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_ass_josiah_hb",
+        "label_ru": "Josiah — reforms",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Josiah#Religious_reform"
+      }
+    ]
   },
   {
     "id": "claim_assyria_to_exile_597",
@@ -42,6 +124,18 @@
     "confidence": "firm",
     "date_min": -597,
     "date_max": -597,
-    "source_ids": ["babylonian_chronicles", "modern_handbook"]
+    "source_ids": [
+      "babylonian_chronicles",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_ass_597",
+        "label_ru": "Siege of Jerusalem (597 BCE)",
+        "kind": "web",
+        "source_id": "babylonian_chronicles",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(597_BC)"
+      }
+    ]
   }
 ]

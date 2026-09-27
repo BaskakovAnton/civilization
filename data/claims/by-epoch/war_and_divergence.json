@@ -6,7 +6,20 @@
     "confidence": "firm",
     "date_min": 66,
     "date_max": 70,
-    "source_ids": ["josephus_war", "roman_fasti", "modern_handbook"]
+    "source_ids": [
+      "josephus_war",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_war_70",
+        "label_ru": "The Jewish War / Siege of Jerusalem (70)",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)"
+      }
+    ]
   },
   {
     "id": "claim_war_and_divergence_paths",
@@ -15,7 +28,26 @@
     "confidence": "anchored",
     "date_min": 70,
     "date_max": 100,
-    "source_ids": ["josephus_war", "modern_handbook"]
+    "source_ids": [
+      "josephus_war",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_war_paths",
+        "label_ru": "Split of early Christianity and Judaism",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Split_of_early_Christianity_and_Judaism"
+      },
+      {
+        "id": "cite_claim_war_paths_jos",
+        "label_ru": "The Jewish War (обзор)",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/The_Jewish_War"
+      }
+    ]
   },
   {
     "id": "claim_war_and_divergence_vespasian_titus",
@@ -24,6 +56,41 @@
     "confidence": "firm",
     "date_min": 67,
     "date_max": 70,
-    "source_ids": ["josephus_war", "roman_fasti", "modern_handbook"]
+    "source_ids": [
+      "josephus_war",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_war_vesp",
+        "label_ru": "First Jewish–Roman War",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/First_Jewish%E2%80%93Roman_War"
+      }
+    ]
+  },
+  {
+    "id": "claim_war_and_divergence_masada",
+    "epoch_id": "war_and_divergence",
+    "statement_ru": "Падение Масады (~73/74 н.э.) завершает основной цикл Первой иудейской войны в нарративе Иосифа.",
+    "confidence": "anchored",
+    "date_min": 73,
+    "date_max": 74,
+    "source_ids": [
+      "josephus_war",
+      "modern_handbook"
+    ],
+    "dissent_ru": "Детали самоубийства защитников — спорная литературная конструкция Иосифа",
+    "citations": [
+      {
+        "id": "cite_claim_war_masada",
+        "label_ru": "Siege of Masada",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Masada"
+      }
+    ]
   }
 ]

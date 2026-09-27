@@ -6,7 +6,20 @@
     "confidence": "firm",
     "date_min": -63,
     "date_max": -63,
-    "source_ids": ["josephus_antiquities", "roman_fasti", "modern_handbook"]
+    "source_ids": [
+      "josephus_antiquities",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_rom_pompey",
+        "label_ru": "Pompey in Judea / Josephus",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(63_BC)"
+      }
+    ]
   },
   {
     "id": "claim_roman_herodian_herod",
@@ -15,7 +28,19 @@
     "confidence": "firm",
     "date_min": -37,
     "date_max": -4,
-    "source_ids": ["josephus_antiquities", "modern_handbook"]
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_rom_herod",
+        "label_ru": "Herod the Great (Josephus)",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Herod_the_Great"
+      }
+    ]
   },
   {
     "id": "claim_roman_herodian_pilate",
@@ -24,7 +49,27 @@
     "confidence": "firm",
     "date_min": 26,
     "date_max": 36,
-    "source_ids": ["josephus_antiquities", "roman_fasti", "synoptic_gospels"]
+    "source_ids": [
+      "josephus_antiquities",
+      "roman_fasti",
+      "synoptic_gospels"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_rom_pilate_stone",
+        "label_ru": "Pilate Stone",
+        "kind": "inscription",
+        "source_id": "roman_fasti",
+        "url": "https://en.wikipedia.org/wiki/Pilate_stone"
+      },
+      {
+        "id": "cite_claim_rom_pilate_jos",
+        "label_ru": "Pontius Pilate — Josephus",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Pontius_Pilate"
+      }
+    ]
   },
   {
     "id": "claim_roman_herodian_temple_rebuild",
@@ -33,6 +78,40 @@
     "confidence": "firm",
     "date_min": -20,
     "date_max": 10,
-    "source_ids": ["josephus_antiquities", "modern_handbook"]
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_rom_temple",
+        "label_ru": "Herod's Temple",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Herod%27s_Temple"
+      }
+    ]
+  },
+  {
+    "id": "claim_roman_herodian_archelaus",
+    "epoch_id": "roman_herodian",
+    "statement_ru": "После смерти Ирода Архелай правит как этнарх Иудеи; около 6 н.э. свергнут, иудея переходит под прямых римских префектов.",
+    "confidence": "firm",
+    "date_min": -4,
+    "date_max": 6,
+    "source_ids": [
+      "josephus_antiquities",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_rom_archelaus",
+        "label_ru": "Herod Archelaus",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Herod_Archelaus"
+      }
+    ]
   }
 ]

@@ -6,7 +6,26 @@
     "confidence": "firm",
     "date_min": -332,
     "date_max": -200,
-    "source_ids": ["hellenistic_chronology", "modern_handbook"]
+    "source_ids": [
+      "hellenistic_chronology",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_hel_alex",
+        "label_ru": "Hellenistic period / Judea",
+        "kind": "web",
+        "source_id": "hellenistic_chronology",
+        "url": "https://en.wikipedia.org/wiki/Hellenistic_period"
+      },
+      {
+        "id": "cite_claim_hel_alex_judea",
+        "label_ru": "History of the Jews in the Second Temple period",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/History_of_the_Jews_in_the_Second_Temple_period"
+      }
+    ]
   },
   {
     "id": "claim_hellenistic_hasmonean_crisis_167",
@@ -15,7 +34,29 @@
     "confidence": "firm",
     "date_min": -167,
     "date_max": -164,
-    "source_ids": ["1_macc", "2_macc", "hellenistic_chronology"]
+    "source_ids": [
+      "1_macc",
+      "2_macc",
+      "hellenistic_chronology"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_hel_167_1macc",
+        "label_ru": "1 Макк 1–4",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.1-4",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+1-4&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_hel_167_2macc",
+        "label_ru": "2 Макк 6–10",
+        "kind": "verse",
+        "source_id": "2_macc",
+        "ref": "2Macc.6-10",
+        "url": "https://www.biblegateway.com/passage/?search=2+Maccabees+6-10&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "claim_hellenistic_hasmonean_state",
@@ -24,7 +65,28 @@
     "confidence": "firm",
     "date_min": -140,
     "date_max": -63,
-    "source_ids": ["1_macc", "josephus_antiquities", "modern_handbook"]
+    "source_ids": [
+      "1_macc",
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_hel_state_1macc",
+        "label_ru": "1 Макк 13–14",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.13-14",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+13-14&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_hel_state_jos",
+        "label_ru": "Antiquities of the Jews (обзор)",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Hasmonean_dynasty"
+      }
+    ]
   },
   {
     "id": "claim_hellenistic_hasmonean_temple_rededication",
@@ -33,6 +95,20 @@
     "confidence": "anchored",
     "date_min": -164,
     "date_max": -164,
-    "source_ids": ["1_macc", "2_macc", "modern_handbook"]
+    "source_ids": [
+      "1_macc",
+      "2_macc",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_hel_hanukkah",
+        "label_ru": "1 Макк 4:36–59",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.4.36-59",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+4%3A36-59&version=NRSVUE"
+      }
+    ]
   }
 ]

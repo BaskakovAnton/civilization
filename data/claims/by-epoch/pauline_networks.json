@@ -6,7 +6,27 @@
     "confidence": "anchored",
     "date_min": 50,
     "date_max": 60,
-    "source_ids": ["pauline_letters", "modern_handbook"]
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_paul_letters_gal",
+        "label_ru": "Гал 1–2",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.1-2",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+1-2&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_paul_letters_hb",
+        "label_ru": "Pauline epistles — undisputed",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Pauline_epistles#Undisputed_epistles"
+      }
+    ]
   },
   {
     "id": "claim_pauline_networks_geography",
@@ -15,7 +35,28 @@
     "confidence": "anchored",
     "date_min": 40,
     "date_max": 65,
-    "source_ids": ["pauline_letters", "acts"]
+    "source_ids": [
+      "pauline_letters",
+      "acts"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_paul_geo_rom",
+        "label_ru": "Рим 15:19–28",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Rom.15.19-28",
+        "url": "https://www.biblegateway.com/passage/?search=Romans+15%3A19-28&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_paul_geo_1cor",
+        "label_ru": "1 Кор 1:1–2",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "1Cor.1.1-2",
+        "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+1%3A1-2&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "claim_pauline_networks_acts_secondary",
@@ -24,7 +65,28 @@
     "confidence": "anchored",
     "date_min": null,
     "date_max": null,
-    "source_ids": ["acts", "pauline_letters", "modern_handbook"]
+    "source_ids": [
+      "acts",
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_paul_acts",
+        "label_ru": "Деян 15 / Гал 2 (сравнение)",
+        "kind": "verse",
+        "source_id": "acts",
+        "ref": "Acts.15",
+        "url": "https://www.biblegateway.com/passage/?search=Acts+15&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_paul_acts_hb",
+        "label_ru": "Acts of the Apostles — historicity",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Acts_of_the_Apostles#Historicity"
+      }
+    ]
   },
   {
     "id": "claim_pauline_networks_antioch_incident",
@@ -33,6 +95,41 @@
     "confidence": "anchored",
     "date_min": 48,
     "date_max": 55,
-    "source_ids": ["pauline_letters", "modern_handbook"]
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_paul_antioch",
+        "label_ru": "Гал 2:11–14",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.11-14",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A11-14&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "claim_pauline_networks_jerusalem_pillars",
+    "epoch_id": "pauline_networks",
+    "statement_ru": "Павел признаёт «столпов» Иерусалима (Иаков, Кифа, Иоанн) и согласование миссий (Гал 2:1–10) — ранний якорь структуры общин.",
+    "confidence": "anchored",
+    "date_min": 48,
+    "date_max": 55,
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_paul_pillars",
+        "label_ru": "Гал 2:1–10",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.1-10",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A1-10&version=NRSVUE"
+      }
+    ]
   }
 ]

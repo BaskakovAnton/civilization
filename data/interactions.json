@@ -7,7 +7,20 @@
     "relation": "kin",
     "label_ru": "Авраам — предок Иакова в генеалогии предания",
     "confidence": "literary",
-    "source_ids": ["genesis_narrative", "modern_handbook"]
+    "source_ids": [
+      "genesis_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_abr_jac",
+        "label_ru": "Быт 25; 27–28",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.25;27-28",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+25%3B+Genesis+27-28&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_jacob_joseph_kin",
@@ -17,7 +30,20 @@
     "relation": "kin",
     "label_ru": "Иаков — отец Иосифа в цикле предания",
     "confidence": "literary",
-    "source_ids": ["genesis_narrative", "modern_handbook"]
+    "source_ids": [
+      "genesis_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jac_jos",
+        "label_ru": "Быт 37",
+        "kind": "verse",
+        "source_id": "genesis_narrative",
+        "ref": "Gen.37",
+        "url": "https://www.biblegateway.com/passage/?search=Genesis+37&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_moses_aaron_kin",
@@ -27,7 +53,20 @@
     "relation": "kin",
     "label_ru": "Моисей и Аарон — братья в предании Исхода",
     "confidence": "literary",
-    "source_ids": ["exodus_narrative", "modern_handbook"]
+    "source_ids": [
+      "exodus_narrative",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_mos_aar",
+        "label_ru": "Исх 4:14–16",
+        "kind": "verse",
+        "source_id": "exodus_narrative",
+        "ref": "Exod.4.14-16",
+        "url": "https://www.biblegateway.com/passage/?search=Exodus+4%3A14-16&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_moses_joshua_succeeds",
@@ -37,8 +76,21 @@
     "relation": "succeeds",
     "label_ru": "Иисус Навин наследует роль Моисея в традиции заселения",
     "confidence": "literary",
-    "source_ids": ["exodus_narrative", "modern_handbook"],
-    "note_ru": "Литературное преемство; не внешняя аттестация биографий"
+    "source_ids": [
+      "exodus_narrative",
+      "modern_handbook"
+    ],
+    "note_ru": "Литературное преемство; не внешняя аттестация биографий",
+    "citations": [
+      {
+        "id": "cite_int_mos_josh",
+        "label_ru": "Втор 31; Нав 1",
+        "kind": "verse",
+        "source_id": "exodus_narrative",
+        "ref": "Deut.31;Josh.1",
+        "url": "https://www.biblegateway.com/passage/?search=Deuteronomy+31%3B+Joshua+1&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_solomon_david_succeeds",
@@ -48,8 +100,29 @@
     "relation": "succeeds",
     "label_ru": "Соломон наследует Давиду в династической традиции",
     "confidence": "disputed",
-    "source_ids": ["deuteronomistic_history", "tel_dan_inscription", "modern_handbook"],
-    "note_ru": "Масштаб царства спорный; династия «дома Давида» имеет внешний якорь (Тель Дан)"
+    "source_ids": [
+      "deuteronomistic_history",
+      "tel_dan_inscription",
+      "modern_handbook"
+    ],
+    "note_ru": "Масштаб царства спорный; династия «дома Давида» имеет внешний якорь (Тель Дан)",
+    "citations": [
+      {
+        "id": "cite_int_sol_dav",
+        "label_ru": "3 Цар 1–2",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "1Kgs.1-2",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+1-2&version=NRSVUE"
+      },
+      {
+        "id": "cite_int_sol_dav_tel",
+        "label_ru": "Tel Dan Stele (дом Давида)",
+        "kind": "inscription",
+        "source_id": "tel_dan_inscription",
+        "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+      }
+    ]
   },
   {
     "id": "int_omri_ahab_succeeds",
@@ -59,7 +132,28 @@
     "relation": "succeeds",
     "label_ru": "Ахав наследует Омри в северной династии",
     "confidence": "anchored",
-    "source_ids": ["deuteronomistic_history", "assyrian_annals", "modern_handbook"]
+    "source_ids": [
+      "deuteronomistic_history",
+      "assyrian_annals",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_omri_ahab",
+        "label_ru": "3 Цар 16:23–34",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "1Kgs.16.23-34",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+16%3A23-34&version=NRSVUE"
+      },
+      {
+        "id": "cite_int_omri_ahab_wiki",
+        "label_ru": "Ahab",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Ahab"
+      }
+    ]
   },
   {
     "id": "int_elijah_ahab_opposes",
@@ -69,7 +163,20 @@
     "relation": "opposes",
     "label_ru": "Илия противостоит дому Ахава в пророческой традиции",
     "confidence": "literary",
-    "source_ids": ["deuteronomistic_history", "modern_handbook"]
+    "source_ids": [
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_elijah_ahab",
+        "label_ru": "3 Цар 18",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "1Kgs.18",
+        "url": "https://www.biblegateway.com/passage/?search=1+Kings+18&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_jehu_ahab_opposes",
@@ -79,7 +186,28 @@
     "relation": "opposes",
     "label_ru": "Ииуй свергает дом Омри/Ахава; есть внешний ассирийский якорь",
     "confidence": "anchored",
-    "source_ids": ["black_obelisk", "deuteronomistic_history", "assyrian_annals"]
+    "source_ids": [
+      "black_obelisk",
+      "deuteronomistic_history",
+      "assyrian_annals"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jehu_obelisk",
+        "label_ru": "Black Obelisk",
+        "kind": "inscription",
+        "source_id": "black_obelisk",
+        "url": "https://en.wikipedia.org/wiki/Black_Obelisk_of_Shalmaneser_III"
+      },
+      {
+        "id": "cite_int_jehu_2kgs9",
+        "label_ru": "4 Цар 9–10",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.9-10",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+9-10&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_sennacherib_hezekiah_opposes",
@@ -89,7 +217,28 @@
     "relation": "opposes",
     "label_ru": "Синаххериб ведёт кампанию против Иудеи Езекии (~701)",
     "confidence": "firm",
-    "source_ids": ["assyrian_annals", "deuteronomistic_history", "modern_handbook"]
+    "source_ids": [
+      "assyrian_annals",
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_senn_hez",
+        "label_ru": "Sennacherib's Annals",
+        "kind": "web",
+        "source_id": "assyrian_annals",
+        "url": "https://en.wikipedia.org/wiki/Sennacherib%27s_Annals"
+      },
+      {
+        "id": "cite_int_senn_hez_2kgs",
+        "label_ru": "4 Цар 18–19",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.18-19",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+18-19&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_nebuchadnezzar_josiah_context",
@@ -99,8 +248,29 @@
     "relation": "succeeds",
     "label_ru": "После Иосии Иудея входит в зону вавилонского давления (Навуходоносор)",
     "confidence": "anchored",
-    "source_ids": ["babylonian_chronicles", "deuteronomistic_history", "modern_handbook"],
-    "note_ru": "Не личная встреча; смена имперского контекста после 609"
+    "source_ids": [
+      "babylonian_chronicles",
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "note_ru": "Не личная встреча; смена имперского контекста после 609",
+    "citations": [
+      {
+        "id": "cite_int_neb_jos",
+        "label_ru": "Babylonian Chronicles",
+        "kind": "web",
+        "source_id": "babylonian_chronicles",
+        "url": "https://en.wikipedia.org/wiki/Babylonian_Chronicles"
+      },
+      {
+        "id": "cite_int_neb_jos_2kgs",
+        "label_ru": "4 Цар 23:29–30",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.23.29-30",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+23%3A29-30&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_cyrus_after_babylon",
@@ -110,7 +280,20 @@
     "relation": "succeeds",
     "label_ru": "Персия сменяет нововавилонский порядок (контекст возвращения в Йехуд)",
     "confidence": "firm",
-    "source_ids": ["cyrus_cylinder", "babylonian_chronicles", "modern_handbook"]
+    "source_ids": [
+      "cyrus_cylinder",
+      "babylonian_chronicles",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_cyrus",
+        "label_ru": "Cyrus Cylinder",
+        "kind": "inscription",
+        "source_id": "cyrus_cylinder",
+        "url": "https://en.wikipedia.org/wiki/Cyrus_Cylinder"
+      }
+    ]
   },
   {
     "id": "int_ezra_nehemiah_allies",
@@ -120,8 +303,21 @@
     "relation": "allies",
     "label_ru": "Эзра и Неемия связаны в традиции восстановления Йехуда",
     "confidence": "disputed",
-    "source_ids": ["ezra_nehemiah", "modern_handbook"],
-    "note_ru": "Хронологическое соотношение фигур спорно"
+    "source_ids": [
+      "ezra_nehemiah",
+      "modern_handbook"
+    ],
+    "note_ru": "Хронологическое соотношение фигур спорно",
+    "citations": [
+      {
+        "id": "cite_int_ezra_neh",
+        "label_ru": "Неем 8",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Neh.8",
+        "url": "https://www.biblegateway.com/passage/?search=Nehemiah+8&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_antiochus_mattathias_opposes",
@@ -131,7 +327,21 @@
     "relation": "opposes",
     "label_ru": "Маттафия и сыновья поднимают восстание против политики Антиоха IV",
     "confidence": "firm",
-    "source_ids": ["1_macc", "2_macc", "hellenistic_chronology"]
+    "source_ids": [
+      "1_macc",
+      "2_macc",
+      "hellenistic_chronology"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_ant_matt",
+        "label_ru": "1 Макк 2",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.2",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+2&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_mattathias_judas_kin",
@@ -141,7 +351,20 @@
     "relation": "kin",
     "label_ru": "Маттафия — отец Иуды Маккавея",
     "confidence": "anchored",
-    "source_ids": ["1_macc", "modern_handbook"]
+    "source_ids": [
+      "1_macc",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_matt_judas",
+        "label_ru": "1 Макк 2:1–5",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.2.1-5",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+2%3A1-5&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_herod_to_prefects",
@@ -151,8 +374,21 @@
     "relation": "succeeds",
     "label_ru": "После Ирода Иудеей управляют римские префекты (Пилат — яркий пример)",
     "confidence": "firm",
-    "source_ids": ["josephus_antiquities", "roman_fasti", "modern_handbook"],
-    "note_ru": "Не прямое личное преемство; смена модели власти"
+    "source_ids": [
+      "josephus_antiquities",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "note_ru": "Не прямое личное преемство; смена модели власти",
+    "citations": [
+      {
+        "id": "cite_int_herod_pref",
+        "label_ru": "Herodian kingdom → Roman Judea",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Judea_(Roman_province)"
+      }
+    ]
   },
   {
     "id": "int_pilate_jesus_judges",
@@ -194,7 +430,29 @@
     "relation": "meets",
     "label_ru": "Пётр — один из ближайших учеников Иисуса (ядро традиции)",
     "confidence": "anchored",
-    "source_ids": ["synoptic_gospels", "pauline_letters", "modern_handbook"]
+    "source_ids": [
+      "synoptic_gospels",
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jes_peter",
+        "label_ru": "Мк 1:16–18; 8:27–30",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.16-18;8.27-30",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A16-18%3B+Mark+8%3A27-30&version=NRSVUE"
+      },
+      {
+        "id": "cite_int_jes_peter_gal",
+        "label_ru": "Гал 1:18",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.1.18",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+1%3A18&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_paul_jesus_mentions",
@@ -204,7 +462,20 @@
     "relation": "mentions",
     "label_ru": "Павел ссылается на смерть и воскресение Иисуса в ранних письмах",
     "confidence": "anchored",
-    "source_ids": ["pauline_letters", "modern_handbook"]
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_paul_jesus",
+        "label_ru": "1 Кор 15:3–8",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "1Cor.15.3-8",
+        "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A3-8&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_paul_peter_opposes",
@@ -214,7 +485,10 @@
     "relation": "opposes",
     "label_ru": "Павел противостоит Кифе в Антиохии (Гал 2)",
     "confidence": "anchored",
-    "source_ids": ["pauline_letters", "modern_handbook"],
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
     "note_ru": "Конфликт по свидетельству Павла; Деяния сглаживают",
     "citations": [
       {
@@ -235,7 +509,19 @@
     "relation": "mentions",
     "label_ru": "Иосиф — главный нарративный источник об Ироде",
     "confidence": "firm",
-    "source_ids": ["josephus_war", "josephus_antiquities"]
+    "source_ids": [
+      "josephus_war",
+      "josephus_antiquities"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jos_herod",
+        "label_ru": "Antiquities — Herod",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Antiquities_of_the_Jews"
+      }
+    ]
   },
   {
     "id": "int_josephus_vespasian_serves",
@@ -245,7 +531,19 @@
     "relation": "serves",
     "label_ru": "Иосиф переходит на сторону Веспасиана и пишет историю войны",
     "confidence": "firm",
-    "source_ids": ["josephus_war", "modern_handbook"]
+    "source_ids": [
+      "josephus_war",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jos_vesp",
+        "label_ru": "Josephus — Flavian patronage",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/Josephus#In_Rome"
+      }
+    ]
   },
   {
     "id": "int_bar_kokhba_hadrian_opposes",
@@ -255,7 +553,27 @@
     "relation": "opposes",
     "label_ru": "Бар-Кохба возглавляет восстание против Рима Адриана",
     "confidence": "firm",
-    "source_ids": ["bar_kokhba_letters", "dio_cassius", "modern_handbook"]
+    "source_ids": [
+      "bar_kokhba_letters",
+      "dio_cassius",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_bk_letters",
+        "label_ru": "Bar Kokhba letters",
+        "kind": "inscription",
+        "source_id": "bar_kokhba_letters",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_letters"
+      },
+      {
+        "id": "cite_int_bk_revolt",
+        "label_ru": "Bar Kokhba revolt",
+        "kind": "web",
+        "source_id": "dio_cassius",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_revolt"
+      }
+    ]
   },
   {
     "id": "int_david_hezekiah_dynasty",
@@ -265,7 +583,28 @@
     "relation": "kin",
     "label_ru": "Езекия — царь «дома Давида» (династическая линия Иудеи)",
     "confidence": "anchored",
-    "source_ids": ["deuteronomistic_history", "tel_dan_inscription", "modern_handbook"]
+    "source_ids": [
+      "deuteronomistic_history",
+      "tel_dan_inscription",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_dav_hez_tel",
+        "label_ru": "Tel Dan Stele",
+        "kind": "inscription",
+        "source_id": "tel_dan_inscription",
+        "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+      },
+      {
+        "id": "cite_int_dav_hez_2kgs",
+        "label_ru": "4 Цар 18:1–3",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "2Kgs.18.1-3",
+        "url": "https://www.biblegateway.com/passage/?search=2+Kings+18%3A1-3&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_herod_jesus_context",
@@ -275,8 +614,29 @@
     "relation": "mentions",
     "label_ru": "Иисус действует в мире, оформленном наследием Ирода (храм, власть)",
     "confidence": "anchored",
-    "source_ids": ["synoptic_gospels", "josephus_antiquities", "modern_handbook"],
-    "note_ru": "Не личная встреча: Ирод Великий умер раньше; контекст иродианского Иерусалима"
+    "source_ids": [
+      "synoptic_gospels",
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "note_ru": "Не личная встреча: Ирод Великий умер раньше; контекст иродианского Иерусалима",
+    "citations": [
+      {
+        "id": "cite_int_herod_jes_jos",
+        "label_ru": "Herod's Temple / Judea",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Herod%27s_Temple"
+      },
+      {
+        "id": "cite_int_herod_jes_mark",
+        "label_ru": "Мк 13:1–2",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.13.1-2",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+13%3A1-2&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "int_paul_rome_mentions",
@@ -286,7 +646,329 @@
     "relation": "mentions",
     "label_ru": "Павел действует в римском имперском пространстве (Пилат — ранний якорь префектуры)",
     "confidence": "anchored",
-    "source_ids": ["pauline_letters", "roman_fasti", "modern_handbook"],
-    "note_ru": "Не современники в одном эпизоде; связка империи"
+    "source_ids": [
+      "pauline_letters",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "note_ru": "Не современники в одном эпизоде; связка империи",
+    "citations": [
+      {
+        "id": "cite_int_paul_rome",
+        "label_ru": "Рим 1:7; 15:22–29",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Rom.1.7;15.22-29",
+        "url": "https://www.biblegateway.com/passage/?search=Romans+1%3A7%3B+Romans+15%3A22-29&version=NRSVUE"
+      },
+      {
+        "id": "cite_int_paul_rome_pilate",
+        "label_ru": "Pilate Stone (префектура)",
+        "kind": "web",
+        "source_id": "roman_fasti",
+        "url": "https://en.wikipedia.org/wiki/Pilate_stone"
+      }
+    ]
+  },
+  {
+    "id": "int_david_saul_succeeds",
+    "epoch_id": "early_monarchy",
+    "from_person_id": "david",
+    "to_person_id": "saul",
+    "relation": "succeeds",
+    "label_ru": "Давид наследует/сменяет Саула в династической традиции",
+    "confidence": "literary",
+    "source_ids": [
+      "deuteronomistic_history",
+      "modern_handbook"
+    ],
+    "note_ru": "Литературное преемство; внешний якорь — позже «дом Давида» (Тель Дан)",
+    "citations": [
+      {
+        "id": "cite_int_dav_saul",
+        "label_ru": "1 Цар 31; 2 Цар 2–5",
+        "kind": "verse",
+        "source_id": "deuteronomistic_history",
+        "ref": "1Sam.31;2Sam.2-5",
+        "url": "https://www.biblegateway.com/passage/?search=1+Samuel+31%3B+2+Samuel+2-5&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_herod_archelaus_succeeds",
+    "epoch_id": "roman_herodian",
+    "from_person_id": "herod_archelaus",
+    "to_person_id": "herod_the_great",
+    "relation": "succeeds",
+    "label_ru": "Архелай наследует Ироду в Иудее (как этнарх)",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_antiquities",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_herod_arch",
+        "label_ru": "Herod Archelaus",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Herod_Archelaus"
+      }
+    ]
+  },
+  {
+    "id": "int_archelaus_to_prefects",
+    "epoch_id": "roman_herodian",
+    "from_person_id": "pontius_pilate",
+    "to_person_id": "herod_archelaus",
+    "relation": "succeeds",
+    "label_ru": "После свержения Архелая Иудеей управляют римские префекты (Пилат — яркий пример)",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_antiquities",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "note_ru": "Не прямое личное преемство; смена модели власти (~6 н.э. → префектура)",
+    "citations": [
+      {
+        "id": "cite_int_arch_pref",
+        "label_ru": "Judea (Roman province)",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Judea_(Roman_province)"
+      }
+    ]
+  },
+  {
+    "id": "int_pompey_herod_context",
+    "epoch_id": "roman_herodian",
+    "from_person_id": "herod_the_great",
+    "to_person_id": "pompey",
+    "relation": "succeeds",
+    "label_ru": "Ирод правит в мире, открытом римским вмешательством Помпея (63 до н.э.)",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_antiquities",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "note_ru": "Не личное преемство; Помпей → хасмонейский кризис → возвышение Ирода",
+    "citations": [
+      {
+        "id": "cite_int_pompey_herod",
+        "label_ru": "Siege of Jerusalem (63 BC)",
+        "kind": "josephus",
+        "source_id": "josephus_antiquities",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(63_BC)"
+      }
+    ]
+  },
+  {
+    "id": "int_alexander_antiochus_context",
+    "epoch_id": "hellenistic_hasmonean",
+    "from_person_id": "antiochus_iv",
+    "to_person_id": "alexander_the_great",
+    "relation": "succeeds",
+    "label_ru": "Селевкиды (Антиох IV) действуют в эллинистическом порядке после Александра",
+    "confidence": "firm",
+    "source_ids": [
+      "hellenistic_chronology",
+      "modern_handbook"
+    ],
+    "note_ru": "Не личное преемство; имперский контекст от Александра к диадохам/Селевкидам",
+    "citations": [
+      {
+        "id": "cite_int_alex_ant",
+        "label_ru": "Hellenistic period",
+        "kind": "web",
+        "source_id": "hellenistic_chronology",
+        "url": "https://en.wikipedia.org/wiki/Hellenistic_period"
+      }
+    ]
+  },
+  {
+    "id": "int_judas_antiochus_opposes",
+    "epoch_id": "hellenistic_hasmonean",
+    "from_person_id": "judas_maccabeus",
+    "to_person_id": "antiochus_iv",
+    "relation": "opposes",
+    "label_ru": "Иуда Маккавей возглавляет военный этап восстания против Антиоха IV",
+    "confidence": "firm",
+    "source_ids": [
+      "1_macc",
+      "2_macc",
+      "hellenistic_chronology"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_judas_ant",
+        "label_ru": "1 Макк 3–4",
+        "kind": "verse",
+        "source_id": "1_macc",
+        "ref": "1Macc.3-4",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+3-4&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_titus_vespasian_succeeds",
+    "epoch_id": "war_and_divergence",
+    "from_person_id": "titus",
+    "to_person_id": "vespasian",
+    "relation": "succeeds",
+    "label_ru": "Тит продолжает осаду Иерусалима после ухода Веспасиана к императорской власти",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_war",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_titus_vesp",
+        "label_ru": "Titus / First Jewish–Roman War",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/Titus#First_Jewish%E2%80%93Roman_War"
+      }
+    ]
+  },
+  {
+    "id": "int_josephus_titus_mentions",
+    "epoch_id": "war_and_divergence",
+    "from_person_id": "josephus_flavius",
+    "to_person_id": "titus",
+    "relation": "mentions",
+    "label_ru": "Иосиф подробно описывает действия Тита при осаде Иерусалима",
+    "confidence": "firm",
+    "source_ids": [
+      "josephus_war",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_jos_titus",
+        "label_ru": "The Jewish War",
+        "kind": "josephus",
+        "source_id": "josephus_war",
+        "url": "https://en.wikipedia.org/wiki/The_Jewish_War"
+      }
+    ]
+  },
+  {
+    "id": "int_paul_james_meets",
+    "epoch_id": "pauline_networks",
+    "from_person_id": "paul_of_tarsus",
+    "to_person_id": "james_of_jerusalem",
+    "relation": "meets",
+    "label_ru": "Павел встречается с Иаковом как авторитетом Иерусалима (Гал 1–2)",
+    "confidence": "anchored",
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_paul_james",
+        "label_ru": "Гал 1:18–19; 2:9",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.1.18-19;2.9",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+1%3A18-19%3B+Galatians+2%3A9&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_paul_barnabas_allies",
+    "epoch_id": "pauline_networks",
+    "from_person_id": "paul_of_tarsus",
+    "to_person_id": "barnabas",
+    "relation": "allies",
+    "label_ru": "Павел и Варнава — сотрудники миссии; в Антиохии Варнава оказывается на стороне Кифы (Гал 2)",
+    "confidence": "anchored",
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "note_ru": "Детали разрыва по Деяниям не подменяют письмо",
+    "citations": [
+      {
+        "id": "cite_int_paul_barnabas",
+        "label_ru": "Гал 2:1; 2:13",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.1;2.13",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A1%3B+Galatians+2%3A13&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_james_peter_allies",
+    "epoch_id": "pauline_networks",
+    "from_person_id": "james_of_jerusalem",
+    "to_person_id": "peter",
+    "relation": "allies",
+    "label_ru": "Иаков и Кифа — «столпы» Иерусалима в свидетельстве Павла",
+    "confidence": "anchored",
+    "source_ids": [
+      "pauline_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_int_james_peter",
+        "label_ru": "Гал 2:9",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.9",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A9&version=NRSVUE"
+      }
+    ]
+  },
+  {
+    "id": "int_akiva_bar_kokhba_allies",
+    "epoch_id": "bar_kokhba",
+    "from_person_id": "rabbi_akiva",
+    "to_person_id": "simon_bar_kokhba",
+    "relation": "allies",
+    "label_ru": "Традиция: Акива поддерживает Бар-Кохбу",
+    "confidence": "disputed",
+    "source_ids": [
+      "modern_handbook"
+    ],
+    "note_ru": "Раввинистическая память; не подтверждено письмами восстания",
+    "citations": [
+      {
+        "id": "cite_int_akiva_bk",
+        "label_ru": "Akiva — Bar Kokhba tradition",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Akiva#Bar_Kokhba_revolt"
+      }
+    ]
+  },
+  {
+    "id": "int_akiva_hadrian_opposes",
+    "epoch_id": "bar_kokhba",
+    "from_person_id": "rabbi_akiva",
+    "to_person_id": "hadrian",
+    "relation": "opposes",
+    "label_ru": "Традиция помещает Акиву в лагерь сопротивления Риму Адриана",
+    "confidence": "disputed",
+    "source_ids": [
+      "modern_handbook",
+      "dio_cassius"
+    ],
+    "note_ru": "Косвенная связка через память о восстании; не римский аннал",
+    "citations": [
+      {
+        "id": "cite_int_akiva_hadrian",
+        "label_ru": "Akiva / Bar Kokhba revolt",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Akiva#Bar_Kokhba_revolt"
+      }
+    ]
   }
 ]

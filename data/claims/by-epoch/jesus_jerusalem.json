@@ -6,7 +6,37 @@
     "confidence": "anchored",
     "date_min": 30,
     "date_max": 33,
-    "source_ids": ["pauline_letters", "synoptic_gospels", "tacitus_annals", "modern_handbook"]
+    "source_ids": [
+      "pauline_letters",
+      "synoptic_gospels",
+      "tacitus_annals",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_jes_core_mark",
+        "label_ru": "Мк 15",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.15",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+15&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_core_tacitus",
+        "label_ru": "Тацит, Анналы 15.44",
+        "kind": "web",
+        "source_id": "tacitus_annals",
+        "url": "https://en.wikipedia.org/wiki/Tacitus_on_Jesus"
+      },
+      {
+        "id": "cite_claim_jes_core_1cor15",
+        "label_ru": "1 Кор 15:3–8",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "1Cor.15.3-8",
+        "url": "https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A3-8&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "claim_jesus_jerusalem_crucifixion",
@@ -15,7 +45,28 @@
     "confidence": "anchored",
     "date_min": 30,
     "date_max": 33,
-    "source_ids": ["synoptic_gospels", "roman_fasti", "modern_handbook"]
+    "source_ids": [
+      "synoptic_gospels",
+      "roman_fasti",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_jes_cruc_mark15",
+        "label_ru": "Мк 15",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.15",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+15&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_cruc_chrono",
+        "label_ru": "Chronology of Jesus",
+        "kind": "web",
+        "source_id": "roman_fasti",
+        "url": "https://en.wikipedia.org/wiki/Chronology_of_Jesus"
+      }
+    ]
   },
   {
     "id": "claim_jesus_jerusalem_community",
@@ -24,7 +75,29 @@
     "confidence": "anchored",
     "date_min": 30,
     "date_max": 40,
-    "source_ids": ["pauline_letters", "acts", "modern_handbook"]
+    "source_ids": [
+      "pauline_letters",
+      "acts",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_jes_comm_gal1",
+        "label_ru": "Гал 1:18–19",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.1.18-19",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+1%3A18-19&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_comm_acts2",
+        "label_ru": "Деян 2 (традиция)",
+        "kind": "verse",
+        "source_id": "acts",
+        "ref": "Acts.2",
+        "url": "https://www.biblegateway.com/passage/?search=Acts+2&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "claim_jesus_jerusalem_peter",
@@ -33,6 +106,28 @@
     "confidence": "anchored",
     "date_min": 30,
     "date_max": 50,
-    "source_ids": ["pauline_letters", "synoptic_gospels", "modern_handbook"]
+    "source_ids": [
+      "pauline_letters",
+      "synoptic_gospels",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_jes_peter_gal2",
+        "label_ru": "Гал 2:7–9",
+        "kind": "verse",
+        "source_id": "pauline_letters",
+        "ref": "Gal.2.7-9",
+        "url": "https://www.biblegateway.com/passage/?search=Galatians+2%3A7-9&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_jes_peter_mark",
+        "label_ru": "Мк 8:27–30",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.8.27-30",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+8%3A27-30&version=NRSVUE"
+      }
+    ]
   }
 ]

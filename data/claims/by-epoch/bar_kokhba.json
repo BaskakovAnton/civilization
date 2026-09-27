@@ -6,7 +6,27 @@
     "confidence": "firm",
     "date_min": 132,
     "date_max": 135,
-    "source_ids": ["bar_kokhba_letters", "dio_cassius", "modern_handbook"]
+    "source_ids": [
+      "bar_kokhba_letters",
+      "dio_cassius",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_bk_letters",
+        "label_ru": "Bar Kokhba letters",
+        "kind": "inscription",
+        "source_id": "bar_kokhba_letters",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_letters"
+      },
+      {
+        "id": "cite_claim_bk_dio",
+        "label_ru": "Cassius Dio / Bar Kokhba",
+        "kind": "web",
+        "source_id": "dio_cassius",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_revolt"
+      }
+    ]
   },
   {
     "id": "claim_bar_kokhba_aelia",
@@ -15,7 +35,19 @@
     "confidence": "firm",
     "date_min": 135,
     "date_max": 135,
-    "source_ids": ["dio_cassius", "modern_handbook"]
+    "source_ids": [
+      "dio_cassius",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_bk_aelia",
+        "label_ru": "Aelia Capitolina",
+        "kind": "web",
+        "source_id": "dio_cassius",
+        "url": "https://en.wikipedia.org/wiki/Aelia_Capitolina"
+      }
+    ]
   },
   {
     "id": "claim_bar_kokhba_letters_admin",
@@ -24,7 +56,19 @@
     "confidence": "firm",
     "date_min": 132,
     "date_max": 135,
-    "source_ids": ["bar_kokhba_letters", "modern_handbook"]
+    "source_ids": [
+      "bar_kokhba_letters",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_bk_admin",
+        "label_ru": "Bar Kokhba letters",
+        "kind": "inscription",
+        "source_id": "bar_kokhba_letters",
+        "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_letters"
+      }
+    ]
   },
   {
     "id": "claim_bar_kokhba_hadrian_policy",
@@ -33,6 +77,40 @@
     "confidence": "anchored",
     "date_min": 130,
     "date_max": 135,
-    "source_ids": ["dio_cassius", "modern_handbook"]
+    "source_ids": [
+      "dio_cassius",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_bk_hadrian",
+        "label_ru": "Hadrian — Judea policy",
+        "kind": "web",
+        "source_id": "dio_cassius",
+        "url": "https://en.wikipedia.org/wiki/Hadrian#Final_years"
+      }
+    ]
+  },
+  {
+    "id": "claim_bar_kokhba_akiva_tradition",
+    "epoch_id": "bar_kokhba",
+    "statement_ru": "Традиция приписывает рабби Акиве поддержку Бар-Кохбы как «звезды»; историчность этой связки в handbook остаётся спорной.",
+    "confidence": "disputed",
+    "date_min": 132,
+    "date_max": 135,
+    "source_ids": [
+      "modern_handbook",
+      "bar_kokhba_letters"
+    ],
+    "dissent_ru": "Письма восстания не называют Акиву; связь — раввинистическая память",
+    "citations": [
+      {
+        "id": "cite_claim_bk_akiva",
+        "label_ru": "Akiva / Bar Kokhba (tradition)",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Akiva#Bar_Kokhba_revolt"
+      }
+    ]
   }
 ]

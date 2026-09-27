@@ -6,7 +6,28 @@
     "confidence": "firm",
     "date_min": -539,
     "date_max": -539,
-    "source_ids": ["cyrus_cylinder", "ezra_nehemiah", "modern_handbook"]
+    "source_ids": [
+      "cyrus_cylinder",
+      "ezra_nehemiah",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_exil_cyrus",
+        "label_ru": "Cyrus Cylinder",
+        "kind": "inscription",
+        "source_id": "cyrus_cylinder",
+        "url": "https://en.wikipedia.org/wiki/Cyrus_Cylinder"
+      },
+      {
+        "id": "cite_claim_exil_ezra1",
+        "label_ru": "Езд 1",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Ezra.1",
+        "url": "https://www.biblegateway.com/passage/?search=Ezra+1&version=NRSVUE"
+      }
+    ]
   },
   {
     "id": "claim_exile_and_persian_second_temple",
@@ -15,7 +36,27 @@
     "confidence": "anchored",
     "date_min": -520,
     "date_max": -515,
-    "source_ids": ["ezra_nehemiah", "modern_handbook"]
+    "source_ids": [
+      "ezra_nehemiah",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_exil_temple_ez6",
+        "label_ru": "Езд 6",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Ezra.6",
+        "url": "https://www.biblegateway.com/passage/?search=Ezra+6&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_exil_temple_hb",
+        "label_ru": "Second Temple",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Second_Temple"
+      }
+    ]
   },
   {
     "id": "claim_exile_and_persian_ezra_nehemiah",
@@ -24,7 +65,27 @@
     "confidence": "disputed",
     "date_min": -450,
     "date_max": -400,
-    "source_ids": ["ezra_nehemiah", "modern_handbook"]
+    "source_ids": [
+      "ezra_nehemiah",
+      "modern_handbook"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_exil_ezra_neh",
+        "label_ru": "Неем 8",
+        "kind": "verse",
+        "source_id": "ezra_nehemiah",
+        "ref": "Neh.8",
+        "url": "https://www.biblegateway.com/passage/?search=Nehemiah+8&version=NRSVUE"
+      },
+      {
+        "id": "cite_claim_exil_ezra_hb",
+        "label_ru": "Ezra–Nehemiah — historicity",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Ezra%E2%80%93Nehemiah#Historical_background"
+      }
+    ]
   },
   {
     "id": "claim_exile_and_persian_yehud",
@@ -33,6 +94,18 @@
     "confidence": "anchored",
     "date_min": -539,
     "date_max": -332,
-    "source_ids": ["modern_handbook", "ezra_nehemiah"]
+    "source_ids": [
+      "modern_handbook",
+      "ezra_nehemiah"
+    ],
+    "citations": [
+      {
+        "id": "cite_claim_exil_yehud",
+        "label_ru": "Yehud Medinata",
+        "kind": "handbook",
+        "source_id": "modern_handbook",
+        "url": "https://en.wikipedia.org/wiki/Yehud_Medinata"
+      }
+    ]
   }
 ]
