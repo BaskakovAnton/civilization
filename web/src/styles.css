@@ -1083,6 +1083,13 @@ body {
   border-radius: 6px;
   padding: 0.4rem 0.85rem;
   touch-action: manipulation;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.journey-open-btn {
+  background: transparent;
+  color: var(--accent);
 }
 
 .journey-open-btn:hover {

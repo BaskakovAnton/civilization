@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civilization.local/schema/jesus_map_itinerary.schema.json",
+  "title": "JesusMapItinerary",
+  "type": "object",
+  "required": [
+    "id",
+    "label_ru",
+    "confidence",
+    "disclaimer_ru",
+    "source_ids",
+    "stops"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+    "label_ru": { "type": "string" },
+    "confidence": {
+      "type": "string",
+      "enum": ["literary", "disputed", "anchored", "firm"]
+    },
+    "disclaimer_ru": { "type": "string" },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "stops": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["place_id", "lat", "lon"],
+        "additionalProperties": false,
+        "properties": {
+          "place_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+          "lon": { "type": "number", "minimum": -180, "maximum": 180 },
+          "geo_note_ru": { "type": "string" }
+        }
+      }
+    }
+  }
+}

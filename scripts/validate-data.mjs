@@ -201,6 +201,31 @@ async function main() {
     err(`places with citations ${placesWithCite}/15 (need ≥14)`);
   }
 
+  const itinerary = await loadJson("data/jesus_map_itinerary.json");
+  if (itinerary.confidence !== "literary") {
+    err("jesus_map_itinerary: confidence must be literary");
+  }
+  if (!itinerary.disclaimer_ru) {
+    err("jesus_map_itinerary: missing disclaimer_ru");
+  }
+  if (!Array.isArray(itinerary.stops) || itinerary.stops.length < 2) {
+    err("jesus_map_itinerary: need ≥2 stops");
+  }
+  for (const sid of itinerary.source_ids || []) {
+    if (!sourceIds.has(sid)) err(`jesus_map_itinerary: unknown source ${sid}`);
+  }
+  for (const [i, stop] of (itinerary.stops || []).entries()) {
+    if (!placeIds.has(stop.place_id)) {
+      err(`jesus_map_itinerary stop[${i}]: unknown place ${stop.place_id}`);
+    }
+    if (typeof stop.lat !== "number" || stop.lat < -90 || stop.lat > 90) {
+      err(`jesus_map_itinerary stop[${i}]: bad lat`);
+    }
+    if (typeof stop.lon !== "number" || stop.lon < -180 || stop.lon > 180) {
+      err(`jesus_map_itinerary stop[${i}]: bad lon`);
+    }
+  }
+
   console.log(
     JSON.stringify(
       {

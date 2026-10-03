@@ -442,6 +442,12 @@ export default function App() {
               <section className="journey-section">
                 <div className="journey-section-head">
                   <h3>Путь и время</h3>
+                  <a
+                    className="journey-open-btn"
+                    href={`${import.meta.env.BASE_URL}jesus.html`}
+                  >
+                    Гео-карта (Leaflet)
+                  </a>
                   <button
                     type="button"
                     className="journey-open-btn"
