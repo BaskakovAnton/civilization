@@ -111,11 +111,11 @@ export default function JesusMapPage() {
       zoomControl: true,
       attributionControl: true,
     });
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    // OSM public tiles — no API key (Carto basemaps now watermark without key).
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> · &copy; <a href="https://carto.com/">CARTO</a>',
-      subdomains: "abcd",
-      maxZoom: 18,
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19,
     }).addTo(map);
 
     mapRef.current = map;
@@ -265,8 +265,8 @@ export default function JesusMapPage() {
       <div className="jm-map-wrap">
         <div ref={mapEl} className="jm-map" />
         <div className="jm-map-legend">
-          Carto/OSM · стрелки = направление literary itinerary · confidence места
-          из places.json · не firm travelogue
+          OpenStreetMap · стрелки = направление literary itinerary · confidence
+          места из places.json · не firm travelogue
         </div>
       </div>
     </div>
