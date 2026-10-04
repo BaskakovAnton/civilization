@@ -1,6 +1,10 @@
 import { useMemo, useState } from "react";
 import type { Confidence, HistEvent } from "./types";
 import { confidenceLabel, previewText } from "./types";
+import {
+  jesusGeoHref,
+  LARKIN_EVENT_TO_PLACE,
+} from "./jesusGeoBridge";
 
 type GospelKey = "mt" | "mk" | "lk" | "jn";
 
@@ -342,6 +346,15 @@ export default function LarkinChart({ events }: Props) {
               .map((g) => g.label)
               .join(", ") || "—"}
           </p>
+          {LARKIN_EVENT_TO_PLACE[activeStop.eventId] ? (
+            <p className="lk-geo-link">
+              <a
+                href={jesusGeoHref(LARKIN_EVENT_TO_PLACE[activeStop.eventId])}
+              >
+                На гео-карте →
+              </a>
+            </p>
+          ) : null}
         </div>
       ) : null}
 

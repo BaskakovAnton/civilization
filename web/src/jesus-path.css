@@ -806,6 +806,15 @@
   font-family: var(--font-display);
 }
 
+.lk-geo-link {
+  margin: 0.4rem 0 0;
+}
+
+.lk-geo-link a {
+  color: var(--accent, #6b3f24);
+  font-weight: 600;
+}
+
 .lk-detail p {
   margin: 0;
   font-size: 0.88rem;

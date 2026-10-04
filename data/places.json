@@ -74,7 +74,8 @@
     "note_ru": "Ключевой город Иудеи / Йехуда; роль меняется по эпохам",
     "source_ids": [
       "modern_handbook",
-      "josephus_war"
+      "josephus_war",
+      "synoptic_gospels"
     ],
     "person_ids": [
       "david",
@@ -98,9 +99,18 @@
     ],
     "citations": [
       {
+        "id": "cite_place_jerusalem_mk11",
+        "label_ru": "Мк 11:15–18",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.11.15-18",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+11%3A15-18&version=NRSVUE"
+      },
+      {
         "id": "cite_wiki_jerusalem",
         "label_ru": "Обзор (история города)",
         "kind": "web",
+        "source_id": "modern_handbook",
         "url": "https://en.wikipedia.org/wiki/History_of_Jerusalem"
       }
     ]
@@ -117,7 +127,8 @@
     "note_ru": "Столица северного царства; падение ~722",
     "source_ids": [
       "assyrian_annals",
-      "modern_handbook"
+      "modern_handbook",
+      "johannine_gospel"
     ],
     "person_ids": [
       "omri",
@@ -125,6 +136,14 @@
       "jesus_of_nazareth"
     ],
     "citations": [
+      {
+        "id": "cite_place_samaria_jn4",
+        "label_ru": "Ин 4:4–42",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.4.4-42",
+        "url": "https://www.biblegateway.com/passage/?search=John+4%3A4-42&version=NRSVUE"
+      },
       {
         "id": "cite_place_samaria",
         "label_ru": "Samaria (ancient city)",
@@ -567,6 +586,7 @@
     "note_ru": "Узел Иоанна (брак); литературная география",
     "source_ids": [
       "synoptic_gospels",
+      "johannine_gospel",
       "modern_handbook"
     ],
     "person_ids": [
@@ -574,8 +594,16 @@
     ],
     "citations": [
       {
+        "id": "cite_place_cana_jn2",
+        "label_ru": "Ин 2:1–11",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.2.1-11",
+        "url": "https://www.biblegateway.com/passage/?search=John+2%3A1-11&version=NRSVUE"
+      },
+      {
         "id": "cite_place_cana",
-        "label_ru": "Jn 2 (Cana)",
+        "label_ru": "Кана (обзор)",
         "kind": "web",
         "source_id": "modern_handbook",
         "url": "https://en.wikipedia.org/wiki/Marriage_at_Cana"
@@ -599,6 +627,14 @@
       "peter"
     ],
     "citations": [
+      {
+        "id": "cite_place_sea_gal_mk4",
+        "label_ru": "Мк 4:35–41",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.4.35-41",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+4%3A35-41&version=NRSVUE"
+      },
       {
         "id": "cite_place_sea_gal",
         "label_ru": "Sea of Galilee",
@@ -670,6 +706,7 @@
     "note_ru": "Узел Иоанна (Лазарь) и страстного предания; literary",
     "source_ids": [
       "synoptic_gospels",
+      "johannine_gospel",
       "modern_handbook"
     ],
     "person_ids": [
@@ -677,6 +714,14 @@
       "mary_magdalene"
     ],
     "citations": [
+      {
+        "id": "cite_place_bethany_jn11",
+        "label_ru": "Ин 11:1–44",
+        "kind": "verse",
+        "source_id": "johannine_gospel",
+        "ref": "John.11.1-44",
+        "url": "https://www.biblegateway.com/passage/?search=John+11%3A1-44&version=NRSVUE"
+      },
       {
         "id": "cite_place_bethany",
         "label_ru": "Bethany",
@@ -730,6 +775,14 @@
       "peter"
     ],
     "citations": [
+      {
+        "id": "cite_place_bethsaida_mk8",
+        "label_ru": "Мк 8:22–26",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.8.22-26",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+8%3A22-26&version=NRSVUE"
+      },
       {
         "id": "cite_place_bethsaida",
         "label_ru": "Bethsaida",
@@ -810,8 +863,16 @@
     ],
     "citations": [
       {
+        "id": "cite_place_jordan_mk1",
+        "label_ru": "Мк 1:9–11",
+        "kind": "verse",
+        "source_id": "synoptic_gospels",
+        "ref": "Mark.1.9-11",
+        "url": "https://www.biblegateway.com/passage/?search=Mark+1%3A9-11&version=NRSVUE"
+      },
+      {
         "id": "cite_place_jordan",
-        "label_ru": "Baptism of Jesus",
+        "label_ru": "Крещение (обзор)",
         "kind": "web",
         "source_id": "modern_handbook",
         "url": "https://en.wikipedia.org/wiki/Baptism_of_Jesus"

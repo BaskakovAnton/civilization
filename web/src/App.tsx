@@ -200,10 +200,18 @@ export default function App() {
     () => [...epochList].sort((a, b) => a.order - b.order),
     []
   );
-  const [selectedId, setSelectedId] = useState(sorted[0]?.id ?? "");
-  const [focusPersonId, setFocusPersonId] = useState<string | null>(null);
+  const boot = useMemo(() => {
+    if (typeof window === "undefined") return null;
+    return new URLSearchParams(window.location.search);
+  }, []);
+  const [selectedId, setSelectedId] = useState(
+    () => boot?.get("epoch") || sorted[0]?.id || ""
+  );
+  const [focusPersonId, setFocusPersonId] = useState<string | null>(() =>
+    boot?.get("path") === "1" ? "jesus_of_nazareth" : null
+  );
   const [focusClaimId, setFocusClaimId] = useState<string | null>(null);
-  const [pathOpen, setPathOpen] = useState(false);
+  const [pathOpen, setPathOpen] = useState(() => boot?.get("path") === "1");
   const [lensId, setLensId] = useState("university");
   const [fathersLayerOn, setFathersLayerOn] = useState(false);
   const [confFilter, setConfFilter] = useState<Confidence[]>([...ALL_CONF]);

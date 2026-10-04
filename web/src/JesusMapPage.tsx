@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 import itinerary from "../../data/jesus_map_itinerary.json";
 import placesData from "../../data/places.json";
 import type { Confidence, Place } from "./types";
 import { confidenceLabel } from "./types";
+import PlaceStopCard, { type StopCardModel } from "./PlaceStopCard";
+import { jesusGeoHref, larkinAppHref } from "./jesusGeoBridge";
+import { loadYmaps, type YmapsMap } from "./loadYmaps";
 
 type Stop = {
   place_id: string;
@@ -13,12 +14,7 @@ type Stop = {
   geo_note_ru?: string;
 };
 
-type ResolvedStop = Stop & {
-  index: number;
-  place?: Place;
-  label_ru: string;
-  confidence: Confidence;
-};
+type ResolvedStop = StopCardModel & Stop;
 
 const places = placesData as Place[];
 const placeById: Record<string, Place> = Object.fromEntries(
@@ -36,9 +32,35 @@ const STOPS: ResolvedStop[] = (itinerary.stops as Stop[]).map((s, index) => {
   };
 });
 
+const PIN_FILL: Record<Confidence, string> = {
+  firm: "#1f5c45",
+  anchored: "#245a7a",
+  disputed: "#8a5a12",
+  literary: "#5a5a5a",
+};
+
+/** Yandex 2.1 bounds: [[south, west], [north, east]]. */
+function itineraryBoundsLatLon(): number[][] {
+  const lats = STOPS.map((s) => s.lat);
+  const lons = STOPS.map((s) => s.lon);
+  const padLat = 0.12;
+  const padLon = 0.18;
+  return [
+    [Math.min(...lats) - padLat, Math.min(...lons) - padLon],
+    [Math.max(...lats) + padLat, Math.max(...lons) + padLon],
+  ];
+}
+
 function homeHref(): string {
   const base = import.meta.env.BASE_URL || "/";
   return base.endsWith("/") ? `${base}index.html` : `${base}/index.html`;
+}
+
+function initialSelected(): number {
+  const stop = new URLSearchParams(window.location.search).get("stop");
+  if (!stop) return 0;
+  const i = STOPS.findIndex((s) => s.place_id === stop);
+  return i >= 0 ? i : 0;
 }
 
 function bearingDeg(
@@ -66,134 +88,177 @@ function lerp(
   };
 }
 
-function pinIcon(n: number, confidence: Confidence, active: boolean) {
-  return L.divIcon({
-    className: "jm-pin-wrap",
-    html: `<div class="jm-pin ${confidence}${active ? " is-active" : ""}">${n}</div>`,
-    iconSize: active ? [28, 28] : [22, 22],
-    iconAnchor: active ? [14, 14] : [11, 11],
-  });
+function svgDataUrl(svg: string) {
+  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
 }
 
-function arrowIcon(deg: number, strong: boolean) {
-  const fill = strong ? "#3d2a1a" : "#8a7a68";
-  const size = strong ? 22 : 16;
-  return L.divIcon({
-    className: "jm-arrow-icon",
-    html: `<svg class="jm-arrow-svg" width="${size}" height="${size}" viewBox="0 0 24 24" style="transform:rotate(${deg}deg)"><path d="M12 2 L20 20 L12 15 L4 20 Z" fill="${fill}"/></svg>`,
-    iconSize: [size, size],
-    iconAnchor: [size / 2, size / 2],
-  });
+function arrowIcon(deg: number, active: boolean) {
+  const fill = active ? "#3d2a1a" : "#8a7a68";
+  const size = active ? 22 : 16;
+  return {
+    iconLayout: "default#image",
+    iconImageHref: svgDataUrl(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g transform="rotate(${deg} 12 12)"><path d="M12 2 L20 20 L12 15 L4 20 Z" fill="${fill}"/></g></svg>`
+    ),
+    iconImageSize: [size, size] as [number, number],
+    iconImageOffset: [-size / 2, -size / 2] as [number, number],
+    hasBalloon: false,
+    hasHint: false,
+  };
+}
+
+function pinIcon(n: number, confidence: Confidence, active: boolean) {
+  const size = active ? 28 : 22;
+  const r = active ? 12 : 10;
+  const fill = PIN_FILL[confidence];
+  return {
+    iconLayout: "default#image",
+    iconImageHref: svgDataUrl(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><circle cx="14" cy="14" r="${r}" fill="${fill}" stroke="#fff" stroke-width="2"/><text x="14" y="18" text-anchor="middle" fill="#fff" font-size="${active ? 12 : 11}" font-family="Arial,sans-serif" font-weight="700">${n}</text></svg>`
+    ),
+    iconImageSize: [size, size] as [number, number],
+    iconImageOffset: [-size / 2, -size / 2] as [number, number],
+    hasBalloon: false,
+  };
 }
 
 export default function JesusMapPage() {
   const mapEl = useRef<HTMLDivElement | null>(null);
-  const mapRef = useRef<L.Map | null>(null);
-  const layerRef = useRef<L.LayerGroup | null>(null);
-  const [selected, setSelected] = useState(0);
+  const mapRef = useRef<YmapsMap | null>(null);
+  const [selected, setSelected] = useState(initialSelected);
+  const [cardOpen, setCardOpen] = useState(() =>
+    Boolean(new URLSearchParams(window.location.search).get("stop"))
+  );
   const [mapReady, setMapReady] = useState(0);
-  /** Active vector = from selected → selected+1 (or last segment if at end). */
+  const [mapError, setMapError] = useState<string | null>(null);
+
+  const apiKey = import.meta.env.VITE_YANDEX_MAPS_KEY as string | undefined;
   const vectorFrom = Math.min(selected, STOPS.length - 2);
   const vectorTo = vectorFrom + 1;
-
   const selectedStop = STOPS[selected];
+  const bounds = useMemo(() => itineraryBoundsLatLon(), []);
 
-  const bounds = useMemo(
-    () => L.latLngBounds(STOPS.map((s) => [s.lat, s.lon] as [number, number])),
-    []
-  );
+  const selectStop = (index: number, openCard: boolean) => {
+    setSelected(index);
+    if (openCard) setCardOpen(true);
+    const placeId = STOPS[index]?.place_id;
+    if (placeId) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("stop", placeId);
+      window.history.replaceState({}, "", url.toString());
+    }
+  };
 
   useEffect(() => {
     const el = mapEl.current;
     if (!el) return;
+    if (!apiKey) {
+      setMapError(
+        "Нет VITE_YANDEX_MAPS_KEY. Создайте web/.env.local (см. web/.env.example)."
+      );
+      return;
+    }
 
-    const map = L.map(el, {
-      zoomControl: true,
-      attributionControl: true,
-    });
-    // OSM public tiles — no API key (Carto basemaps now watermark without key).
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      maxZoom: 19,
-    }).addTo(map);
+    let cancelled = false;
+    let map: YmapsMap | null = null;
 
-    mapRef.current = map;
-    layerRef.current = L.layerGroup().addTo(map);
-
-    // Grid layout may settle after first paint — without this, tiles/bounds break.
-    const settle = () => {
-      map.invalidateSize();
-      map.fitBounds(bounds.pad(0.18));
-    };
-    settle();
-    const t1 = window.setTimeout(settle, 0);
-    const t2 = window.setTimeout(settle, 120);
-    setMapReady((n) => n + 1);
+    loadYmaps(apiKey)
+      .then((ymaps) => {
+        if (cancelled || !mapEl.current) return;
+        map = new ymaps.Map(
+          mapEl.current,
+          {
+            bounds,
+            controls: ["zoomControl"],
+          },
+          {
+            restrictMapArea: bounds,
+            minZoom: 8,
+            maxZoom: 16,
+            suppressMapOpenBlock: true,
+          }
+        );
+        mapRef.current = map;
+        setMapReady((n) => n + 1);
+      })
+      .catch((e: Error) => {
+        setMapError(e.message || "Не удалось загрузить Яндекс.Карты");
+      });
 
     return () => {
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-      map.remove();
+      cancelled = true;
+      if (map) map.destroy();
       mapRef.current = null;
-      layerRef.current = null;
     };
-  }, [bounds]);
+  }, [apiKey, bounds]);
 
   useEffect(() => {
     const map = mapRef.current;
-    const layer = layerRef.current;
-    if (!mapReady || !map || !layer) return;
-    layer.clearLayers();
+    const ymaps = window.ymaps;
+    if (!mapReady || !map || !ymaps) return;
 
-    const fullLatLngs = STOPS.map((s) => [s.lat, s.lon] as [number, number]);
-    L.polyline(fullLatLngs, {
-      color: "#b7a894",
-      weight: 2,
-      opacity: 0.55,
-      dashArray: "4 6",
-    }).addTo(layer);
+    map.geoObjects.removeAll();
+
+    const full = STOPS.map((s) => [s.lat, s.lon]);
+    map.geoObjects.add(
+      new ymaps.Polyline(
+        full,
+        {},
+        {
+          strokeColor: "#b7a894",
+          strokeWidth: 2,
+          strokeOpacity: 0.55,
+          strokeStyle: "dash",
+        }
+      )
+    );
 
     for (let i = 0; i < STOPS.length - 1; i++) {
       const a = STOPS[i];
       const b = STOPS[i + 1];
       const active = i === vectorFrom;
-      L.polyline(
-        [
-          [a.lat, a.lon],
-          [b.lat, b.lon],
-        ],
-        {
-          color: active ? "#3d2a1a" : "#8a7a68",
-          weight: active ? 3.5 : 1.5,
-          opacity: active ? 0.95 : 0.35,
-        }
-      ).addTo(layer);
+      map.geoObjects.add(
+        new ymaps.Polyline(
+          [
+            [a.lat, a.lon],
+            [b.lat, b.lon],
+          ],
+          {},
+          {
+            strokeColor: active ? "#3d2a1a" : "#8a7a68",
+            strokeWidth: active ? 4 : 2,
+            strokeOpacity: active ? 0.95 : 0.35,
+          }
+        )
+      );
 
       const tip = lerp(a, b, 0.72);
-      const deg = bearingDeg(a, b);
-      L.marker([tip.lat, tip.lon], {
-        icon: arrowIcon(deg, active),
-        interactive: false,
-        keyboard: false,
-      }).addTo(layer);
+      map.geoObjects.add(
+        new ymaps.Placemark(
+          [tip.lat, tip.lon],
+          {},
+          arrowIcon(bearingDeg(a, b), active)
+        )
+      );
     }
 
     for (const stop of STOPS) {
       const active = stop.index === selected;
-      const marker = L.marker([stop.lat, stop.lon], {
-        icon: pinIcon(stop.index + 1, stop.confidence, active),
-        title: stop.label_ru,
-      });
-      marker.on("click", () => setSelected(stop.index));
-      marker.bindTooltip(`${stop.index + 1}. ${stop.label_ru}`, {
-        direction: "top",
-        offset: [0, -10],
-      });
-      marker.addTo(layer);
+      const pm = new ymaps.Placemark(
+        [stop.lat, stop.lon],
+        { hintContent: `${stop.index + 1}. ${stop.label_ru}` },
+        pinIcon(stop.index + 1, stop.confidence, active)
+      );
+      (pm as { events: { add: (e: string, fn: () => void) => void } }).events.add(
+        "click",
+        () => selectStop(stop.index, true)
+      );
+      map.geoObjects.add(pm);
     }
 
-    map.panTo([selectedStop.lat, selectedStop.lon], { animate: true });
+    map.setCenter([selectedStop.lat, selectedStop.lon], undefined, {
+      duration: 300,
+    });
   }, [mapReady, selected, selectedStop, vectorFrom]);
 
   return (
@@ -205,11 +270,14 @@ export default function JesusMapPage() {
 
         <div className="jm-nav">
           <a href={homeHref()}>← Civilization</a>
+          <a className="jm-btn" href={larkinAppHref(selectedStop.place_id)}>
+            Схема Larkin
+          </a>
           <button
             type="button"
             className="jm-btn"
             disabled={selected <= 0}
-            onClick={() => setSelected((i) => Math.max(0, i - 1))}
+            onClick={() => selectStop(Math.max(0, selected - 1), true)}
           >
             Назад
           </button>
@@ -217,7 +285,9 @@ export default function JesusMapPage() {
             type="button"
             className="jm-btn"
             disabled={selected >= STOPS.length - 1}
-            onClick={() => setSelected((i) => Math.min(STOPS.length - 1, i + 1))}
+            onClick={() =>
+              selectStop(Math.min(STOPS.length - 1, selected + 1), true)
+            }
           >
             Далее
           </button>
@@ -243,7 +313,7 @@ export default function JesusMapPage() {
                 <button
                   type="button"
                   className={cls}
-                  onClick={() => setSelected(stop.index)}
+                  onClick={() => selectStop(stop.index, true)}
                 >
                   <span className="jm-stop-n">{stop.index + 1}</span>
                   <span>
@@ -263,10 +333,21 @@ export default function JesusMapPage() {
       </aside>
 
       <div className="jm-map-wrap">
+        {mapError ? <div className="jm-map-error">{mapError}</div> : null}
         <div ref={mapEl} className="jm-map" />
+        {cardOpen ? (
+          <div className="jm-card-dock">
+            <PlaceStopCard
+              stop={selectedStop}
+              onClose={() => setCardOpen(false)}
+              larkinHref={larkinAppHref(selectedStop.place_id)}
+            />
+          </div>
+        ) : null}
         <div className="jm-map-legend">
-          OpenStreetMap · стрелки = направление literary itinerary · confidence
-          места из places.json · не firm travelogue
+          Яндекс.Карты 2.1 · номера = literary itinerary · клик → тексты /
+          справки ·{" "}
+          <a href={jesusGeoHref(selectedStop.place_id)}>ссылка на точку</a>
         </div>
       </div>
     </div>

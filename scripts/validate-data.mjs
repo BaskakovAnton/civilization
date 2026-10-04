@@ -214,6 +214,9 @@ async function main() {
   for (const sid of itinerary.source_ids || []) {
     if (!sourceIds.has(sid)) err(`jesus_map_itinerary: unknown source ${sid}`);
   }
+  const PRIMARY_CITE = new Set(["verse", "inscription", "josephus", "handbook"]);
+  const lats = [];
+  const lons = [];
   for (const [i, stop] of (itinerary.stops || []).entries()) {
     if (!placeIds.has(stop.place_id)) {
       err(`jesus_map_itinerary stop[${i}]: unknown place ${stop.place_id}`);
@@ -223,6 +226,35 @@ async function main() {
     }
     if (typeof stop.lon !== "number" || stop.lon < -180 || stop.lon > 180) {
       err(`jesus_map_itinerary stop[${i}]: bad lon`);
+    }
+    lats.push(stop.lat);
+    lons.push(stop.lon);
+    const pl = places.find((p) => p.id === stop.place_id);
+    const primary = (pl?.citations || []).filter(
+      (c) => PRIMARY_CITE.has(c.kind) && c.url
+    );
+    if (!primary.length) {
+      err(
+        `jesus_map_itinerary stop ${stop.place_id}: need verse/handbook/josephus/inscription url`
+      );
+    }
+  }
+  if (lats.length) {
+    const padLat = 0.12;
+    const padLon = 0.18;
+    const south = Math.min(...lats) - padLat;
+    const north = Math.max(...lats) + padLat;
+    const west = Math.min(...lons) - padLon;
+    const east = Math.max(...lons) + padLon;
+    for (const [i, stop] of itinerary.stops.entries()) {
+      if (
+        stop.lat < south ||
+        stop.lat > north ||
+        stop.lon < west ||
+        stop.lon > east
+      ) {
+        err(`jesus_map_itinerary stop[${i}] outside planned Levant bbox`);
+      }
     }
   }
 

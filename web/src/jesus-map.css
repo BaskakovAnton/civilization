@@ -210,7 +210,97 @@ body {
   background: #dfe6e0;
 }
 
-.jm-map.leaflet-container {
+.jm-map-error {
+  position: absolute;
+  z-index: 600;
+  inset: 12px;
+  padding: 12px 14px;
+  background: #efe2d4;
+  border: 1px solid var(--jm-line);
+  color: var(--jm-ink);
+  font-size: 0.9rem;
+  max-width: 420px;
+  height: fit-content;
+}
+
+.jm-card-dock {
+  position: absolute;
+  z-index: 550;
+  right: 12px;
+  top: 12px;
+  width: min(360px, calc(100% - 24px));
+  max-height: calc(100% - 56px);
+  overflow: auto;
+}
+
+.jm-card {
+  background: rgba(251, 248, 242, 0.97);
+  border: 1px solid var(--jm-line);
+  padding: 12px 14px;
+}
+
+.jm-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.jm-card-kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--jm-muted);
+}
+
+.jm-card-title {
+  margin: 2px 0 0;
+  font-family: var(--jm-font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.jm-card-hint,
+.jm-card-note,
+.jm-card-empty {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: var(--jm-muted);
+  line-height: 1.4;
+}
+
+.jm-card-block {
+  margin-top: 12px;
+}
+
+.jm-card-block h3 {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--jm-muted);
+}
+
+.jm-card-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.jm-card-block a {
+  color: var(--jm-accent);
+}
+
+.jm-card-bridge {
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+}
+
+.jm-card-bridge a {
+  color: var(--jm-accent);
+}
+
+.jm-pin {
+  cursor: pointer;
+  padding: 0;
   font: inherit;
 }
 
