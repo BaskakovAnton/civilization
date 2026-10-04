@@ -1,4 +1,4 @@
-/** Load Yandex Maps JS API 2.1 (key works with 2.1; v3 returns 403 for this cabinet key). */
+/** Load Yandex Maps JS API 2.1 (cabinet key works with 2.1; v3 → 403). */
 
 export type YmapsMap = {
   geoObjects: {
@@ -8,8 +8,19 @@ export type YmapsMap = {
   setCenter: (c: number[], zoom?: number, opts?: { duration?: number }) => void;
   setBounds: (
     b: number[][],
-    opts?: { checkZoomRange?: boolean; duration?: number }
-  ) => void;
+    opts?: {
+      checkZoomRange?: boolean;
+      duration?: number;
+      zoomMargin?: number | number[];
+    }
+  ) => void | Promise<unknown>;
+  getZoom: () => number;
+  options: {
+    set: (key: string, value: unknown) => void;
+  };
+  container: {
+    fitToViewport: () => void;
+  };
   destroy: () => void;
 };
 

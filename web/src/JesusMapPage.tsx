@@ -21,6 +21,7 @@ const placeById: Record<string, Place> = Object.fromEntries(
   places.map((p) => [p.id, p])
 );
 
+/** Only itinerary stops — nothing outside the literary route. */
 const STOPS: ResolvedStop[] = (itinerary.stops as Stop[]).map((s, index) => {
   const place = placeById[s.place_id];
   return {
@@ -39,15 +40,22 @@ const PIN_FILL: Record<Confidence, string> = {
   literary: "#5a5a5a",
 };
 
-/** Yandex 2.1 bounds: [[south, west], [north, east]]. */
-function itineraryBoundsLatLon(): number[][] {
+/**
+ * Tight bbox around route only (Yandex 2.1: [[south, west], [north, east]]).
+ * Pad is a fraction of span so we don't pull in half of the Levant.
+ */
+function routeBoundsLatLon(): number[][] {
   const lats = STOPS.map((s) => s.lat);
   const lons = STOPS.map((s) => s.lon);
-  const padLat = 0.12;
-  const padLon = 0.18;
+  const minLat = Math.min(...lats);
+  const maxLat = Math.max(...lats);
+  const minLon = Math.min(...lons);
+  const maxLon = Math.max(...lons);
+  const padLat = Math.max((maxLat - minLat) * 0.1, 0.035);
+  const padLon = Math.max((maxLon - minLon) * 0.1, 0.035);
   return [
-    [Math.min(...lats) - padLat, Math.min(...lons) - padLon],
-    [Math.max(...lats) + padLat, Math.max(...lons) + padLon],
+    [minLat - padLat, minLon - padLon],
+    [maxLat + padLat, maxLon + padLon],
   ];
 }
 
@@ -122,6 +130,27 @@ function pinIcon(n: number, confidence: Confidence, active: boolean) {
   };
 }
 
+/** Fit viewport to every route stop; lock so the map cannot leave the route. */
+function fitRouteOnly(map: YmapsMap, bounds: number[][]) {
+  map.container.fitToViewport();
+  const done = map.setBounds(bounds, {
+    checkZoomRange: true,
+    // top chrome / bottom sheet / side margins — keep all pins inside
+    zoomMargin: [56, 28, 64, 28],
+  });
+  const lock = () => {
+    const z = map.getZoom();
+    map.options.set("minZoom", z);
+    map.options.set("maxZoom", Math.min(z + 4, 16));
+    map.options.set("restrictMapArea", bounds);
+  };
+  if (done && typeof (done as Promise<unknown>).then === "function") {
+    (done as Promise<unknown>).then(lock).catch(lock);
+  } else {
+    lock();
+  }
+}
+
 export default function JesusMapPage() {
   const mapEl = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<YmapsMap | null>(null);
@@ -136,7 +165,7 @@ export default function JesusMapPage() {
   const vectorFrom = Math.min(selected, STOPS.length - 2);
   const vectorTo = vectorFrom + 1;
   const selectedStop = STOPS[selected];
-  const bounds = useMemo(() => itineraryBoundsLatLon(), []);
+  const bounds = useMemo(() => routeBoundsLatLon(), []);
 
   const selectStop = (index: number, openCard: boolean) => {
     setSelected(index);
@@ -161,6 +190,7 @@ export default function JesusMapPage() {
 
     let cancelled = false;
     let map: YmapsMap | null = null;
+    let onResize: (() => void) | null = null;
 
     loadYmaps(apiKey)
       .then((ymaps) => {
@@ -170,16 +200,29 @@ export default function JesusMapPage() {
           {
             bounds,
             controls: ["zoomControl"],
+            type: "yandex#map",
           },
           {
+            // Only the route window — no panning into Egypt/Syria/etc.
             restrictMapArea: bounds,
-            minZoom: 8,
-            maxZoom: 16,
             suppressMapOpenBlock: true,
+            yandexMapDisablePoiInteractivity: true,
+            copyrightUaVisible: false,
+            copyrightLogoVisible: true,
           }
         );
         mapRef.current = map;
-        setMapReady((n) => n + 1);
+        // Defer fit until layout paints (mobile flex height).
+        requestAnimationFrame(() => {
+          if (cancelled || !map) return;
+          fitRouteOnly(map, bounds);
+          setMapReady((n) => n + 1);
+        });
+        onResize = () => {
+          if (!map) return;
+          fitRouteOnly(map, bounds);
+        };
+        window.addEventListener("resize", onResize);
       })
       .catch((e: Error) => {
         setMapError(e.message || "Не удалось загрузить Яндекс.Карты");
@@ -187,6 +230,7 @@ export default function JesusMapPage() {
 
     return () => {
       cancelled = true;
+      if (onResize) window.removeEventListener("resize", onResize);
       if (map) map.destroy();
       mapRef.current = null;
     };
@@ -256,47 +300,72 @@ export default function JesusMapPage() {
       map.geoObjects.add(pm);
     }
 
-    map.setCenter([selectedStop.lat, selectedStop.lon], undefined, {
-      duration: 300,
-    });
-  }, [mapReady, selected, selectedStop, vectorFrom]);
+    // Keep all route points in view (do not pan away to a single stop).
+    fitRouteOnly(map, bounds);
+  }, [mapReady, selected, selectedStop, vectorFrom, bounds]);
 
   return (
     <div className="jm-page">
-      <aside className="jm-sidebar">
-        <h1 className="jm-brand">Иисус — гео-карта</h1>
-        <p className="jm-sub">{itinerary.label_ru}</p>
-        <p className="jm-disclaimer">{itinerary.disclaimer_ru}</p>
+      <div className="jm-map-wrap">
+        <header className="jm-map-chrome">
+          <div className="jm-map-chrome-titles">
+            <h1 className="jm-brand">Иисус — гео-карта</h1>
+            <p className="jm-step-meta">
+              {vectorFrom + 1}→{vectorTo + 1}: {STOPS[vectorFrom].label_ru} →{" "}
+              {STOPS[vectorTo].label_ru}
+            </p>
+          </div>
+          <div className="jm-nav">
+            <a href={homeHref()}>←</a>
+            <button
+              type="button"
+              className="jm-btn"
+              disabled={selected <= 0}
+              onClick={() => selectStop(Math.max(0, selected - 1), true)}
+            >
+              Назад
+            </button>
+            <button
+              type="button"
+              className="jm-btn"
+              disabled={selected >= STOPS.length - 1}
+              onClick={() =>
+                selectStop(Math.min(STOPS.length - 1, selected + 1), true)
+              }
+            >
+              Далее
+            </button>
+          </div>
+        </header>
 
+        {mapError ? <div className="jm-map-error">{mapError}</div> : null}
+        <div ref={mapEl} className="jm-map" />
+
+        {cardOpen ? (
+          <div className="jm-card-dock">
+            <PlaceStopCard
+              stop={selectedStop}
+              onClose={() => setCardOpen(false)}
+              larkinHref={larkinAppHref(selectedStop.place_id)}
+            />
+          </div>
+        ) : null}
+
+        <div className="jm-map-legend">
+          Только маршрут · все {STOPS.length} точек в кадре · Яндекс 2.1
+        </div>
+      </div>
+
+      <aside className="jm-sidebar">
+        <p className="jm-disclaimer">{itinerary.disclaimer_ru}</p>
         <div className="jm-nav">
-          <a href={homeHref()}>← Civilization</a>
           <a className="jm-btn" href={larkinAppHref(selectedStop.place_id)}>
             Схема Larkin
           </a>
-          <button
-            type="button"
-            className="jm-btn"
-            disabled={selected <= 0}
-            onClick={() => selectStop(Math.max(0, selected - 1), true)}
-          >
-            Назад
-          </button>
-          <button
-            type="button"
-            className="jm-btn"
-            disabled={selected >= STOPS.length - 1}
-            onClick={() =>
-              selectStop(Math.min(STOPS.length - 1, selected + 1), true)
-            }
-          >
-            Далее
-          </button>
+          <a className="jm-btn" href={jesusGeoHref(selectedStop.place_id)}>
+            Ссылка на точку
+          </a>
         </div>
-
-        <p className="jm-step-meta">
-          Вектор {vectorFrom + 1}→{vectorTo + 1}: {STOPS[vectorFrom].label_ru} →{" "}
-          {STOPS[vectorTo].label_ru}
-        </p>
 
         <ul className="jm-stops">
           {STOPS.map((stop) => {
@@ -331,25 +400,6 @@ export default function JesusMapPage() {
           })}
         </ul>
       </aside>
-
-      <div className="jm-map-wrap">
-        {mapError ? <div className="jm-map-error">{mapError}</div> : null}
-        <div ref={mapEl} className="jm-map" />
-        {cardOpen ? (
-          <div className="jm-card-dock">
-            <PlaceStopCard
-              stop={selectedStop}
-              onClose={() => setCardOpen(false)}
-              larkinHref={larkinAppHref(selectedStop.place_id)}
-            />
-          </div>
-        ) : null}
-        <div className="jm-map-legend">
-          Яндекс.Карты 2.1 · номера = literary itinerary · клик → тексты /
-          справки ·{" "}
-          <a href={jesusGeoHref(selectedStop.place_id)}>ссылка на точку</a>
-        </div>
-      </div>
     </div>
   );
 }
