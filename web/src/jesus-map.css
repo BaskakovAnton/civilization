@@ -43,59 +43,153 @@ body {
 .jm-map-wrap {
   position: relative;
   flex: 1 1 auto;
-  min-height: 58dvh;
+  min-height: 100%;
   min-width: 0;
   display: flex;
   flex-direction: column;
 }
 
-.jm-map-chrome {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 8px 10px;
-  background: var(--jm-panel);
-  border-bottom: 1px solid var(--jm-line);
+.jm-float-nav {
+  position: absolute;
   z-index: 520;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
 }
 
-.jm-map-chrome-titles {
-  min-width: 0;
+.jm-float-nav a {
+  appearance: none;
+  border: 1px solid var(--jm-line);
+  background: rgba(251, 248, 242, 0.92);
+  color: var(--jm-ink);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  touch-action: manipulation;
 }
 
-.jm-map-chrome .jm-brand {
-  font-size: 1.05rem;
+.jm-float-nav a:hover {
+  border-color: var(--jm-accent);
+  background: #efe2d4;
 }
 
-.jm-map-chrome .jm-step-meta {
-  margin: 2px 0 0;
-  font-size: 0.75rem;
+/* Static Heroes overworld — no map vendor */
+.jm-arena {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  container-type: size;
+  background:
+    radial-gradient(ellipse at center, #2a2118 0%, #14100c 70%);
+  padding: 6px;
+}
+
+.jm-arena-stage {
+  position: relative;
+  /* Fit full overworld into the pane (Heroes arena, no letterbox crop). */
+  width: min(100cqw, calc(100cqh * 16 / 9));
+  height: min(100cqh, calc(100cqw * 9 / 16));
+  margin: auto;
+}
+
+.jm-arena-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.jm-arena-routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.jm-route-ghost {
+  stroke: rgba(183, 168, 148, 0.45);
+  stroke-width: 0.45;
+  stroke-dasharray: 1.2 0.9;
+}
+
+.jm-route-seg {
+  stroke: rgba(138, 122, 104, 0.55);
+  stroke-width: 0.35;
+}
+
+.jm-route-seg.is-active {
+  stroke: #3d2a1a;
+  stroke-width: 0.7;
+  stroke-opacity: 0.95;
+}
+
+.jm-marker {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  color: var(--jm-ink);
+}
+
+.jm-marker-dot {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: var(--jm-pin, var(--jm-literary));
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--jm-font-body);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.jm-marker-label {
+  max-width: 7.5rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(251, 248, 242, 0.92);
+  border: 1px solid var(--jm-line);
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.jm-map {
-  flex: 1 1 auto;
-  width: 100%;
-  min-height: 0;
-  height: 100%;
-  background: #dfe6e0;
+.jm-marker.is-active .jm-marker-dot {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+  outline: 2px solid var(--jm-accent);
+  outline-offset: 2px;
 }
 
-.jm-sidebar {
-  flex: 0 1 38dvh;
-  max-height: 38dvh;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px 12px 14px;
-  border-top: 1px solid var(--jm-line);
-  background: var(--jm-panel);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+.jm-marker:hover .jm-marker-dot {
+  filter: brightness(1.08);
 }
 
 .jm-brand {
@@ -104,23 +198,6 @@ body {
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
-}
-
-.jm-sub {
-  margin: 0;
-  color: var(--jm-muted);
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.jm-disclaimer {
-  margin: 0;
-  padding: 8px 10px;
-  border: 1px solid var(--jm-line);
-  background: #efe2d4;
-  font-size: 0.78rem;
-  line-height: 1.35;
-  color: var(--jm-ink);
 }
 
 .jm-nav {
@@ -163,93 +240,6 @@ body {
   margin: 0;
 }
 
-.jm-stops {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.jm-stop {
-  display: grid;
-  grid-template-columns: 28px 1fr auto;
-  gap: 8px;
-  align-items: start;
-  width: 100%;
-  text-align: left;
-  border: 1px solid transparent;
-  background: transparent;
-  padding: 8px;
-  border-radius: 4px;
-  font: inherit;
-  cursor: pointer;
-  color: inherit;
-  touch-action: manipulation;
-}
-
-.jm-stop:hover {
-  background: var(--jm-bg);
-}
-
-.jm-stop.is-selected {
-  border-color: var(--jm-accent);
-  background: #efe2d4;
-}
-
-.jm-stop.is-vector-from,
-.jm-stop.is-vector-to {
-  border-color: var(--jm-route);
-}
-
-.jm-stop-n {
-  font-variant-numeric: tabular-nums;
-  color: var(--jm-muted);
-  font-size: 0.8rem;
-  padding-top: 2px;
-}
-
-.jm-stop-title {
-  font-weight: 600;
-  font-size: 0.92rem;
-}
-
-.jm-stop-note {
-  display: block;
-  margin-top: 2px;
-  font-size: 0.78rem;
-  color: var(--jm-muted);
-  line-height: 1.35;
-}
-
-.jm-badge {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 2px 6px;
-  border-radius: 3px;
-  border: 1px solid var(--jm-line);
-  color: var(--jm-literary);
-  white-space: nowrap;
-}
-
-.jm-badge.literary {
-  color: var(--jm-literary);
-}
-.jm-badge.disputed {
-  color: var(--jm-disputed);
-  border-color: #d4b48a;
-}
-.jm-badge.anchored {
-  color: var(--jm-anchored);
-  border-color: #9bb8c9;
-}
-.jm-badge.firm {
-  color: var(--jm-firm);
-  border-color: #8fb9a8;
-}
-
 .jm-map-error {
   position: absolute;
   z-index: 600;
@@ -265,25 +255,38 @@ body {
   height: fit-content;
 }
 
-/* Mobile: card as bottom sheet over the map */
-.jm-card-dock {
+/* Centered parchment modal */
+.jm-modal {
   position: absolute;
+  inset: 0;
   z-index: 550;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  max-height: 55%;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(20, 16, 12, 0.45);
+}
+
+.jm-modal-panel {
+  width: min(440px, 100%);
+  max-height: min(86dvh, 720px);
   overflow: auto;
-  padding: 0;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
 .jm-card {
-  background: rgba(251, 248, 242, 0.98);
-  border: 1px solid var(--jm-line);
-  border-bottom: none;
-  border-radius: 12px 12px 0 0;
-  padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px));
+  background:
+    linear-gradient(180deg, rgba(255, 250, 235, 0.55), rgba(232, 214, 180, 0.35)),
+    repeating-linear-gradient(
+      -12deg,
+      rgba(120, 90, 50, 0.03) 0 2px,
+      transparent 2px 6px
+    ),
+    #f3e6c8;
+  border: 1px solid #c4a97a;
+  border-radius: 6px;
+  padding: 14px 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 248, 230, 0.45);
 }
 
 .jm-card-head {
@@ -293,6 +296,27 @@ body {
   align-items: flex-start;
 }
 
+.jm-loc-art {
+  margin: 10px 0 0;
+}
+
+.jm-loc-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--jm-line);
+  border-radius: 4px;
+  background: #e7e0d2;
+}
+
+.jm-loc-art figcaption {
+  margin: 4px 0 0;
+  font-size: 0.7rem;
+  color: var(--jm-muted);
+  line-height: 1.3;
+}
+
 .jm-card-kicker {
   margin: 0;
   font-size: 0.75rem;
@@ -300,14 +324,20 @@ body {
 }
 
 .jm-card-title {
-  margin: 2px 0 0;
+  margin: 0;
   font-family: var(--jm-font-display);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 .jm-card-hint,
-.jm-card-note,
+.jm-card-note {
+  margin: 10px 0 0;
+  font-size: 0.92rem;
+  color: var(--jm-ink);
+  line-height: 1.45;
+}
+
 .jm-card-empty {
   margin: 6px 0 0;
   font-size: 0.82rem;
@@ -327,34 +357,58 @@ body {
   color: var(--jm-muted);
 }
 
+.jm-gospel-tabs,
+.jm-trans-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 8px;
+}
+
+.jm-gospel-tab,
+.jm-trans-tab {
+  appearance: none;
+  border: 1px solid var(--jm-line);
+  background: var(--jm-bg);
+  color: var(--jm-ink);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.jm-gospel-tab.is-active,
+.jm-trans-tab.is-active {
+  border-color: var(--jm-accent);
+  background: #efe2d4;
+  color: var(--jm-accent);
+  font-weight: 600;
+}
+
+.jm-gospel-text {
+  margin: 0;
+  padding: 8px 10px;
+  max-height: min(36vh, 280px);
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--jm-font-body);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  background: rgba(247, 236, 210, 0.65);
+  border: 1px solid #c4a97a;
+  border-radius: 4px;
+}
+
 .jm-card-block ul {
   margin: 0;
   padding-left: 1.1rem;
 }
 
-.jm-card-block a,
-.jm-card-bridge a {
+.jm-card-block a {
   color: var(--jm-accent);
-}
-
-.jm-card-bridge {
-  margin: 12px 0 0;
-  font-size: 0.85rem;
-}
-
-.jm-map-legend {
-  position: absolute;
-  z-index: 500;
-  left: 10px;
-  bottom: 10px;
-  padding: 6px 8px;
-  background: rgba(251, 248, 242, 0.92);
-  border: 1px solid var(--jm-line);
-  font-size: 0.7rem;
-  color: var(--jm-muted);
-  line-height: 1.3;
-  max-width: min(220px, calc(100% - 20px));
-  pointer-events: none;
 }
 
 .jm-pin {
@@ -404,39 +458,8 @@ body {
   overflow: visible;
 }
 
-/* Desktop: map still primary (left), list secondary */
 @media (min-width: 900px) {
-  .jm-page {
-    flex-direction: row;
-  }
-
-  .jm-map-wrap {
-    flex: 1 1 auto;
-    min-height: 100%;
-  }
-
-  .jm-sidebar {
-    flex: 0 0 320px;
-    max-height: none;
-    border-top: none;
-    border-left: 1px solid var(--jm-line);
-  }
-
-  .jm-card-dock {
-    left: auto;
-    right: 12px;
-    top: 64px;
-    bottom: auto;
-    width: min(340px, calc(100% - 24px));
-    max-height: calc(100% - 80px);
-  }
-
-  .jm-card {
-    border-radius: 4px;
-    border: 1px solid var(--jm-line);
-  }
-
-  .jm-map-chrome .jm-brand {
-    font-size: 1.25rem;
+  .jm-modal-panel {
+    width: min(480px, 92vw);
   }
 }

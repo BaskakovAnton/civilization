@@ -1,0 +1,22 @@
+{
+  "id": "jesus_map_marker_layout_v1",
+  "label_ru": "Маркеры на иллюстративной арене Heroes",
+  "note_ru": "Координаты x/y в % от кадра overworld.jpg (0,0 = левый верх). Literary-раскладка по замкам на картинке, не WGS84.",
+  "overworld": "heroes-map/overworld.jpg",
+  "markers": {
+    "tyre_region": { "x": 14.5, "y": 22 },
+    "caesarea_philippi": { "x": 57, "y": 10 },
+    "capernaum": { "x": 64, "y": 29 },
+    "bethsaida": { "x": 76, "y": 26 },
+    "sea_of_galilee": { "x": 66, "y": 38 },
+    "decapolis": { "x": 79, "y": 43 },
+    "nazareth": { "x": 40, "y": 36 },
+    "cana": { "x": 34, "y": 30 },
+    "nain": { "x": 43, "y": 46 },
+    "samaria": { "x": 44, "y": 58 },
+    "jordan_valley": { "x": 68, "y": 60 },
+    "jericho": { "x": 74, "y": 70 },
+    "bethany": { "x": 48, "y": 80 },
+    "jerusalem": { "x": 50, "y": 88 }
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "id": "jesus_genealogy_matt_v1",
+  "label_ru": "Родословие Мф 1 (Синодальный)",
+  "confidence": "literary",
+  "source_ids": ["synoptic_gospels"],
+  "translation_id": "rst",
+  "translation_label_ru": "Синодальный",
+  "note_ru": "Литературная цепочка Мф 1:2–16. Не firm-генеалогия и не внешняя биография.",
+  "segments": [
+    { "id": "abraham_david", "label_ru": "Авраам → Давид", "from_index": 0, "to_index": 13 },
+    { "id": "david_exile", "label_ru": "Давид → Вавилон", "from_index": 13, "to_index": 28 },
+    { "id": "exile_christ", "label_ru": "Вавилон → Христос", "from_index": 28, "to_index": 41 }
+  ],
+  "nodes": [
+    {
+      "id": "abraham",
+      "label_ru": "Авраам",
+      "verse": "1:2",
+      "verse_text_ru": "Авраам родил Исаака; Исаак родил Иакова; Иаков родил Иуду и братьев его;",
+      "person_id": "abraham",
+      "confidence": "literary"
+    },
+    {
+      "id": "isaac",
+      "label_ru": "Исаак",
+      "verse": "1:2",
+      "verse_text_ru": "Авраам родил Исаака; Исаак родил Иакова; Иаков родил Иуду и братьев его;",
+      "person_id": "isaac",
+      "confidence": "literary"
+    },
+    {
+      "id": "jacob",
+      "label_ru": "Иаков",
+      "verse": "1:2",
+      "verse_text_ru": "Авраам родил Исаака; Исаак родил Иакова; Иаков родил Иуду и братьев его;",
+      "person_id": "jacob",
+      "confidence": "literary"
+    },
+    {
+      "id": "judah",
+      "label_ru": "Иуда",
+      "verse": "1:2",
+      "verse_text_ru": "Авраам родил Исаака; Исаак родил Иакова; Иаков родил Иуду и братьев его;",
+      "confidence": "literary"
+    },
+    {
+      "id": "perez",
+      "label_ru": "Фарес",
+      "verse": "1:3",
+      "verse_text_ru": "Иуда родил Фареса и Зару от Фамари; Фарес родил Есрома; Есром родил Арама;",
+      "confidence": "literary",
+      "note_ru": "В стихе также Зара и Фамарь."
+    },
+    {
+      "id": "hezron",
+      "label_ru": "Есром",
+      "verse": "1:3",
+      "verse_text_ru": "Иуда родил Фареса и Зару от Фамари; Фарес родил Есрома; Есром родил Арама;",
+      "confidence": "literary"
+    },
+    {
+      "id": "ram",
+      "label_ru": "Арам",
+      "verse": "1:3",
+      "verse_text_ru": "Иуда родил Фареса и Зару от Фамари; Фарес родил Есрома; Есром родил Арама;",
+      "confidence": "literary"
+    },
+    {
+      "id": "amminadab",
+      "label_ru": "Аминадав",
+      "verse": "1:4",
+      "verse_text_ru": "Арам родил Аминадава; Аминадав родил Наассона; Наассон родил Салмона;",
+      "confidence": "literary"
+    },
+    {
+      "id": "nahshon",
+      "label_ru": "Наассон",
+      "verse": "1:4",
+      "verse_text_ru": "Арам родил Аминадава; Аминадав родил Наассона; Наассон родил Салмона;",
+      "confidence": "literary"
+    },
+    {
+      "id": "salmon",
+      "label_ru": "Салмон",
+      "verse": "1:4",
+      "verse_text_ru": "Арам родил Аминадава; Аминадав родил Наассона; Наассон родил Салмона;",
+      "confidence": "literary"
+    },
+    {
+      "id": "boaz",
+      "label_ru": "Вооз",
+      "verse": "1:5",
+      "verse_text_ru": "Салмон родил Вооза от Рахавы; Вооз родил Овида от Руфи; Овид родил Иессея;",
+      "confidence": "literary",
+      "note_ru": "В стихе также Рахава и Руфь."
+    },
+    {
+      "id": "obed",
+      "label_ru": "Овид",
+      "verse": "1:5",
+      "verse_text_ru": "Салмон родил Вооза от Рахавы; Вооз родил Овида от Руфи; Овид родил Иессея;",
+      "confidence": "literary"
+    },
+    {
+      "id": "jesse",
+      "label_ru": "Иессей",
+      "verse": "1:5",
+      "verse_text_ru": "Салмон родил Вооза от Рахавы; Вооз родил Овида от Руфи; Овид родил Иессея;",
+      "confidence": "literary"
+    },
+    {
+      "id": "david",
+      "label_ru": "Давид",
+      "verse": "1:6",
+      "verse_text_ru": "Иессей родил Давида царя; Давид царь родил Соломона от бывшей за Уриею;",
+      "person_id": "david",
+      "confidence": "literary"
+    },
+    {
+      "id": "solomon",
+      "label_ru": "Соломон",
+      "verse": "1:6",
+      "verse_text_ru": "Иессей родил Давида царя; Давид царь родил Соломона от бывшей за Уриею;",
+      "person_id": "solomon",
+      "confidence": "literary"
+    },
+    {
+      "id": "rehoboam",
+      "label_ru": "Ровоам",
+      "verse": "1:7",
+      "verse_text_ru": "Соломон родил Ровоама; Ровоам родил Авию; Авия родил Асу;",
+      "confidence": "literary"
+    },
+    {
+      "id": "abijah",
+      "label_ru": "Авия",
+      "verse": "1:7",
+      "verse_text_ru": "Соломон родил Ровоама; Ровоам родил Авию; Авия родил Асу;",
+      "confidence": "literary"
+    },
+    {
+      "id": "asa",
+      "label_ru": "Аса",
+      "verse": "1:7",
+      "verse_text_ru": "Соломон родил Ровоама; Ровоам родил Авию; Авия родил Асу;",
+      "confidence": "literary"
+    },
+    {
+      "id": "jehoshaphat",
+      "label_ru": "Иосафат",
+      "verse": "1:8",
+      "verse_text_ru": "Аса родил Иосафата; Иосафат родил Иорама; Иорам родил Озию;",
+      "confidence": "literary"
+    },
+    {
+      "id": "joram",
+      "label_ru": "Иорам",
+      "verse": "1:8",
+      "verse_text_ru": "Аса родил Иосафата; Иосафат родил Иорама; Иорам родил Озию;",
+      "confidence": "literary"
+    },
+    {
+      "id": "uzziah",
+      "label_ru": "Озия",
+      "verse": "1:8",
+      "verse_text_ru": "Аса родил Иосафата; Иосафат родил Иорама; Иорам родил Озию;",
+      "confidence": "literary"
+    },
+    {
+      "id": "jotham",
+      "label_ru": "Иоафам",
+      "verse": "1:9",
+      "verse_text_ru": "Озия родил Иоафама; Иоафам родил Ахаза; Ахаз родил Езекию;",
+      "confidence": "literary"
+    },
+    {
+      "id": "ahaz",
+      "label_ru": "Ахаз",
+      "verse": "1:9",
+      "verse_text_ru": "Озия родил Иоафама; Иоафам родил Ахаза; Ахаз родил Езекию;",
+      "confidence": "literary"
+    },
+    {
+      "id": "hezekiah",
+      "label_ru": "Езекия",
+      "verse": "1:9",
+      "verse_text_ru": "Озия родил Иоафама; Иоафам родил Ахаза; Ахаз родил Езекию;",
+      "person_id": "hezekiah",
+      "confidence": "literary"
+    },
+    {
+      "id": "manasseh",
+      "label_ru": "Манассия",
+      "verse": "1:10",
+      "verse_text_ru": "Езекия родил Манассию; Манассия родил Амона; Амон родил Иосию;",
+      "confidence": "literary"
+    },
+    {
+      "id": "amon",
+      "label_ru": "Амон",
+      "verse": "1:10",
+      "verse_text_ru": "Езекия родил Манассию; Манассия родил Амона; Амон родил Иосию;",
+      "confidence": "literary"
+    },
+    {
+      "id": "josiah",
+      "label_ru": "Иосия",
+      "verse": "1:10",
+      "verse_text_ru": "Езекия родил Манассию; Манассия родил Амона; Амон родил Иосию;",
+      "person_id": "josiah",
+      "confidence": "literary"
+    },
+    {
+      "id": "jehoiakim",
+      "label_ru": "Иоаким",
+      "verse": "1:11",
+      "verse_text_ru": "Иосия родил Иоакима; Иоаким родил Иехонию и братьев его, перед переселением в Вавилон.",
+      "confidence": "literary"
+    },
+    {
+      "id": "jeconiah",
+      "label_ru": "Иехония",
+      "verse": "1:11",
+      "verse_text_ru": "Иосия родил Иоакима; Иоаким родил Иехонию и братьев его, перед переселением в Вавилон.",
+      "confidence": "literary"
+    },
+    {
+      "id": "shealtiel",
+      "label_ru": "Салафииль",
+      "verse": "1:12",
+      "verse_text_ru": "По переселении же в Вавилон, Иехония родил Салафииля; Салафииль родил Зоровавеля;",
+      "confidence": "literary"
+    },
+    {
+      "id": "zerubbabel",
+      "label_ru": "Зоровавель",
+      "verse": "1:12",
+      "verse_text_ru": "По переселении же в Вавилон, Иехония родил Салафииля; Салафииль родил Зоровавеля;",
+      "person_id": "zerubbabel",
+      "confidence": "literary"
+    },
+    {
+      "id": "abiud",
+      "label_ru": "Авиуд",
+      "verse": "1:13",
+      "verse_text_ru": "Зоровавель родил Авиуда; Авиуд родил Елиакима; Елиаким родил Азора;",
+      "confidence": "literary"
+    },
+    {
+      "id": "eliakim",
+      "label_ru": "Елиаким",
+      "verse": "1:13",
+      "verse_text_ru": "Зоровавель родил Авиуда; Авиуд родил Елиакима; Елиаким родил Азора;",
+      "confidence": "literary"
+    },
+    {
+      "id": "azor",
+      "label_ru": "Азор",
+      "verse": "1:13",
+      "verse_text_ru": "Зоровавель родил Авиуда; Авиуд родил Елиакима; Елиаким родил Азора;",
+      "confidence": "literary"
+    },
+    {
+      "id": "zadok",
+      "label_ru": "Садок",
+      "verse": "1:14",
+      "verse_text_ru": "Азор родил Садока; Садок родил Ахима; Ахим родил Елиуда;",
+      "confidence": "literary"
+    },
+    {
+      "id": "akim",
+      "label_ru": "Ахим",
+      "verse": "1:14",
+      "verse_text_ru": "Азор родил Садока; Садок родил Ахима; Ахим родил Елиуда;",
+      "confidence": "literary"
+    },
+    {
+      "id": "eliud",
+      "label_ru": "Елиуд",
+      "verse": "1:14",
+      "verse_text_ru": "Азор родил Садока; Садок родил Ахима; Ахим родил Елиуда;",
+      "confidence": "literary"
+    },
+    {
+      "id": "eleazar",
+      "label_ru": "Елеазар",
+      "verse": "1:15",
+      "verse_text_ru": "Елиуд родил Елеазара; Елеазар родил Матфана; Матфан родил Иакова;",
+      "confidence": "literary"
+    },
+    {
+      "id": "matthan",
+      "label_ru": "Матфан",
+      "verse": "1:15",
+      "verse_text_ru": "Елиуд родил Елеазара; Елеазар родил Матфана; Матфан родил Иакова;",
+      "confidence": "literary"
+    },
+    {
+      "id": "jacob_father_of_joseph",
+      "label_ru": "Иаков",
+      "verse": "1:15",
+      "verse_text_ru": "Елиуд родил Елеазара; Елеазар родил Матфана; Матфан родил Иакова;",
+      "confidence": "literary",
+      "note_ru": "Отец Иосифа в Мф 1; не путать с патриархом Иаковом."
+    },
+    {
+      "id": "joseph_of_nazareth",
+      "label_ru": "Иосиф",
+      "verse": "1:16",
+      "verse_text_ru": "Иаков родил Иосифа, мужа Марии, от Которой родился Иисус, называемый Христос.",
+      "confidence": "literary",
+      "note_ru": "Обручник Марии в Мф 1; не Иосиф сын Иакова (ВЗ)."
+    },
+    {
+      "id": "jesus",
+      "label_ru": "Иисус",
+      "verse": "1:16",
+      "verse_text_ru": "Иаков родил Иосифа, мужа Марии, от Которой родился Иисус, называемый Христос.",
+      "person_id": "jesus_of_nazareth",
+      "confidence": "literary"
+    }
+  ]
+}

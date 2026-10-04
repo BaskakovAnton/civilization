@@ -16,6 +16,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "web/index.html"),
         jesus: resolve(__dirname, "web/jesus.html"),
+        genealogy: resolve(__dirname, "web/genealogy.html"),
       },
     },
   },

@@ -454,7 +454,13 @@ export default function App() {
                     className="journey-open-btn"
                     href={`${import.meta.env.BASE_URL}jesus.html`}
                   >
-                    Гео-карта (Leaflet)
+                    Карта арены
+                  </a>
+                  <a
+                    className="journey-open-btn"
+                    href={`${import.meta.env.BASE_URL}genealogy.html`}
+                  >
+                    Родословие Мф 1
                   </a>
                   <button
                     type="button"

@@ -4,6 +4,7 @@ export type YmapsMap = {
   geoObjects: {
     add: (o: unknown) => void;
     removeAll: () => void;
+    getBounds: () => number[][] | null;
   };
   setCenter: (c: number[], zoom?: number, opts?: { duration?: number }) => void;
   setBounds: (
@@ -12,17 +13,64 @@ export type YmapsMap = {
       checkZoomRange?: boolean;
       duration?: number;
       zoomMargin?: number | number[];
+      preciseZoom?: boolean;
     }
   ) => void | Promise<unknown>;
   getZoom: () => number;
+  setZoom: (zoom: number, opts?: { duration?: number }) => void;
+  setType?: (type: string) => void;
   options: {
     set: (key: string, value: unknown) => void;
+    unset?: (key: string) => void;
+  };
+  controls?: {
+    remove: (c: unknown) => void;
+    get: (name: string) => unknown;
+    each?: (fn: (c: { options?: { get?: (k: string) => unknown } }) => void) => void;
+  };
+  panes?: {
+    get: (name: string) => { getElement?: () => HTMLElement | null } | null;
   };
   container: {
     fitToViewport: () => void;
+    getSize: () => number[];
   };
   destroy: () => void;
 };
+
+/** Hide Yandex POI / toponym panes when they exist as separate DOM layers. */
+export function hideYandexExtraneousLabels(map: YmapsMap) {
+  for (const name of ["places", "overlaps", "outdoor", "copyrights"]) {
+    try {
+      const el = map.panes?.get?.(name)?.getElement?.();
+      if (el) el.style.display = "none";
+    } catch {
+      /* pane may be absent */
+    }
+  }
+}
+
+/** Keep only the zoom slider; drop any other chrome Yandex injects. */
+export function keepOnlyZoomControl(map: YmapsMap) {
+  const drop = [
+    "searchControl",
+    "trafficControl",
+    "typeSelector",
+    "fullscreenControl",
+    "geolocationControl",
+    "rulerControl",
+    "routeButtonControl",
+    "routePanelControl",
+  ];
+  for (const name of drop) {
+    try {
+      const c = map.controls?.get?.(name);
+      if (c) map.controls?.remove(c);
+    } catch {
+      /* absent */
+    }
+  }
+}
 
 type YmapsNS = {
   ready: (cb: () => void) => void;
@@ -38,6 +86,11 @@ type YmapsNS = {
   ) => unknown;
   Polyline: new (
     coords: number[][],
+    props?: Record<string, unknown>,
+    opts?: Record<string, unknown>
+  ) => unknown;
+  Rectangle: new (
+    geometry: number[][] | number[][][],
     props?: Record<string, unknown>,
     opts?: Record<string, unknown>
   ) => unknown;
